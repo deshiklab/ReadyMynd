@@ -4,8 +4,8 @@ import { Reveal } from './reveal';
 type Tone = 'light' | 'mist' | 'ink';
 
 const tones: Record<Tone, string> = {
-  light: 'bg-white text-ink-800',
-  mist: 'bg-mist-50 text-ink-800',
+  light: 'bg-surface text-body',
+  mist: 'bg-surface-muted text-body',
   ink: 'section-ink',
 };
 
@@ -49,7 +49,7 @@ export function Eyebrow({
 }) {
   const styles =
     tone === 'dark'
-      ? 'text-brand-500 before:bg-brand-500'
+      ? 'text-accent before:bg-brand-500'
       : 'text-brand-300 before:bg-brand-400';
   return (
     <span
@@ -78,8 +78,8 @@ export function SectionHeading({
   children?: ReactNode;
 }) {
   const alignCls = align === 'center' ? 'mx-auto text-center' : '';
-  const titleCls = tone === 'dark' ? 'text-ink-900' : 'text-white';
-  const introCls = tone === 'dark' ? 'text-mist-600' : 'text-mist-300';
+  const titleCls = tone === 'dark' ? 'text-heading' : 'text-white';
+  const introCls = tone === 'dark' ? 'text-body' : 'text-onink';
 
   return (
     <Reveal className={`max-w-3xl ${alignCls} ${className}`}>
@@ -99,7 +99,7 @@ export function SectionHeading({
 
 export function Lead({ children, tone = 'dark' }: { children: ReactNode; tone?: 'dark' | 'light' }) {
   return (
-    <p className={`text-lg leading-relaxed ${tone === 'dark' ? 'text-mist-700' : 'text-mist-300'}`}>
+    <p className={`text-lg leading-relaxed ${tone === 'dark' ? 'text-body-strong' : 'text-onink'}`}>
       {children}
     </p>
   );

@@ -17,8 +17,8 @@ export function Notice({
     tone === 'amber'
       ? 'border-signal-500/30 bg-signal-500/[0.07]'
       : 'border-ink-600/40 bg-white/[0.04]';
-  const titleCls = tone === 'amber' ? 'text-ink-900' : 'text-white';
-  const bodyCls = tone === 'amber' ? 'text-mist-700' : 'text-mist-300';
+  const titleCls = tone === 'amber' ? 'text-heading' : 'text-white';
+  const bodyCls = tone === 'amber' ? 'text-body-strong' : 'text-onink';
 
   return (
     <aside className={`rounded-2xl border p-5 sm:p-6 ${shell}`}>

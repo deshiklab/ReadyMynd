@@ -13,7 +13,7 @@ Built from the approved **Website Content v1.8** and **Master Menu v1.8** specif
 | ------------ | -------------------------------------------------------------- |
 | Framework    | Next.js 15 (App Router, React 19, TypeScript strict)            |
 | Styling      | Tailwind CSS v4 (CSS-first config, custom `@theme` tokens)      |
-| Fonts        | `@fontsource-variable/inter` + `@fontsource-variable/sora` (self-hosted, no external requests) |
+| Fonts        | `@fontsource-variable/inter` + `@fontsource-variable/sora` + `@fontsource-variable/noto-sans-bengali` (self-hosted, no external requests) |
 | Icons        | `lucide-react`                                                  |
 | Deployment   | Static-first: 23 prerendered pages + 1 API route. Vercel-ready. |
 
@@ -26,6 +26,44 @@ npm run build   # production build
 npm run start   # serve the production build
 npm run typecheck
 ```
+
+## Appearance, language and quick actions
+
+### Themes
+The site ships a **light theme (default)** derived from the corporate image palette — near-white
+canvas, cool blue-grey surfaces and a deep blue-ink heading colour — plus the original dark theme.
+Visitors switch with the sun/moon control in the header utility bar or the labelled switch in the
+mobile drawer.
+
+* Choice is stored in `localStorage['readymynd-theme']` and re-applied by an inline pre-paint
+  script (`NoFlashScript` in `components/providers.tsx`), so there is no flash of the wrong theme.
+* Everything is driven by theme-aware CSS custom properties in `app/globals.css`
+  (`--color-surface`, `--color-heading`, `--color-body`, `--color-line`, `--color-accent`, …).
+  The dark theme simply re-declares those variables under `.dark`.
+* By default only the page hero and the closing CTA band are dark; all body sections are light or
+  mist, so the site reads light-first.
+
+### Languages
+English (default) and Bengali (`বাংলা`). The EN / বাং control sits next to the theme switch.
+
+* Choice is stored in `localStorage['readymynd-locale']`; the same pre-paint script sets
+  `documentElement.lang`, so no flash of the wrong language.
+* Catalogues live in `lib/i18n/messages/{common,home,services,company,legal}.ts`.
+  Site content is bilingual via the `Bi` type in `lib/content.ts` and resolved with `tx()` / `tl()` /
+  `tr()` from `useI18n()`.
+* Dates format per locale. Long-form legal clauses and the six insight article bodies remain
+  English-only and are marked `lang="en"`; Bengali visitors see an `englishOnly` notice there.
+
+### Quick actions
+A floating action button (bottom-right, above the footer) expands into:
+
+| Action            | Behaviour                                                              |
+| ----------------- | ---------------------------------------------------------------------- |
+| Chat to ReadyMynd | Opens an inline chat panel with quick-reply prompts                    |
+| WhatsApp          | `https://wa.me/8801755628272` with a prefilled message                 |
+| Call us           | `tel:+8801755628272`                                                   |
+| Send an enquiry   | Jumps to `/contact/#assessment-enquiry`                                |
+| Back to top       | Appears once the page is scrolled; smooth-scrolls to the top           |
 
 ## Routes (approved v1.8 URL map)
 
@@ -43,6 +81,19 @@ npm run typecheck
 
 Trailing slashes are enforced (`trailingSlash: true`) to match the approved URL map.
 `/sitemap.xml` and `/robots.txt` are generated automatically.
+
+## Structure (theme / i18n / quick actions)
+
+```
+app/globals.css                      theme tokens, .dark overrides, Bengali font stack
+components/providers.tsx             NoFlashScript + Providers (Theme → I18n → children → QuickActions)
+lib/theme.tsx                        ThemeProvider / useTheme
+lib/i18n/index.tsx                   I18nProvider / useI18n (t, tl, tr, tx)
+lib/i18n/messages/*.ts               bilingual catalogues
+components/theme/controls.tsx        ThemeToggle + LanguageToggle
+components/quick-actions/            FAB, action stack, chat panel, back-to-top
+components/pages/*.tsx               client page bodies (need useI18n)
+```
 
 ## Structure
 

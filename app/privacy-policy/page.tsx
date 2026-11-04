@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { LegalPage, type LegalSection } from '@/components/legal/legal-page';
 import { site } from '@/lib/site';
+import { LegalPage, type LegalSection } from '@/components/legal/legal-page';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const sections: LegalSection[] = [
+const privacySections: LegalSection[] = [
   {
     heading: 'Introduction',
     blocks: [
@@ -186,13 +186,6 @@ const sections: LegalSection[] = [
   },
 ];
 
-export default function PrivacyPolicyPage() {
-  return (
-    <LegalPage
-      title="Privacy Policy"
-      crumb="Privacy Policy"
-      intro="How ReadyMynd collects, uses, stores, protects and handles personal information through its website and related communications."
-      sections={sections}
-    />
-  );
+export default function Page() {
+  return <LegalPage kind="privacy" sections={privacySections} />;
 }

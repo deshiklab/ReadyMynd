@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/sora';
+import '@fontsource-variable/noto-sans-bengali';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { NoFlashScript, Providers } from '@/components/providers';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   publisher: site.name,
-  alternates: { canonical: '/' },
+  alternates: { canonical: '/', languages: { en: '/', bn: '/' } },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -36,7 +38,12 @@ export const metadata: Metadata = {
     description:
       'Know your digital readiness before deciding what comes next. Structured Textile DPP Digital Readiness Assessment for Bangladesh textile and apparel manufacturers.',
     images: [
-      { url: '/images/generated/og-cover.jpg', width: 1600, height: 630, alt: 'ReadyMynd — Textile DPP Readiness & Digital Advisory' },
+      {
+        url: '/images/generated/og-cover.jpg',
+        width: 1600,
+        height: 630,
+        alt: 'ReadyMynd — Textile DPP Readiness & Digital Advisory',
+      },
     ],
   },
   twitter: {
@@ -55,7 +62,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0b1220',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#070b13' },
+  ],
   width: 'device-width',
   initialScale: 1,
 };
@@ -88,19 +98,22 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-dvh bg-white font-sans antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-dvh bg-surface font-sans antialiased">
+        <NoFlashScript />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
         >
           Skip to content
         </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </Providers>
         <noscript>
-          {/* Scroll-reveal is opt-in via JS; make sure content is visible without it. */}
+          {/* Scroll-reveal is opt-in via JS; keep content visible without it. */}
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
         </noscript>
         <script

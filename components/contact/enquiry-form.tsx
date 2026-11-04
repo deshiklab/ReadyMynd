@@ -13,38 +13,9 @@ import {
 } from 'lucide-react';
 import type { EnquiryPurpose } from '@/app/api/enquiries/route';
 import { site } from '@/lib/site';
+import { useI18n } from '@/lib/i18n';
 
 type Purpose = EnquiryPurpose;
-
-const purposes: { id: Purpose; label: string; hint: string }[] = [
-  {
-    id: 'assessment',
-    label: 'Request Digital Readiness Assessment',
-    hint: 'One representative product at one physical factory.',
-  },
-  {
-    id: 'brochure',
-    label: 'Download Service Brochure',
-    hint: 'The brochure is available immediately after submission.',
-  },
-  {
-    id: 'general',
-    label: 'General Business Enquiry',
-    hint: 'Advisory, partnerships or other business matters.',
-  },
-];
-
-const factoryTypes = [
-  'Garment Manufacturing Factory',
-  'Knitwear Manufacturing Factory',
-  'Spinning Mill',
-  'Knitting Mill',
-  'Weaving Mill',
-  'Dyeing & Finishing Facility',
-  'Fabric Manufacturing Facility',
-  'Composite Textile Mill',
-  'Other / Not listed',
-];
 
 const requiredByPurpose: Record<Purpose, string[]> = {
   assessment: ['fullName', 'designation', 'company', 'factoryType', 'email', 'phone'],
@@ -79,11 +50,19 @@ const initialState = (purpose: Purpose): FormState => ({
 });
 
 const fieldClass =
-  'mt-2 block w-full rounded-xl border border-mist-300 bg-white px-4 py-3 text-[0.9375rem] text-ink-900 placeholder:text-mist-400 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20';
+  'mt-2 block w-full rounded-xl border border-line-strong bg-surface-raised px-4 py-3 text-[0.9375rem] text-heading placeholder:text-onink-soft transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20';
 
-const labelClass = 'text-sm font-semibold text-ink-900';
+const labelClass = 'text-sm font-semibold text-heading';
 
 export function EnquiryForm() {
+  const { t, tl, tr } = useI18n();
+  const purposeCopy = tr<{ label: string; hint: string }[]>('form.purposes') ?? [];
+  const purposes = (['assessment', 'brochure', 'general'] as Purpose[]).map((id, index) => ({
+    id,
+    label: purposeCopy[index]?.label ?? id,
+    hint: purposeCopy[index]?.hint ?? '',
+  }));
+  const factoryTypes = tl('form.factoryTypes');
   const searchParams = useSearchParams();
   const purposeParam = searchParams.get('purpose');
   const initialPurpose: Purpose =
@@ -134,17 +113,17 @@ export function EnquiryForm() {
     const nextErrors: Record<string, string> = {};
     for (const field of required) {
       if (!String(form[field as keyof FormState] ?? '').trim()) {
-        nextErrors[field] = 'This field is required.';
+        nextErrors[field] = t('form.errorRequired');
       }
     }
     if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email)) {
-      nextErrors.email = 'Enter a valid business email address.';
+      nextErrors.email = t('form.errorEmail');
     }
     if (isRequired('phone') && form.phone && !/^[+()\d][\d\s\-()]{5,20}$/.test(form.phone)) {
-      nextErrors.phone = 'Enter a valid contact number.';
+      nextErrors.phone = t('form.errorPhone');
     }
     if (!form.privacy) {
-      nextErrors.privacy = 'Please acknowledge the privacy notice to continue.';
+      nextErrors.privacy = t('form.errorPrivacy');
     }
 
     if (Object.keys(nextErrors).length > 0) {
@@ -168,7 +147,7 @@ export function EnquiryForm() {
       };
 
       if (!response.ok || !data.ok) {
-        setErrors(data.errors ?? { form: 'Something went wrong. Please try again.' });
+        setErrors(data.errors ?? { form: t('form.errorGeneric') });
         setStatus('idle');
         return;
       }
@@ -176,7 +155,7 @@ export function EnquiryForm() {
       setReference(data.reference ?? '');
       setStatus('success');
     } catch {
-      setErrors({ form: 'Network error. Please try again or email us directly.' });
+      setErrors({ form: t('form.errorNetwork') });
       setStatus('idle');
     }
   };
@@ -194,16 +173,16 @@ export function EnquiryForm() {
             <CheckCircle2 className="size-6" aria-hidden />
           </span>
           <div>
-            <h3 className="font-display text-xl font-semibold text-ink-900">
-              {form.purpose === 'brochure' ? 'Your brochure is ready' : 'Enquiry received'}
+            <h3 className="font-display text-xl font-semibold text-heading">
+              {form.purpose === 'brochure' ? t('form.successBrochureTitle') : t('form.successTitle')}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-mist-700">
+            <p className="mt-2 text-sm leading-relaxed text-body-strong">
               {form.purpose === 'brochure'
-                ? 'Thank you. The ReadyMynd service brochure is available below, and a copy of your request has been logged.'
-                : 'Thank you. Our advisory team will review your enquiry and contact you regarding the proposed engagement.'}
+                ? t('form.successBrochureBody')
+                : t('form.successBody')}
             </p>
             {reference && (
-              <p className="mt-3 inline-flex rounded-lg bg-white px-3 py-1.5 font-mono text-xs font-semibold text-ink-900 ring-1 ring-mist-200">
+              <p className="mt-3 inline-flex rounded-lg bg-surface-raised px-3 py-1.5 font-mono text-xs font-semibold text-heading ring-1 ring-line">
                 Reference {reference}
               </p>
             )}
@@ -216,7 +195,7 @@ export function EnquiryForm() {
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.6)] transition-colors hover:bg-brand-600"
               >
                 <Download className="size-4" aria-hidden />
-                Download the brochure (PDF)
+                {t('form.downloadBrochure')}
               </a>
             )}
 
@@ -228,12 +207,12 @@ export function EnquiryForm() {
                   setStatus('idle');
                   setReference('');
                 }}
-                className="font-semibold text-brand-600 hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
-                Submit another enquiry
+                {t('form.submitAnother')}
               </button>
-              <Link href="/textile-dpp-digital-readiness-assessment/" className="font-semibold text-mist-600 hover:text-ink-900">
-                Read about the assessment
+              <Link href="/textile-dpp-digital-readiness-assessment/" className="font-semibold text-body hover:text-heading">
+                {t('form.readAssessment')}
               </Link>
             </div>
           </div>
@@ -243,11 +222,11 @@ export function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-mist-200 bg-white p-6 shadow-lift sm:p-8">
+    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-surface-raised p-6 shadow-lift sm:p-8">
       {/* Purpose selector */}
       <fieldset>
         <legend className={labelClass}>
-          Select an enquiry purpose <span className="text-brand-600">*</span>
+          {t('form.purposeLabel')} <span className="text-accent">*</span>
         </legend>
         <div className="mt-3 grid gap-2 sm:grid-cols-3">
           {purposes.map((purpose) => {
@@ -257,8 +236,8 @@ export function EnquiryForm() {
                 key={purpose.id}
                 className={`cursor-pointer rounded-xl border p-4 transition-all ${
                   selected
-                    ? 'border-brand-500 bg-brand-50/60 ring-1 ring-brand-500'
-                    : 'border-mist-200 bg-white hover:border-mist-300'
+                    ? 'border-brand-500 bg-accent-soft ring-1 ring-brand-500'
+                    : 'border-line bg-surface-raised hover:border-line-strong'
                 }`}
               >
                 <input
@@ -272,14 +251,14 @@ export function EnquiryForm() {
                 <span className="flex items-start gap-2.5">
                   <span
                     className={`mt-0.5 grid size-4 shrink-0 place-items-center rounded-full border-2 ${
-                      selected ? 'border-brand-500 bg-brand-500' : 'border-mist-300'
+                      selected ? 'border-brand-500 bg-brand-500' : 'border-line-strong'
                     }`}
                   >
-                    {selected && <span className="size-1.5 rounded-full bg-white" />}
+                    {selected && <span className="size-1.5 rounded-full bg-surface-raised" />}
                   </span>
                   <span>
-                    <span className="block text-sm font-semibold text-ink-900">{purpose.label}</span>
-                    <span className="mt-1 block text-xs leading-relaxed text-mist-500">
+                    <span className="block text-sm font-semibold text-heading">{purpose.label}</span>
+                    <span className="mt-1 block text-xs leading-relaxed text-body-soft">
                       {purpose.hint}
                     </span>
                   </span>
@@ -291,7 +270,7 @@ export function EnquiryForm() {
       </fieldset>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
-        <Field id={`${uid}-fullName`} label="Full name" required error={errors.fullName}>
+        <Field id={`${uid}-fullName`} label={t('form.fullName')} required error={errors.fullName}>
           <input
             id={`${uid}-fullName`}
             name="fullName"
@@ -302,13 +281,14 @@ export function EnquiryForm() {
             aria-invalid={Boolean(errors.fullName)}
             aria-describedby={errors.fullName ? `${uid}-fullName-error` : undefined}
             className={fieldClass}
-            placeholder="e.g. Mohammad Rahman"
+            placeholder={t('form.placeholderName')}
           />
         </Field>
 
         <Field
           id={`${uid}-designation`}
-          label="Designation"
+          optionalLabel={t('form.optional')}
+          label={t('form.designation')}
           required={isRequired('designation')}
           error={errors.designation}
         >
@@ -322,11 +302,11 @@ export function EnquiryForm() {
             aria-invalid={Boolean(errors.designation)}
             aria-describedby={errors.designation ? `${uid}-designation-error` : undefined}
             className={fieldClass}
-            placeholder="e.g. Head of Compliance"
+            placeholder={t('form.placeholderDesignation')}
           />
         </Field>
 
-        <Field id={`${uid}-company`} label="Factory / company name" required error={errors.company}>
+        <Field id={`${uid}-company`} label={t('form.company')} required error={errors.company}>
           <input
             id={`${uid}-company`}
             name="company"
@@ -337,13 +317,14 @@ export function EnquiryForm() {
             aria-invalid={Boolean(errors.company)}
             aria-describedby={errors.company ? `${uid}-company-error` : undefined}
             className={fieldClass}
-            placeholder="Registered factory or company name"
+            placeholder={t('form.placeholderCompany')}
           />
         </Field>
 
         <Field
           id={`${uid}-factoryType`}
-          label="Factory type"
+          optionalLabel={t('form.optional')}
+          label={t('form.factoryType')}
           required={isRequired('factoryType')}
           error={errors.factoryType}
         >
@@ -356,7 +337,7 @@ export function EnquiryForm() {
             aria-describedby={errors.factoryType ? `${uid}-factoryType-error` : undefined}
             className={fieldClass}
           >
-            <option value="">Select a factory type</option>
+            <option value="">{t('form.selectFactoryType')}</option>
             {factoryTypes.map((type) => (
               <option key={type} value={type}>
                 {type}
@@ -365,7 +346,7 @@ export function EnquiryForm() {
           </select>
         </Field>
 
-        <Field id={`${uid}-email`} label="Business email" required error={errors.email}>
+        <Field id={`${uid}-email`} label={t('form.email')} required error={errors.email}>
           <input
             id={`${uid}-email`}
             name="email"
@@ -376,13 +357,14 @@ export function EnquiryForm() {
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? `${uid}-email-error` : undefined}
             className={fieldClass}
-            placeholder="name@company.com"
+            placeholder={t('form.placeholderEmail')}
           />
         </Field>
 
         <Field
           id={`${uid}-phone`}
-          label="Contact number"
+          optionalLabel={t('form.optional')}
+          label={t('form.phone')}
           required={isRequired('phone')}
           error={errors.phone}
         >
@@ -396,14 +378,15 @@ export function EnquiryForm() {
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? `${uid}-phone-error` : undefined}
             className={fieldClass}
-            placeholder="+880 1XXX XXXXXX"
+            placeholder={t('form.placeholderPhone')}
           />
         </Field>
 
         <div className="sm:col-span-2">
           <Field
             id={`${uid}-message`}
-            label="Message / enquiry details"
+            optionalLabel={t('form.optional')}
+            label={t('form.message')}
             required={isRequired('message')}
             error={errors.message}
           >
@@ -416,7 +399,7 @@ export function EnquiryForm() {
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? `${uid}-message-error` : undefined}
               className={`${fieldClass} resize-y`}
-              placeholder="Tell us about your product, factory setup and what you would like to understand."
+              placeholder={t('form.placeholderMessage')}
             />
           </Field>
         </div>
@@ -437,7 +420,7 @@ export function EnquiryForm() {
       </div>
 
       {/* Consents */}
-      <div className="mt-6 space-y-3 rounded-xl border border-mist-200 bg-mist-50 p-5">
+      <div className="mt-6 space-y-3 rounded-xl border border-line bg-surface-muted p-5">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             id={`${uid}-privacy`}
@@ -447,36 +430,35 @@ export function EnquiryForm() {
             onChange={(e) => set('privacy', e.target.checked)}
             aria-invalid={Boolean(errors.privacy)}
             aria-describedby={errors.privacy ? `${uid}-privacy-error` : undefined}
-            className="mt-0.5 size-4 shrink-0 rounded border-mist-400 text-brand-500 focus:ring-brand-500"
+            className="mt-0.5 size-4 shrink-0 rounded border-line-strong text-accent focus:ring-brand-500"
           />
-          <span className="text-sm leading-relaxed text-mist-700">
-            I acknowledge that ReadyMynd will use the information above to respond to this enquiry, as
-            described in the{' '}
-            <Link href="/privacy-policy/" className="font-semibold text-brand-600 hover:underline">
-              Privacy Policy
+          <span className="text-sm leading-relaxed text-body-strong">
+            {t('form.privacy')}{' '}
+            <Link href="/privacy-policy/" className="font-semibold text-accent hover:underline">
+              {t('form.privacyLink')}
             </Link>
-            . <span className="text-brand-600">*</span>
+            . <span className="text-accent">*</span>
           </span>
         </label>
         <ErrorText id={`${uid}-privacy-error`} message={errors.privacy} />
 
-        <label className="flex cursor-pointer items-start gap-3 border-t border-mist-200 pt-3">
+        <label className="flex cursor-pointer items-start gap-3 border-t border-line pt-3">
           <input
             type="checkbox"
             name="marketing"
             checked={form.marketing}
             onChange={(e) => set('marketing', e.target.checked)}
-            className="mt-0.5 size-4 shrink-0 rounded border-mist-400 text-brand-500 focus:ring-brand-500"
+            className="mt-0.5 size-4 shrink-0 rounded border-line-strong text-accent focus:ring-brand-500"
           />
-          <span className="text-sm leading-relaxed text-mist-600">
-            <span className="font-semibold text-mist-700">Optional:</span> send me ReadyMynd updates on
-            EU Textile DPP developments and new insights. You can unsubscribe at any time.
+          <span className="text-sm leading-relaxed text-body">
+            <span className="font-semibold text-body-strong">{t('form.marketingLabel')}</span>{' '}
+            {t('form.marketing')}
           </span>
         </label>
       </div>
 
       {errors.form && (
-        <p className="mt-5 flex items-start gap-2 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-700">
+        <p className="mt-5 flex items-start gap-2 rounded-xl border border-accent-line bg-accent-soft px-4 py-3 text-sm text-accent-strong">
           <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden />
           {errors.form}
         </p>
@@ -491,18 +473,18 @@ export function EnquiryForm() {
           {status === 'submitting' ? (
             <>
               <Loader2 className="size-4 animate-spin" aria-hidden />
-              Submitting…
+              {t('form.submitting')}
             </>
           ) : (
             <>
               <Send className="size-4" aria-hidden />
-              {form.purpose === 'brochure' ? 'Get the brochure' : 'Submit enquiry'}
+              {form.purpose === 'brochure' ? t('form.submitBrochure') : t('form.submit')}
             </>
           )}
         </button>
-        <p className="inline-flex items-center gap-2 text-xs text-mist-500">
+        <p className="inline-flex items-center gap-2 text-xs text-body-soft">
           <Lock className="size-3.5" aria-hidden />
-          Submitted for enquiry response only. Never sold or shared for advertising.
+          {t('form.secureNote')}
         </p>
       </div>
     </form>
@@ -513,20 +495,22 @@ function Field({
   id,
   label,
   required,
+  optionalLabel,
   error,
   children,
 }: {
   id: string;
   label: string;
   required?: boolean;
+  optionalLabel?: string;
   error?: string;
   children: React.ReactNode;
 }) {
   return (
     <div>
       <label htmlFor={id} className={labelClass}>
-        {label} {required && <span className="text-brand-600">*</span>}
-        {!required && <span className="ml-1.5 text-xs font-normal text-mist-400">(optional)</span>}
+        {label} {required && <span className="text-accent">*</span>}
+        {!required && <span className="ml-1.5 text-xs font-normal text-body-soft">{optionalLabel}</span>}
       </label>
       {children}
       <ErrorText id={`${id}-error`} message={error} />
@@ -537,7 +521,7 @@ function Field({
 function ErrorText({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} role="alert" className="mt-1.5 text-xs font-medium text-brand-600">
+    <p id={id} role="alert" className="mt-1.5 text-xs font-medium text-accent">
       {message}
     </p>
   );

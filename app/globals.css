@@ -2,25 +2,40 @@
 
 /* ---------------------------------------------------------------------------
    ReadyMynd design tokens
-   Light canvas for long-form reading, deep ink sections for impact bands.
---------------------------------------------------------------------------- */
-@theme {
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Sora Variable', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
 
-  /* Brand */
-  --color-brand-50: #fef3f2;
-  --color-brand-100: #fee4e2;
-  --color-brand-200: #fecdca;
-  --color-brand-300: #fda29b;
-  --color-brand-400: #f97066;
+   Default theme is LIGHT. Its palette is derived from the supplied brand
+   imagery: near-white canvas (#fefefe), soft cool blue-grey mists
+   (#e3edf4 / #eaf1f7 / #f1f6fb), muted mauve mid-tones, and the deep brick
+   red (#843232) found in the logo mark.
+
+   Semantic tokens (surface / heading / body / line / accent) flip under
+   `.dark`. Ink bands and "on-ink" text stay constant, because those surfaces
+   are dark in BOTH themes.
+--------------------------------------------------------------------------- */
+
+/* Class-based dark mode (the toggle writes `.dark` onto <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans:
+    'Inter Variable', 'Noto Sans Bengali Variable', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-display:
+    'Sora Variable', 'Noto Sans Bengali Variable', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+
+  /* Brand ---------------------------------------------------------------- */
+  --color-brand-50: #fdf4f3;
+  --color-brand-100: #fae6e4;
+  --color-brand-200: #f4ccc8;
+  --color-brand-300: #f0a49c;
+  --color-brand-400: #e9706a;
   --color-brand-500: #e53e3e;
   --color-brand-600: #d02f2f;
   --color-brand-700: #b02121;
-  --color-brand-800: #8f1c1c;
-  --color-brand-900: #751a19;
+  --color-brand-800: #8f2827;
+  --color-brand-900: #74211f;
 
-  /* Ink (dark surfaces) */
+  /* Raw ink scale (surfaces that are dark in every theme) ----------------- */
   --color-ink-950: #070b13;
   --color-ink-900: #0b1220;
   --color-ink-850: #101828;
@@ -29,7 +44,7 @@
   --color-ink-600: #2b3a52;
   --color-ink-500: #47566d;
 
-  /* Neutrals (light surfaces) */
+  /* Raw neutral scale ----------------------------------------------------- */
   --color-mist-50: #f8fafc;
   --color-mist-100: #f1f5f9;
   --color-mist-200: #e6ebf2;
@@ -39,17 +54,65 @@
   --color-mist-600: #5b6879;
   --color-mist-700: #454f5e;
 
-  /* Signals */
+  /* Signals --------------------------------------------------------------- */
   --color-verified-400: #34d399;
   --color-verified-500: #10b981;
   --color-signal-400: #fbbf24;
   --color-signal-500: #f59e0b;
 
-  --shadow-soft: 0 1px 2px rgba(11, 18, 32, 0.04), 0 8px 24px -12px rgba(11, 18, 32, 0.12);
-  --shadow-lift: 0 2px 4px rgba(11, 18, 32, 0.05), 0 24px 48px -20px rgba(11, 18, 32, 0.22);
+  /* === Semantic (theme-aware) ============================================ */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f2f7fb;
+  --color-surface-sunken: #e9f1f8;
+  --color-surface-raised: #ffffff;
 
-  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  --animate-fade-in: fade-in 0.6s ease both;
+  --color-heading: #101c28;
+  --color-body: #56687a;
+  --color-body-strong: #3d4e5e;
+  --color-body-soft: #7d8c9b;
+
+  --color-line: #dfe8f0;
+  --color-line-strong: #cbd9e5;
+
+  --color-accent: #d02f2f;
+  --color-accent-strong: #b02121;
+  --color-accent-soft: #fef3f2;
+  --color-accent-line: #fae6e4;
+
+  /* === Constant (identical in both themes) =============================== */
+  --color-ink: #0b1220;
+  --color-ink-deep: #070b13;
+  --color-ink-soft: #101828;
+  --color-onink: #cbd5e1;
+  --color-onink-soft: #94a3b8;
+  --color-onink-muted: #7a8899;
+
+  --shadow-soft: 0 1px 2px rgba(11, 18, 32, 0.04), 0 8px 24px -12px rgba(11, 18, 32, 0.1);
+  --shadow-lift: 0 2px 4px rgba(11, 18, 32, 0.05), 0 24px 48px -20px rgba(11, 18, 32, 0.18);
+}
+
+.dark {
+  --color-surface: #070b13;
+  --color-surface-muted: #0d1420;
+  --color-surface-sunken: #111a28;
+  --color-surface-raised: #131c2b;
+
+  --color-heading: #f8fafc;
+  --color-body: #a9b6c8;
+  --color-body-strong: #cbd5e1;
+  --color-body-soft: #7f8ca0;
+
+  --color-line: #1d2939;
+  --color-line-strong: #2b3a52;
+
+  --color-accent: #e9706a;
+  --color-accent-strong: #f0a49c;
+  --color-accent-soft: rgb(229 62 62 / 0.14);
+  --color-accent-line: rgb(229 62 62 / 0.3);
+
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
 }
 
 @keyframes fade-up {
@@ -80,14 +143,18 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
+    color-scheme: light;
   }
 
   body {
-    background-color: #ffffff;
-    color: var(--color-ink-800);
+    background-color: var(--color-surface);
+    color: var(--color-body);
     font-feature-settings: 'cv11', 'ss01';
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
@@ -108,10 +175,18 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
     text-wrap: balance;
+    color: var(--color-heading);
   }
 
   p {
     text-wrap: pretty;
+  }
+
+  /* Bengali needs a touch more leading than Latin. */
+  :lang(bn) body,
+  :lang(bn) p,
+  :lang(bn) li {
+    line-height: 1.85;
   }
 }
 
@@ -125,15 +200,14 @@
   }
 }
 
-/* Dark section base used by hero + CTA bands */
+/* Ink band: dark in both themes. */
 @utility section-ink {
-  background-color: var(--color-ink-900);
-  color: var(--color-mist-100);
+  background-color: var(--color-ink);
+  color: var(--color-onink);
   position: relative;
   isolation: isolate;
 }
 
-/* Subtle engineering grid, used behind dark sections */
 @utility grid-veil {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
@@ -143,12 +217,17 @@
 
 @utility grid-veil-light {
   background-image:
-    linear-gradient(to right, rgba(11, 18, 32, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 18, 32, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgb(11 18 32 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(11 18 32 / 0.045) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
-/* Scroll-reveal: elements start hidden only when JS is available. */
+.dark .grid-veil-light {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
     opacity: 0;

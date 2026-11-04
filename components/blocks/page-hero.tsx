@@ -33,16 +33,16 @@ export function PageHero({
       <div className="container-page">
         {crumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex flex-wrap items-center gap-1.5 text-xs text-mist-400">
+            <ol className="flex flex-wrap items-center gap-1.5 text-xs text-onink-soft">
               {crumbs.map((crumb, i) => (
                 <li key={i} className="flex items-center gap-1.5">
-                  {i > 0 && <ChevronRight className="size-3 text-mist-600" aria-hidden />}
+                  {i > 0 && <ChevronRight className="size-3 text-body" aria-hidden />}
                   {crumb.href ? (
                     <Link href={crumb.href} className="hover:text-white">
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-mist-300">{crumb.label}</span>
+                    <span className="text-onink">{crumb.label}</span>
                   )}
                 </li>
               ))}
@@ -57,7 +57,7 @@ export function PageHero({
               {title}
             </h1>
             {intro && (
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist-300">{intro}</p>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-onink">{intro}</p>
             )}
 
             {meta && meta.length > 0 && (

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { LegalPage, type LegalSection } from '@/components/legal/legal-page';
 import { site } from '@/lib/site';
+import { LegalPage, type LegalSection } from '@/components/legal/legal-page';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const sections: LegalSection[] = [
+const cookieSections: LegalSection[] = [
   {
     heading: 'Introduction',
     blocks: [
@@ -132,13 +132,6 @@ const sections: LegalSection[] = [
   },
 ];
 
-export default function CookiePolicyPage() {
-  return (
-    <LegalPage
-      title="Cookie Policy"
-      crumb="Cookie Policy"
-      intro="How ReadyMynd uses cookies and similar technologies, the categories that may apply, and how you can manage your preferences."
-      sections={sections}
-    />
-  );
+export default function Page() {
+  return <LegalPage kind="cookies" sections={cookieSections} />;
 }

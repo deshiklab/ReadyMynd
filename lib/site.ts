@@ -16,6 +16,8 @@ export const site = {
   email: 'contact@readymynd.com',
   phone: '+880 17 5562 8272',
   phoneHref: '+8801755628272',
+  /** Digits only, in international format — used for wa.me / tel: deep links. */
+  whatsapp: '8801755628272',
   location: 'Bangladesh',
   hours: 'Sun – Thu, 9:00 AM – 6:00 PM (BST)',
   brochureHref: '/downloads/readymynd-corporate-brochure.pdf',

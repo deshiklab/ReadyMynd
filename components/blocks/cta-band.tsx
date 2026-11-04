@@ -1,11 +1,14 @@
+'use client';
+
 import { ArrowRight, Download } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/section';
 import { Reveal } from '@/components/ui/reveal';
 import { brochureCta } from '@/lib/site';
+import { useI18n } from '@/lib/i18n';
 
 export function CtaBand({
-  eyebrow = 'Next step',
+  eyebrow,
   title,
   intro,
   primary,
@@ -19,6 +22,8 @@ export function CtaBand({
   secondary?: { href: string; label: string };
   note?: React.ReactNode;
 }) {
+  const { t } = useI18n();
+
   return (
     <section className="section-ink overflow-hidden py-20 sm:py-24">
       <div aria-hidden className="grid-veil absolute inset-0 -z-10 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
@@ -27,12 +32,12 @@ export function CtaBand({
       <div className="container-page">
         <Reveal className="mx-auto max-w-3xl text-center">
           <Eyebrow tone="light" className="justify-center">
-            {eyebrow}
+            {eyebrow ?? t('cta.requestAssessment')}
           </Eyebrow>
           <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
             {title}
           </h2>
-          {intro && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-mist-300">{intro}</p>}
+          {intro && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-onink">{intro}</p>}
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href={primary.href} size="lg">
@@ -46,11 +51,11 @@ export function CtaBand({
               className="gap-2"
             >
               <Download className="size-4" aria-hidden />
-              {secondary?.label ?? brochureCta.label}
+              {secondary?.label ?? t('brochureCta.cta')}
             </ButtonLink>
           </div>
 
-          {note && <p className="mt-6 text-sm leading-relaxed text-mist-500">{note}</p>}
+          {note && <p className="mt-6 text-sm leading-relaxed text-onink-muted">{note}</p>}
         </Reveal>
       </div>
     </section>

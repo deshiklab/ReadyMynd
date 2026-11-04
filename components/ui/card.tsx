@@ -17,11 +17,11 @@ export function Card({
   const shell =
     tone === 'ink'
       ? 'border-white/10 bg-white/[0.04] backdrop-blur-sm'
-      : 'border-mist-200 bg-white';
+      : 'border-line bg-surface-raised';
   const hover =
     tone === 'ink'
       ? 'hover:border-brand-400/50 hover:bg-white/[0.07]'
-      : 'hover:border-brand-200 hover:shadow-lift';
+      : 'hover:border-accent-line hover:shadow-lift';
 
   return (
     <Reveal
@@ -44,7 +44,7 @@ export function CardTitle({
 }) {
   return (
     <h3
-      className={`text-lg font-semibold tracking-tight ${tone === 'light' ? 'text-ink-900' : 'text-white'} ${className}`}
+      className={`text-lg font-semibold tracking-tight ${tone === 'light' ? 'text-heading' : 'text-white'} ${className}`}
     >
       {children}
     </h3>
@@ -62,7 +62,7 @@ export function CardBody({
 }) {
   return (
     <p
-      className={`mt-3 text-[0.9375rem] leading-relaxed ${tone === 'light' ? 'text-mist-600' : 'text-mist-300'} ${className}`}
+      className={`mt-3 text-[0.9375rem] leading-relaxed ${tone === 'light' ? 'text-body' : 'text-onink'} ${className}`}
     >
       {children}
     </p>
@@ -72,7 +72,7 @@ export function CardBody({
 /** Numbered / lettered badge used across framework cards. */
 export function StepBadge({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 font-display text-sm font-bold text-brand-600 ring-1 ring-brand-100">
+    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft font-display text-sm font-bold text-accent ring-1 ring-accent-line">
       {children}
     </span>
   );
@@ -94,7 +94,7 @@ export function CheckList({
           <svg
             aria-hidden
             viewBox="0 0 20 20"
-            className={`mt-1 size-4 shrink-0 ${tone === 'light' ? 'text-brand-500' : 'text-brand-400'}`}
+            className={`mt-1 size-4 shrink-0 ${tone === 'light' ? 'text-accent' : 'text-brand-400'}`}
             fill="currentColor"
           >
             <path
@@ -104,7 +104,7 @@ export function CheckList({
             />
           </svg>
           <span
-            className={`text-[0.9375rem] leading-relaxed ${tone === 'light' ? 'text-mist-700' : 'text-mist-300'}`}
+            className={`text-[0.9375rem] leading-relaxed ${tone === 'light' ? 'text-body-strong' : 'text-onink'}`}
           >
             {item}
           </span>
