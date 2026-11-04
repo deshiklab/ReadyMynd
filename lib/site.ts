@@ -1,0 +1,70 @@
+export type NavItem = {
+  /** Short label used in the desktop header (per the v1.8 master menu guidance). */
+  label: string;
+  /** Full approved page name, used in the mobile drawer and metadata. */
+  full: string;
+  href: string;
+  description?: string;
+};
+
+export const site = {
+  name: 'ReadyMynd',
+  legalName: 'ReadyMynd',
+  tagline: 'Textile DPP Readiness & Digital Advisory',
+  positioning: 'Software-Enabled. Analyst-Led. Evidence-Based.',
+  url: 'https://www.readymynd.com',
+  email: 'contact@readymynd.com',
+  phone: '+880 17 5562 8272',
+  phoneHref: '+8801755628272',
+  location: 'Bangladesh',
+  hours: 'Sun – Thu, 9:00 AM – 6:00 PM (BST)',
+  brochureHref: '/downloads/readymynd-corporate-brochure.pdf',
+} as const;
+
+export const mainNav: NavItem[] = [
+  { label: 'Home', full: 'Home', href: '/' },
+  {
+    label: 'EU Textile DPP',
+    full: 'EU Textile Digital Product Passport',
+    href: '/textile-digital-product-passport/',
+    description: 'The developing EU framework and what it may mean for Bangladesh suppliers.',
+  },
+  {
+    label: 'Assessment',
+    full: 'Textile DPP Digital Readiness Assessment',
+    href: '/textile-dpp-digital-readiness-assessment/',
+    description: 'A structured evaluation of your factory’s digital capabilities.',
+  },
+  {
+    label: 'Methodology',
+    full: 'Assessment Methodology & Process',
+    href: '/assessment-methodology/',
+    description: 'Five steps, evidence-based evaluation, scope and responsibilities.',
+  },
+  {
+    label: 'Digital Advisory',
+    full: 'Digital Advisory Services',
+    href: '/digital-advisory-services/',
+    description: 'Focused post-assessment technical advisory: data, systems, integration.',
+  },
+  { label: 'About', full: 'About ReadyMynd', href: '/about/', description: 'Who we are and how we work.' },
+  {
+    label: 'Insights',
+    full: 'Textile DPP Resources & Insights',
+    href: '/insights/',
+    description: 'Analysis and a knowledge library for Bangladesh manufacturers.',
+  },
+  { label: 'Contact', full: 'Contact ReadyMynd', href: '/contact/', description: 'Request an assessment or the service brochure.' },
+];
+
+export const legalNav: NavItem[] = [
+  { label: 'Privacy Policy', full: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Cookie Policy', full: 'Cookie Policy', href: '/cookie-policy/' },
+  { label: 'Terms of Use', full: 'Terms of Use', href: '/terms-of-use/' },
+];
+
+/** Every v1.8 main page ends with the same secondary CTA. */
+export const brochureCta = {
+  label: 'Download Service Brochure',
+  href: '/contact/?purpose=brochure#assessment-enquiry',
+};
