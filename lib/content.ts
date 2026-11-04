@@ -611,9 +611,8 @@ export type Insight = {
   date: string;
   readTime: Bi;
   featured?: boolean;
-  /** Long-form body — English only until reviewed. */
-  body: string[];
-  takeaways: string[];
+  body: Bi[];
+  takeaways: Bi[];
 };
 
 export const insights: Insight[] = [
@@ -632,17 +631,17 @@ export const insights: Insight[] = [
     readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
     featured: true,
     body: [
-      'Regulation (EU) 2024/1781 — the Ecodesign for Sustainable Products Regulation — establishes the framework for introducing Digital Product Passports across covered product groups. Textiles and apparel are named among the priority groups, which is why the topic has moved from sustainability conferences into sourcing conversations.',
-      'One distinction matters more than any other for Bangladesh suppliers: legal responsibility and information reality are not in the same place. The obligation to place a passport on the market may fall to the economic operator that puts the product on the EU market — often the brand or importer. But the substance of that passport: fibre composition, material suppliers, processing facilities, test evidence, production records — sits with manufacturers and upstream suppliers.',
-      'That asymmetry is the practical reason to prepare now. When a buyer asks for structured, traceable product information, the request lands on the factory regardless of where the legal duty formally sits. Factories that can answer quickly, with evidence, become easier to work with. Factories that cannot become a risk to be managed.',
-      'The second reason to prepare now is that the textile-specific detail is still being developed. Final information fields, technical obligations and implementation dates will depend on the applicable EU rules. Because those rules are not fixed, spending on a specific software solution today is a bet on an outcome nobody can yet confirm. Understanding your own information capabilities is not a bet — it is groundwork that holds its value whichever way the rules land.',
-      'Our recommendation is deliberately unglamorous: find out what you already have, where it lives, who owns it and whether you can evidence it. That is the whole of readiness, and it precedes any technology decision.',
+      { en: 'Regulation (EU) 2024/1781 — the Ecodesign for Sustainable Products Regulation — establishes the framework for introducing Digital Product Passports across covered product groups. Textiles and apparel are named among the priority groups, which is why the topic has moved from sustainability conferences into sourcing conversations.', bn: 'Regulation (EU) 2024/1781 — টেকসই পণ্যের জন্য ইকোডিজাইন বিধিমালা — অন্তর্ভুক্ত পণ্যগোষ্ঠীগুলোতে ডিজিটাল প্রোডাক্ট পাসপোর্ট চালুর কাঠামো প্রতিষ্ঠা করেছে। টেক্সটাইল ও পোশাককে অগ্রাধিকারপ্রাপ্ত গোষ্ঠীর মধ্যে উল্লেখ করা হয়েছে, আর এ কারণেই বিষয়টি টেকসইতার সম্মেলন থেকে সোর্সিং আলোচনায় চলে এসেছে।' },
+      { en: 'One distinction matters more than any other for Bangladesh suppliers: legal responsibility and information reality are not in the same place. The obligation to place a passport on the market may fall to the economic operator that puts the product on the EU market — often the brand or importer. But the substance of that passport: fibre composition, material suppliers, processing facilities, test evidence, production records — sits with manufacturers and upstream suppliers.', bn: 'বাংলাদেশের সরবরাহকারীদের জন্য অন্য সব দিকের চেয়ে একটি পার্থক্য বেশি গুরুত্বপূর্ণ: আইনি দায়িত্ব ও তথ্যের বাস্তবতা এক জায়গায় নেই। বাজারে পাসপোর্ট স্থাপনের বাধ্যবাধকতা সেই অর্থনৈতিক অপারেটরের ওপর পড়তে পারে যিনি পণ্যটি ইইউ বাজারে ছাড়েন — সাধারণত ব্র্যান্ড বা আমদানিকারক। কিন্তু সেই পাসপোর্টের মূল বিষয়বস্তু — তন্তুর গঠন, উপকরণ সরবরাহকারী, প্রক্রিয়াকরণ ইউনিট, পরীক্ষার প্রমাণ, উৎপাদন রেকর্ড — থাকে উৎপাদক ও আপস্ট্রিম সরবরাহকারীদের কাছে।' },
+      { en: 'That asymmetry is the practical reason to prepare now. When a buyer asks for structured, traceable product information, the request lands on the factory regardless of where the legal duty formally sits. Factories that can answer quickly, with evidence, become easier to work with. Factories that cannot become a risk to be managed.', bn: 'এই অসাম্যই এখনই প্রস্তুতি নেওয়ার ব্যবহারিক কারণ। যখন কোনো ক্রেতা কাঠামোবদ্ধ, ট্রেসেবল পণ্য-তথ্য চান, আনুষ্ঠানিকভাবে আইনি দায়িত্ব যেখানেই থাকুক না কেন, অনুরোধটি এসে পড়ে কারখানায়। যে কারখানা প্রমাণসহ দ্রুত উত্তর দিতে পারে, তার সঙ্গে কাজ করা সহজ হয়। যে পারে না, সে এমন একটি ঝুঁকিতে পরিণত হয় যা সামলাতে হয়।' },
+      { en: 'The second reason to prepare now is that the textile-specific detail is still being developed. Final information fields, technical obligations and implementation dates will depend on the applicable EU rules. Because those rules are not fixed, spending on a specific software solution today is a bet on an outcome nobody can yet confirm. Understanding your own information capabilities is not a bet — it is groundwork that holds its value whichever way the rules land.', bn: 'এখনই প্রস্তুতি নেওয়ার দ্বিতীয় কারণ হলো টেক্সটাইল-নির্দিষ্ট বিস্তারিত এখনো তৈরি হচ্ছে। চূড়ান্ত তথ্য-ক্ষেত্র, কারিগরি বাধ্যবাধকতা ও বাস্তবায়নের তারিখ প্রযোজ্য ইইউ বিধির ওপর নির্ভর করবে। সেই বিধি এখনো নির্দিষ্ট নয়, তাই আজ কোনো নির্দিষ্ট সফটওয়্যার সমাধানে ব্যয় করা এমন একটি ফলাফলে বাজি ধরা যা কেউ এখনো নিশ্চিত করতে পারে না। নিজের তথ্য-সক্ষমতা বোঝা কোনো বাজি নয় — এটি এমন ভিত্তি প্রস্তুতি যা বিধি যেভাবেই আসুক, তার মূল্য ধরে রাখে।' },
+      { en: 'Our recommendation is deliberately unglamorous: find out what you already have, where it lives, who owns it and whether you can evidence it. That is the whole of readiness, and it precedes any technology decision.', bn: 'আমাদের সুপারিশ ইচ্ছে করেই সাদাসিধা: আপনার কাছে যা আছে তা খুঁজে বের করুন, তা কোথায় আছে, কার দায়িত্বে আছে এবং এর প্রমাণ দিতে পারবেন কি না। এটিই প্রস্তুতির পুরোটা, আর যেকোনো প্রযুক্তি সিদ্ধান্তের আগে এটির জায়গা।' },
     ],
     takeaways: [
-      'ESPR (Regulation (EU) 2024/1781) creates the DPP framework; textiles are a priority group.',
-      'Legal duty and information custody sit with different parties — preparation still lands on the factory.',
-      'Because textile-specific detail is unsettled, capability assessment is lower-risk than software purchase.',
-      'Buyer requests typically arrive before formal obligations do.',
+      { en: 'ESPR (Regulation (EU) 2024/1781) creates the DPP framework; textiles are a priority group.', bn: 'ESPR (Regulation (EU) 2024/1781) ডিপিপির কাঠামো তৈরি করেছে; টেক্সটাইল একটি অগ্রাধিকারপ্রাপ্ত গোষ্ঠী।' },
+      { en: 'Legal duty and information custody sit with different parties — preparation still lands on the factory.', bn: 'আইনি দায়িত্ব ও তথ্যের হেফাজত ভিন্ন ভিন্ন পক্ষের কাছে — প্রস্তুতির দায়িত্ব তবুও কারখানাতেই পড়ে।' },
+      { en: 'Because textile-specific detail is unsettled, capability assessment is lower-risk than software purchase.', bn: 'টেক্সটাইল-নির্দিষ্ট বিস্তারিত চূড়ান্ত না হওয়ায় সফটওয়্যার কেনার চেয়ে সক্ষমতা মূল্যায়নে ঝুঁকি কম।' },
+      { en: 'Buyer requests typically arrive before formal obligations do.', bn: 'ক্রেতার অনুরোধ সাধারণত আনুষ্ঠানিক বাধ্যবাধকতার আগেই পৌঁছে যায়।' },
     ],
   },
   {
@@ -660,17 +659,17 @@ export const insights: Insight[] = [
     readTime: { en: '4 min read', bn: '৪ মিনিটের পাঠ' },
     featured: true,
     body: [
-      'There is a persistent assumption in the supply chain that preparation can wait until the textile-specific Digital Product Passport rules are finalised. Commercially, that assumption is expensive.',
-      'European buyers operate on their own timelines. They face their own reporting commitments, their own board pressure and their own due diligence obligations. When they need structured information about materials, suppliers or processing, they ask for it — and they ask the party that holds it. Those requests do not wait for implementing acts.',
-      'The factories that handle this well are not necessarily the most digital. They are the ones that can answer a specific question with a specific document inside a specific timeframe. That capability is mostly about knowing where things are and who is responsible for them.',
-      'The factories that handle it badly tend to fail in a predictable way: the request arrives, three departments each hold part of the answer, nobody owns the whole, and the response takes three weeks and three revisions. By then the buyer has learned something about working with that factory.',
-      'A readiness assessment does not change what a buyer asks for. It changes how a factory responds — with evidence rather than reassurance, and in days rather than weeks.',
+      { en: 'There is a persistent assumption in the supply chain that preparation can wait until the textile-specific Digital Product Passport rules are finalised. Commercially, that assumption is expensive.', bn: 'সাপ্লাই চেইনে একটি ধারণা দীর্ঘদিন ধরে টিকে আছে যে টেক্সটাইল-নির্দিষ্ট ডিজিটাল প্রোডাক্ট পাসপোর্টের বিধি চূড়ান্ত না হওয়া পর্যন্ত প্রস্তুতি অপেক্ষা করতে পারে। ব্যবসায়িক দৃষ্টিকোণ থেকে এই ধারণার দাম বেশি।' },
+      { en: 'European buyers operate on their own timelines. They face their own reporting commitments, their own board pressure and their own due diligence obligations. When they need structured information about materials, suppliers or processing, they ask for it — and they ask the party that holds it. Those requests do not wait for implementing acts.', bn: 'ইউরোপীয় ক্রেতারা নিজেদের সময়সীমায় কাজ করেন। তাদের নিজস্ব প্রতিবেদনের বাধ্যবাধকতা, নিজস্ব বোর্ডের চাপ ও নিজস্ব যথাযথ-পরীক্ষার দায়িত্ব থাকে। উপকরণ, সরবরাহকারী বা প্রক্রিয়াকরণ সম্পর্কে কাঠামোবদ্ধ তথ্য দরকার হলে তারা তা চান — আর যার কাছে তথ্য আছে, তাকেই চান। এই অনুরোধগুলো বাস্তবায়ন আইনের জন্য অপেক্ষা করে না।' },
+      { en: 'The factories that handle this well are not necessarily the most digital. They are the ones that can answer a specific question with a specific document inside a specific timeframe. That capability is mostly about knowing where things are and who is responsible for them.', bn: 'যে কারখানাগুলো এটি ভালোভাবে সামলায়, তারা অগত্যা সবচেয়ে ডিজিটাল নয়। তারাই পারে যারা একটি নির্দিষ্ট সময়ের মধ্যে একটি নির্দিষ্ট প্রশ্নের উত্তর একটি নির্দিষ্ট দলিল দিয়ে দিতে পারে। এই সক্ষমতা মূলত এই বোঝার ওপর নির্ভর করে যে জিনিসগুলো কোথায় আছে এবং সেগুলোর দায়িত্ব কার।' },
+      { en: 'The factories that handle it badly tend to fail in a predictable way: the request arrives, three departments each hold part of the answer, nobody owns the whole, and the response takes three weeks and three revisions. By then the buyer has learned something about working with that factory.', bn: 'যারা খারাপভাবে সামলায়, তারা একটা অনুমেয় পথেই ব্যর্থ হয়: অনুরোধ আসে, তিনটি বিভাগের প্রত্যেকের কাছে উত্তরের কিছু অংশ থাকে, পুরোটার দায়িত্ব কারো নেই, আর উত্তর দিতে লাগে তিন সপ্তাহ ও তিনবার সংশোধন। ততক্ষণে ক্রেতা সেই কারখানার সাথে কাজ করা সম্পর্কে কিছু শিখে ফেলেন।' },
+      { en: 'A readiness assessment does not change what a buyer asks for. It changes how a factory responds — with evidence rather than reassurance, and in days rather than weeks.', bn: 'প্রস্তুতি মূল্যায়ন ক্রেতা যা চান তা বদলায় না। এটি বদলায় কারখানা কীভাবে উত্তর দেয় — আশ্বাসের বদলে প্রমাণ দিয়ে, আর সপ্তাহের বদলে দিনেই।' },
     ],
     takeaways: [
-      'Buyer information requests are driven by buyer obligations, not by EU implementation dates.',
-      'Response speed and evidence quality shape commercial relationships.',
-      'Failure is usually organisational — unclear ownership — not technological.',
-      'Knowing where information lives is the highest-leverage preparation step.',
+      { en: 'Buyer information requests are driven by buyer obligations, not by EU implementation dates.', bn: 'ক্রেতার তথ্য-অনুরোধ চালিত হয় ক্রেতার নিজস্ব বাধ্যবাধকতা দ্বারা, ইইউ বাস্তবায়নের তারিখ দ্বারা নয়।' },
+      { en: 'Response speed and evidence quality shape commercial relationships.', bn: 'উত্তরের গতি ও প্রমাণের মান বাণিজ্যিক সম্পর্কের রূপ দেয়।' },
+      { en: 'Failure is usually organisational — unclear ownership — not technological.', bn: 'ব্যর্থতা সাধারণত সাংগঠনিক — মালিকানা অস্পষ্ট থাকা — প্রযুক্তিগত নয়।' },
+      { en: 'Knowing where information lives is the highest-leverage preparation step.', bn: 'তথ্য কোথায় আছে তা জানাই সবচেয়ে বেশি ফলদায়ক প্রস্তুতিমূলক পদক্ষেপ।' },
     ],
   },
   {
@@ -685,19 +684,19 @@ export const insights: Insight[] = [
     readTime: { en: '7 min read', bn: '৭ মিনিটের পাঠ' },
     featured: true,
     body: [
-      'Readiness is often discussed as if it were a score. In practice it is a profile, and the shape of that profile determines which improvements are worth making first.',
-      'The first two dimensions describe where information physically and digitally lives. Manual data covers the paper and personal-file reality of most factories: printed Tech Packs, whiteboards, spreadsheets on one laptop. Digital data covers the records that exist in systems — their availability, quality, accessibility and the capability limits of the systems holding them.',
-      'The third dimension, integration, describes movement. Product information rarely stays in one place; it has to travel between merchandising, sourcing, production, quality and compliance. Every handover is an opportunity for the same field to be recorded three different ways.',
-      'The fourth dimension is the one buyers actually test. Validation, verification and auditability ask whether a claim can be substantiated, whether anything checks information before it leaves the factory, and whether decisions leave a trace. A factory can hold excellent data and still fail here, because nobody can prove it.',
-      'The fifth dimension, governance, determines whether any of it survives contact with staff turnover. Named ownership, maintenance routines, access control and integrity protection are what convert a one-off cleanup into a durable capability.',
-      'Treating traceability as a sixth dimension is tempting and wrong. Traceability is a property that emerges across the other five — you cannot have it without manual and digital records, movement between them, evidence behind them, and someone accountable for them.',
+      { en: 'Readiness is often discussed as if it were a score. In practice it is a profile, and the shape of that profile determines which improvements are worth making first.', bn: 'প্রস্তুতি সম্পর্কে প্রায়ই এমনভাবে কথা বলা হয় যেন তা একটি স্কোর। বাস্তবে এটি একটি প্রোফাইল, আর সেই প্রোফাইলের আকৃতিই নির্ধারণ করে কোন উন্নয়নগুলো আগে করা মূল্যবান।' },
+      { en: 'The first two dimensions describe where information physically and digitally lives. Manual data covers the paper and personal-file reality of most factories: printed Tech Packs, whiteboards, spreadsheets on one laptop. Digital data covers the records that exist in systems — their availability, quality, accessibility and the capability limits of the systems holding them.', bn: 'প্রথম দুটি মাত্রা বর্ণনা করে তথ্য ভৌতভাবে ও ডিজিটালভাবে কোথায় থাকে। ম্যানুয়াল তথ্য অধিকাংশ কারখানার কাগজ ও ব্যক্তিগত ফাইলের বাস্তবতাকে ধরে: ছাপা টেক প্যাক, হোয়াইটবোর্ড, এক ল্যাপটপে থাকা স্প্রেডশিট। ডিজিটাল তথ্য ধরে সিস্টেমে থাকা রেকর্ডগুলোকে — সেগুলোর প্রাপ্যতা, মান, ব্যবহারযোগ্যতা এবং সেগুলো ধরে রাখা সিস্টেমের সক্ষমতার সীমা।' },
+      { en: 'The third dimension, integration, describes movement. Product information rarely stays in one place; it has to travel between merchandising, sourcing, production, quality and compliance. Every handover is an opportunity for the same field to be recorded three different ways.', bn: 'তৃতীয় মাত্রা, সংযোজন, বর্ণনা করে চলাচল। পণ্যের তথ্য খুব কমই এক জায়গায় থাকে; তাকে মার্চেন্ডাইজিং, সোর্সিং, উৎপাদন, মান ও কমপ্লায়েন্সের মধ্যে দিয়ে যেতে হয়। প্রতিটি হস্তান্তরই একই ক্ষেত্রটি তিন ভিন্নভাবে লিপিবদ্ধ হওয়ার সুযোগ।' },
+      { en: 'The fourth dimension is the one buyers actually test. Validation, verification and auditability ask whether a claim can be substantiated, whether anything checks information before it leaves the factory, and whether decisions leave a trace. A factory can hold excellent data and still fail here, because nobody can prove it.', bn: 'চতুর্থ মাত্রাটিই সেটি যা ক্রেতারা আসলে পরীক্ষা করেন। বৈধতা, যাচাই ও নিরীক্ষাযোগ্যতা প্রশ্ন করে কোনো দাবির সমর্থনে প্রমাণ আছে কি না, কারখানা থেকে বের হওয়ার আগে তথ্য কেউ যাচাই করে কি না, আর সিদ্ধান্তগুলোর কোনো চিহ্ন থাকে কি না। একটি কারখানার হাতে চমৎকার তথ্য থাকতে পারে, তবুও সে এখানে ব্যর্থ হতে পারে — কারণ কেউ তা প্রমাণ করতে পারে না।' },
+      { en: 'The fifth dimension, governance, determines whether any of it survives contact with staff turnover. Named ownership, maintenance routines, access control and integrity protection are what convert a one-off cleanup into a durable capability.', bn: 'পঞ্চম মাত্রা, শাসন, নির্ধারণ করে কর্মী-বদলের ধাক্কায় এর কোনোটিই টিকে থাকে কি না। নির্দিষ্ট মালিকানা, রক্ষণাবেক্ষণের নিয়ম, প্রবেশাধিকার নিয়ন্ত্রণ ও অখণ্ডতা রক্ষাই এককালীন পরিচ্ছন্নতাকে টেকসই সক্ষমতায় রূপান্তরিত করে।' },
+      { en: 'Treating traceability as a sixth dimension is tempting and wrong. Traceability is a property that emerges across the other five — you cannot have it without manual and digital records, movement between them, evidence behind them, and someone accountable for them.', bn: 'ট্রেসেবিলিটিকে ষষ্ঠ মাত্রা হিসেবে ধরা প্রলুব্ধকর, কিন্তু ভুল। ট্রেসেবিলিটি এমন একটি বৈশিষ্ট্য যা অন্য পাঁচটির মধ্য দিয়ে উদ্ভূত হয় — ম্যানুয়াল ও ডিজিটাল রেকর্ড, তাদের মাঝে চলাচল, তাদের পেছনে প্রমাণ এবং তাদের জন্য দায়ী কেউ না থাকলে তা থাকতে পারে না।' },
     ],
     takeaways: [
-      'Readiness is a profile across five dimensions, not a single score.',
-      'Manual and digital data describe where information lives; integration describes how it moves.',
-      'Validation and auditability are what buyers actually test.',
-      'Governance determines whether improvements survive staff turnover.',
-      'Traceability is an emergent property, not a separate dimension.',
+      { en: 'Readiness is a profile across five dimensions, not a single score.', bn: 'প্রস্তুতি একটি স্কোর নয়, পাঁচটি মাত্রার একটি প্রোফাইল।' },
+      { en: 'Manual and digital data describe where information lives; integration describes how it moves.', bn: 'ম্যানুয়াল ও ডিজিটাল তথ্য বর্ণনা করে তথ্য কোথায় থাকে; সংযোজন বর্ণনা করে তা কীভাবে চলাচল করে।' },
+      { en: 'Validation and auditability are what buyers actually test.', bn: 'বৈধতা ও নিরীক্ষাযোগ্যতাই সেটি যা ক্রেতারা আসলে পরীক্ষা করেন।' },
+      { en: 'Governance determines whether improvements survive staff turnover.', bn: 'শাসন নির্ধারণ করে উন্নয়নগুলো কর্মী-বদলের মধ্যে টিকে থাকে কি না।' },
+      { en: 'Traceability is an emergent property, not a separate dimension.', bn: 'ট্রেসেবিলিটি একটি উদ্ভূত বৈশিষ্ট্য, আলাদা কোনো মাত্রা নয়।' },
     ],
   },
   {
@@ -711,17 +710,17 @@ export const insights: Insight[] = [
     date: '2026-10-30',
     readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
     body: [
-      'When a factory struggles to answer a product information request, the reflex is to buy a platform. It is an understandable reflex and frequently the wrong one.',
-      'Most information failures are not caused by absent software. They are caused by absent definitions — two departments using the same field to mean different things, a specification that was never updated after a material substitution, a supplier declaration that exists but cannot be found. No platform resolves any of those. A platform records them more tidily.',
-      'This is why our assessment precedes any advisory conversation about systems. The diagnostic separates problems that are genuinely technical from problems that are organisational and can be fixed with a decision rather than a purchase.',
-      'The commercial argument is straightforward. Software licences, implementation and the internal disruption of a rollout are real costs. If half of the underlying gap can be closed by naming an owner, standardising a template and archiving evidence properly, that half should be closed first — and the system requirement that remains will be far better specified.',
-      'None of this is an argument against technology. It is an argument for buying it last, when you finally know what you need it to do.',
+      { en: 'When a factory struggles to answer a product information request, the reflex is to buy a platform. It is an understandable reflex and frequently the wrong one.', bn: 'কোনো কারখানা পণ্য-তথ্যের অনুরোধের উত্তর দিতে হিমশিম খেলে স্বাভাবিক প্রতিক্রিয়া হয় একটি প্ল্যাটফর্ম কেনা। এটি বোধগম্য প্রতিক্রিয়া, কিন্তু প্রায়ই ভুল।' },
+      { en: 'Most information failures are not caused by absent software. They are caused by absent definitions — two departments using the same field to mean different things, a specification that was never updated after a material substitution, a supplier declaration that exists but cannot be found. No platform resolves any of those. A platform records them more tidily.', bn: 'অধিকাংশ তথ্য-ব্যর্থতার কারণ সফটওয়্যার না থাকা নয়, বরং সংজ্ঞা না থাকা — দুটি বিভাগ একই ক্ষেত্রটি ভিন্ন ভিন্ন অর্থে ব্যবহার করছে, উপকরণ বদলের পর কোনো স্পেসিফিকেশন আর হালনাগাদ হয়নি, সরবরাহকারীর ঘোষণা আছে কিন্তু খুঁজে পাওয়া যাচ্ছে না। এর কোনোটিরই সমাধান কোনো প্ল্যাটফর্ম করতে পারে না। প্ল্যাটফর্ম কেবল সেগুলো আরও গুছিয়ে লিপিবদ্ধ করে।' },
+      { en: 'This is why our assessment precedes any advisory conversation about systems. The diagnostic separates problems that are genuinely technical from problems that are organisational and can be fixed with a decision rather than a purchase.', bn: 'এ কারণেই সিস্টেম নিয়ে যেকোনো পরামর্শ-আলোচনার আগে আমাদের মূল্যায়নের স্থান। এই রোগনির্ণয় প্রকৃতপক্ষে কারিগরি সমস্যাকে সাংগঠনিক সমস্যা থেকে আলাদা করে, যা কেনার বদলে একটি সিদ্ধান্তের মাধ্যমেই সমাধান করা যায়।' },
+      { en: 'The commercial argument is straightforward. Software licences, implementation and the internal disruption of a rollout are real costs. If half of the underlying gap can be closed by naming an owner, standardising a template and archiving evidence properly, that half should be closed first — and the system requirement that remains will be far better specified.', bn: 'বাণিজ্যিক যুক্তিটি সহজ। সফটওয়্যার লাইসেন্স, বাস্তবায়ন ও রোলআউটের অভ্যন্তরীণ বিশৃঙ্খলা — সবই বাস্তব খরচ। যদি মূল ঘাটতির অর্ধেক একজন মালিক নির্ধারণ করে, একটি টেমপ্লেট মানক করে এবং প্রমাণ সঠিকভাবে সংরক্ষণ করে মেটানো যায়, তবে সেই অর্ধেক আগে মেটানো উচিত — আর যে সিস্টেম-প্রয়োজনীয়তা অবশিষ্ট থাকবে, তা অনেক বেশি স্পষ্টভাবে লেখা যাবে।' },
+      { en: 'None of this is an argument against technology. It is an argument for buying it last, when you finally know what you need it to do.', bn: 'এর কোনোটিই প্রযুক্তির বিরুদ্ধে যুক্তি নয়। এটি প্রযুক্তি সবার শেষে কেনার যুক্তি — যখন আপনি অবশেষে জানেন যে দিয়ে আপনাকে আসলে কী করাতে হবে।' },
     ],
     takeaways: [
-      'Most information failures are definitional, not technological.',
-      'Platforms record tidy versions of untidy processes unless the process is fixed first.',
-      'A diagnostic separates technical gaps from organisational ones.',
-      'Requirements written after remediation are cheaper to satisfy.',
+      { en: 'Most information failures are definitional, not technological.', bn: 'অধিকাংশ তথ্য-ব্যর্থতা সংজ্ঞাগত, প্রযুক্তিগত নয়।' },
+      { en: 'Platforms record tidy versions of untidy processes unless the process is fixed first.', bn: 'প্রক্রিয়া আগে ঠিক না করলে প্ল্যাটফর্ম এলোমেলো প্রক্রিয়ার গুছানো সংস্করণ লিপিবদ্ধ করে।' },
+      { en: 'A diagnostic separates technical gaps from organisational ones.', bn: 'রোগনির্ণয় কারিগরি ঘাটতিকে সাংগঠনিক ঘাটতি থেকে আলাদা করে।' },
+      { en: 'Requirements written after remediation are cheaper to satisfy.', bn: 'সংশোধনের পর লেখা প্রয়োজনীয়তা পূরণ করা সস্তা।' },
     ],
   },
   {
@@ -738,17 +737,17 @@ export const insights: Insight[] = [
     date: '2026-10-30',
     readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
     body: [
-      'Almost every Bangladesh facility we encounter runs three information environments at once: paper files, spreadsheets, and at least one enterprise application. Traceability has to work across all three, and it almost always breaks at the joins.',
-      'The paper layer is not the problem it is often made out to be. Physical records can be perfectly traceable if they are filed consistently and someone knows where they are. They become a problem when filing depends on one person, or when the file was never completed in the first place.',
-      'Spreadsheets are the real wildcard. They are flexible enough to absorb any requirement and unconstrained enough to diverge silently. Two teams maintaining the same supplier list in two workbooks will, within a quarter, hold two different truths — and neither will know.',
-      'Enterprise applications usually hold the cleanest data and the narrowest coverage. ERP and PLM modules tend to capture what was configured at implementation, not what the business actually needs for product information questions today.',
-      'The practical work of traceability is therefore less about digitising everything and more about mapping the handovers: where information passes between layers, who re-keys it, and what gets lost. Those handovers are where readiness is won.',
+      { en: 'Almost every Bangladesh facility we encounter runs three information environments at once: paper files, spreadsheets, and at least one enterprise application. Traceability has to work across all three, and it almost always breaks at the joins.', bn: 'আমরা বাংলাদেশের যত প্রতিষ্ঠান দেখি, প্রায় প্রতিটিই একসাথে তিনটি তথ্য-পরিবেশ চালায়: কাগজের ফাইল, স্প্রেডশিট, এবং অন্তত একটি এন্টারপ্রাইজ অ্যাপ্লিকেশন। ট্রেসেবিলিটিকে এই তিনটিতেই কাজ করতে হবে, আর প্রায় সব সময়ই তা ভাঙে জোড়ের জায়গায়।' },
+      { en: 'The paper layer is not the problem it is often made out to be. Physical records can be perfectly traceable if they are filed consistently and someone knows where they are. They become a problem when filing depends on one person, or when the file was never completed in the first place.', bn: 'কাগজের স্তরটি ততটা সমস্যা নয় যতটা প্রায়ই বলা হয়। ভৌত রেকর্ড নিখুঁতভাবে ট্রেসেবল হতে পারে যদি সেগুলো ধারাবাহিকভাবে ফাইল করা হয় এবং কেউ জানে সেগুলো কোথায় আছে। সমস্যা তখনই হয় যখন ফাইল করা একজনের ওপর নির্ভর করে, কিংবা ফাইলটি প্রথম থেকেই কখনো পূর্ণ করা হয়নি।' },
+      { en: 'Spreadsheets are the real wildcard. They are flexible enough to absorb any requirement and unconstrained enough to diverge silently. Two teams maintaining the same supplier list in two workbooks will, within a quarter, hold two different truths — and neither will know.', bn: 'স্প্রেডশিট-ই আসল চলক। এগুলো যেকোনো প্রয়োজন শুষে নেওয়ার মতো নমনীয়, আবার নীরবে বিচ্যুত হওয়ার মতোই অনিয়ন্ত্রিত। দুটি দল দুটি ওয়ার্কবুকে একই সরবরাহকারী তালিকা রক্ষণাবেক্ষণ করলে এক ত্রৈমাসিকের মধ্যেই দুটি ভিন্ন সত্যের অধিকারী হবে — আর কেউই জানবে না।' },
+      { en: 'Enterprise applications usually hold the cleanest data and the narrowest coverage. ERP and PLM modules tend to capture what was configured at implementation, not what the business actually needs for product information questions today.', bn: 'এন্টারপ্রাইজ অ্যাপ্লিকেশনে সাধারণত সবচেয়ে পরিষ্কার তথ্য থাকে, কিন্তু বিস্তৃতি সবচেয়ে কম। ERP ও PLM মডিউল সাধারণত সেটিই ধরে যা বাস্তবায়নের সময় কনফিগার করা হয়েছিল, আজ পণ্য-তথ্যের প্রশ্নের জন্য ব্যবসার আসলে যা দরকার তা নয়।' },
+      { en: 'The practical work of traceability is therefore less about digitising everything and more about mapping the handovers: where information passes between layers, who re-keys it, and what gets lost. Those handovers are where readiness is won.', bn: 'তাই ট্রেসেবিলিটির ব্যবহারিক কাজ সবকিছু ডিজিটাইজ করার চেয়ে হাত-বদলের মানচিত্র তৈরির ব্যাপার বেশি: স্তরের মাঝে তথ্য কোথায় যায়, কে তা নতুন করে টাইপ করে, আর কী হারিয়ে যায়। সেই হাত-বদলের জায়গাতেই প্রস্তুতি জেতা বা হারা হয়।' },
     ],
     takeaways: [
-      'Most facilities run paper, spreadsheet and enterprise layers simultaneously.',
-      'Spreadsheets diverge silently — they are the highest-risk layer.',
-      'ERP and PLM coverage often reflects past configuration, not present need.',
-      'Map the handovers between layers before digitising anything.',
+      { en: 'Most facilities run paper, spreadsheet and enterprise layers simultaneously.', bn: 'অধিকাংশ প্রতিষ্ঠান একই সময়ে কাগজ, স্প্রেডশিট ও এন্টারপ্রাইজ স্তর চালায়।' },
+      { en: 'Spreadsheets diverge silently — they are the highest-risk layer.', bn: 'স্প্রেডশিট নীরবে বিচ্যুত হয় — এটি সবচেয়ে বেশি ঝুঁকিপূর্ণ স্তর।' },
+      { en: 'ERP and PLM coverage often reflects past configuration, not present need.', bn: 'ERP ও PLM-এর বিস্তৃতি প্রায়ই অতীত কনফিগারেশনের প্রতিফলন, বর্তমান প্রয়োজনের নয়।' },
+      { en: 'Map the handovers between layers before digitising anything.', bn: 'কিছু ডিজিটাইজ করার আগে স্তরগুলোর মাঝের হাত-বদলের মানচিত্র তৈরি করুন।' },
     ],
   },
   {
@@ -762,17 +761,17 @@ export const insights: Insight[] = [
     date: '2026-10-30',
     readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
     body: [
-      'Environmental and end-of-life information is among the most evidence-dependent categories in any product passport discussion — and among the least prepared in most factories.',
-      'The reason is structural. Composition, supplier and production data are generated by your own operations. Environmental and circularity claims usually depend on information from somewhere else: a mill certificate, a chemical supplier declaration, a test report from a third-party laboratory, a footprint calculation built on assumptions someone else made.',
-      'That dependency has two consequences. First, you cannot create this information on demand — you have to know which documents you hold, whether they are current, and whether they are linked to the specific style in question. Second, a claim without its supporting document is worse than no claim, because it invites the reviewer to question everything else you submitted.',
-      'The practical starting point is an evidence inventory rather than a data project. For each environmental or circularity field a buyer might ask about, establish three things: do we hold supporting evidence, is it current, and can we retrieve it per style. Fields that fail all three are the ones worth working on — and they are usually fewer than expected, because the evidence often exists somewhere in the organisation and simply is not linked to the product record.',
-      'Durability, repairability and end-of-life guidance deserve a separate note. These are forward-looking statements about a product, not records of what happened. They require someone to take responsibility for the statement, which is a governance question rather than a data one.',
+      { en: 'Environmental and end-of-life information is among the most evidence-dependent categories in any product passport discussion — and among the least prepared in most factories.', bn: 'যেকোনো পণ্য পাসপোর্ট আলোচনায় পরিবেশ ও জীবনান্ত তথ্য সবচেয়ে প্রমাণ-নির্ভর বিভাগের মধ্যে অন্যতম — আর অধিকাংশ কারখানায় সবচেয়ে কম প্রস্তুত থাকা বিভাগগুলোরও একটি।' },
+      { en: 'The reason is structural. Composition, supplier and production data are generated by your own operations. Environmental and circularity claims usually depend on information from somewhere else: a mill certificate, a chemical supplier declaration, a test report from a third-party laboratory, a footprint calculation built on assumptions someone else made.', bn: 'কারণটি কাঠামোগত। গঠন, সরবরাহকারী ও উৎপাদনের তথ্য আপনার নিজের কার্যক্রমেই তৈরি হয়। পরিবেশ ও বৃত্তাকারতার দাবি সাধারণত অন্য কোথাও থেকে আসা তথ্যের ওপর নির্ভর করে: একটি মিল সার্টিফিকেট, রাসায়নিক সরবরাহকারীর ঘোষণা, তৃতীয় পক্ষের ল্যাবের পরীক্ষা-প্রতিবেদন, কেউ অন্যের করা অনুমানের ওপর দাঁড়ানো একটি ফুটপ্রিন্ট হিসাব।' },
+      { en: 'That dependency has two consequences. First, you cannot create this information on demand — you have to know which documents you hold, whether they are current, and whether they are linked to the specific style in question. Second, a claim without its supporting document is worse than no claim, because it invites the reviewer to question everything else you submitted.', bn: 'এই নির্ভরতার দুটি পরিণতি আছে। প্রথমত, এই তথ্য চাহিদামাত্রিক তৈরি করা যায় না — আপনাকে জানতে হবে কোন দলিলগুলো আপনার কাছে আছে, সেগুলো বর্তমান কি না, আর সেগুলো নির্দিষ্ট স্টাইলের সাথে সংযুক্ত কি না। দ্বিতীয়ত, সমর্থক দলিল ছাড়া একটি দাবি কোনো দাবি না করার চেয়েও খারাপ, কারণ তা পর্যালোচককে আপনার জমা দেওয়া আর সবকিছু নিয়েও প্রশ্ন করতে আমন্ত্রণ জানায়।' },
+      { en: 'The practical starting point is an evidence inventory rather than a data project. For each environmental or circularity field a buyer might ask about, establish three things: do we hold supporting evidence, is it current, and can we retrieve it per style. Fields that fail all three are the ones worth working on — and they are usually fewer than expected, because the evidence often exists somewhere in the organisation and simply is not linked to the product record.', bn: 'ব্যবহারিক শুরু একটি তথ্য-প্রকল্প নয়, বরং একটি প্রমাণ-তালিকা। ক্রেতা যে পরিবেশ বা বৃত্তাকারতার ক্ষেত্র সম্পর্কে প্রশ্ন করতে পারেন, তার প্রতিটির জন্য তিনটি বিষয় নিশ্চিত করুন: সমর্থক প্রমাণ আমাদের কাছে আছে কি, তা বর্তমান কি, আর স্টাইলভিত্তিক তা খুঁজে বের করা যায় কি। যে ক্ষেত্রগুলো তিনটিতেই ব্যর্থ হয়, সেগুলোই কাজ করার মতো — আর সাধারণত প্রত্যাশার চেয়ে কম হয়, কারণ প্রমাণ প্রায়ই প্রতিষ্ঠানের কোথাও থাকে, কেবল পণ্য-রেকর্ডের সাথে যুক্ত থাকে না।' },
+      { en: 'Durability, repairability and end-of-life guidance deserve a separate note. These are forward-looking statements about a product, not records of what happened. They require someone to take responsibility for the statement, which is a governance question rather than a data one.', bn: 'স্থায়িত্ব, মেরামতযোগ্যতা ও জীবনান্ত নির্দেশনা আলাদা করে উল্লেখের দাবি রাখে। এগুলো কোনো পণ্য সম্পর্কে ভবিষ্যৎমুখী বক্তব্য, ঘটে যাওয়ার রেকর্ড নয়। এগুলোর জন্য কাউকে সেই বক্তব্যের দায়িত্ব নিতে হয়, যা তথ্যের নয়, শাসনের প্রশ্ন।' },
     ],
     takeaways: [
-      'Environmental claims depend on evidence held outside your operations.',
-      'An unsubstantiated claim damages the credibility of everything submitted with it.',
-      'Start with an evidence inventory, not a data-capture project.',
-      'Durability and end-of-life statements are governance decisions, not records.',
+      { en: 'Environmental claims depend on evidence held outside your operations.', bn: 'পরিবেশ সংক্রান্ত দাবি আপনার কার্যক্রমের বাইরে থাকা প্রমাণের ওপর নির্ভর করে।' },
+      { en: 'An unsubstantiated claim damages the credibility of everything submitted with it.', bn: 'প্রমাণহীন কোনো দাবি তার সাথে জমা দেওয়া সবকিছুরই বিশ্বাসযোগ্যতা নষ্ট করে।' },
+      { en: 'Start with an evidence inventory, not a data-capture project.', bn: 'তথ্য-সংগ্রহ প্রকল্প নয়, একটি প্রমাণ-তালিকা দিয়ে শুরু করুন।' },
+      { en: 'Durability and end-of-life statements are governance decisions, not records.', bn: 'স্থায়িত্ব ও জীবনান্ত সংক্রান্ত বক্তব্য রেকর্ড নয়, শাসন-সিদ্ধান্ত।' },
     ],
   },
 ];

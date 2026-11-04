@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, CalendarDays, Clock, Lightbulb, Languages } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CalendarDays, Clock, Lightbulb } from 'lucide-react';
 import { PageHero } from '@/components/blocks/page-hero';
 import { CtaBand } from '@/components/blocks/cta-band';
 import { Notice } from '@/components/blocks/notice';
@@ -63,25 +63,13 @@ export function InsightArticleContent({ slug }: { slug: string }) {
             </span>
           </Reveal>
 
-          {/* Long-form body is English-only until reviewed. */}
-          {locale === 'bn' && (
-            <Reveal className="mt-8 flex items-start gap-3 rounded-2xl border border-line bg-surface-muted p-5">
-              <Languages className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
-              <div>
-                <p className="text-sm font-semibold text-heading">{t('englishOnly.title')}</p>
-                <p className="mt-1 text-sm leading-relaxed text-body">{t('englishOnly.body')}</p>
-              </div>
-            </Reveal>
-          )}
-
           <div className="mt-10 space-y-6">
             {insight.body.map((paragraph, i) => (
               <Reveal key={i} delay={i * 40}>
                 <p
-                  lang="en"
                   className={`leading-relaxed text-body ${i === 0 ? 'text-xl text-heading' : 'text-[1.0625rem]'}`}
                 >
-                  {paragraph}
+                  {tx(paragraph)}
                 </p>
               </Reveal>
             ))}
@@ -96,11 +84,9 @@ export function InsightArticleContent({ slug }: { slug: string }) {
             </h2>
             <ul className="mt-4 space-y-3">
               {insight.takeaways.map((item) => (
-                <li key={item} className="flex gap-3">
+                <li key={tx(item)} className="flex gap-3">
                   <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-500" />
-                  <span lang="en" className="text-[0.9375rem] leading-relaxed text-body">
-                    {item}
-                  </span>
+                  <span className="text-[0.9375rem] leading-relaxed text-body">{tx(item)}</span>
                 </li>
               ))}
             </ul>

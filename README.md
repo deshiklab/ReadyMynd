@@ -48,11 +48,14 @@ English (default) and Bengali (`বাংলা`). The EN / বাং control si
 
 * Choice is stored in `localStorage['readymynd-locale']`; the same pre-paint script sets
   `documentElement.lang`, so no flash of the wrong language.
-* Catalogues live in `lib/i18n/messages/{common,home,services,company,legal}.ts`.
-  Site content is bilingual via the `Bi` type in `lib/content.ts` and resolved with `tx()` / `tl()` /
-  `tr()` from `useI18n()`.
-* Dates format per locale. Long-form legal clauses and the six insight article bodies remain
-  English-only and are marked `lang="en"`; Bengali visitors see an `englishOnly` notice there.
+* UI catalogues live in `lib/i18n/messages/{common,home,services,company,legal}.ts`.
+* Editorial content is bilingual via the `Bi` type (`{ en, bn }`) and resolved with `tx()` / `tl()` /
+  `tr()` from `useI18n()`:
+  * `lib/content.ts` — pages, sections, and the six insight articles (title, excerpt, topic,
+    read time, full body and key takeaways).
+  * `lib/content/legal/` — the privacy, cookie and terms clauses, built with the `bi` / `p` /
+    `list` / `note` helpers in `lib/content/legal/types.ts`.
+* Dates format per locale. All content on the site is available in both languages.
 
 ### Quick actions
 A floating action button (bottom-right, above the footer) expands into:
@@ -93,6 +96,7 @@ lib/i18n/messages/*.ts               bilingual catalogues
 components/theme/controls.tsx        ThemeToggle + LanguageToggle
 components/quick-actions/            FAB, action stack, chat panel, back-to-top
 components/pages/*.tsx               client page bodies (need useI18n)
+lib/content/legal/                   bilingual legal clauses (privacy, cookies, terms)
 ```
 
 ## Structure

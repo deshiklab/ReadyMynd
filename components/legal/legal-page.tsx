@@ -1,20 +1,11 @@
 'use client';
 
-import { FileText, Languages } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { PageHero } from '@/components/blocks/page-hero';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { useI18n } from '@/lib/i18n';
-
-export type LegalBlock =
-  | { type: 'paragraph'; text: string }
-  | { type: 'list'; items: string[]; ordered?: boolean }
-  | { type: 'note'; text: string };
-
-export type LegalSection = {
-  heading: string;
-  blocks: LegalBlock[];
-};
+import type { LegalSection } from '@/lib/content/legal';
 
 export function LegalPage({
   kind,
@@ -23,7 +14,7 @@ export function LegalPage({
   kind: 'privacy' | 'cookies' | 'terms';
   sections: LegalSection[];
 }) {
-  const { t, locale } = useI18n();
+  const { t, tx } = useI18n();
 
   return (
     <>
@@ -47,7 +38,7 @@ export function LegalPage({
               </p>
               <ol className="mt-4 space-y-2 text-sm">
                 {sections.map((section, i) => (
-                  <li key={section.heading}>
+                  <li key={tx(section.heading)}>
                     <a
                       href={`#section-${i + 1}`}
                       className="flex gap-2 text-body transition-colors hover:text-accent"
@@ -55,7 +46,7 @@ export function LegalPage({
                       <span className="font-mono text-xs text-body-soft">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      {section.heading}
+                      {tx(section.heading)}
                     </a>
                   </li>
                 ))}
@@ -70,20 +61,10 @@ export function LegalPage({
               <p className="text-sm leading-relaxed text-body">{t('shared.draftBanner')}</p>
             </Reveal>
 
-            {locale === 'bn' && (
-              <Reveal className="mb-10 flex items-start gap-3 rounded-2xl border border-line bg-surface-muted p-5">
-                <Languages className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
-                <div>
-                  <p className="text-sm font-semibold text-heading">{t('englishOnly.title')}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-body">{t('englishOnly.body')}</p>
-                </div>
-              </Reveal>
-            )}
-
             <div className="space-y-12">
               {sections.map((section, i) => (
                 <Reveal
-                  key={section.heading}
+                  key={tx(section.heading)}
                   delay={i * 30}
                   as="section"
                   id={`section-${i + 1}`}
@@ -93,15 +74,15 @@ export function LegalPage({
                     <span className="font-mono text-sm font-normal text-body-soft">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span lang="en">{section.heading}</span>
+                    <span>{tx(section.heading)}</span>
                   </h2>
 
                   <div className="mt-4 space-y-4">
                     {section.blocks.map((block, j) => {
                       if (block.type === 'paragraph') {
                         return (
-                          <p key={j} lang="en" className="text-base leading-relaxed text-body">
-                            {block.text}
+                          <p key={j} className="text-base leading-relaxed text-body">
+                            {tx(block.text)}
                           </p>
                         );
                       }
@@ -110,14 +91,13 @@ export function LegalPage({
                         return (
                           <Tag
                             key={j}
-                            lang="en"
                             className={`ml-5 space-y-2 pl-1 text-base leading-relaxed text-body marker:text-brand-500 ${
                               block.ordered ? 'list-decimal' : 'list-disc'
                             }`}
                           >
                             {block.items.map((item) => (
-                              <li key={item} className="pl-1">
-                                {item}
+                              <li key={tx(item)} className="pl-1">
+                                {tx(item)}
                               </li>
                             ))}
                           </Tag>
@@ -126,10 +106,9 @@ export function LegalPage({
                       return (
                         <p
                           key={j}
-                          lang="en"
                           className="border-l-2 border-brand-500 bg-surface-muted py-3 pl-4 pr-4 text-sm leading-relaxed text-body"
                         >
-                          {block.text}
+                          {tx(block.text)}
                         </p>
                       );
                     })}
