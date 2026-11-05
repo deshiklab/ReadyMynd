@@ -7,6 +7,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { Section, SectionHeading } from '@/components/ui/section';
 import { CtaBand } from '@/components/blocks/cta-band';
 import { BrochureCta } from '@/components/blocks/brochure-cta';
+import { HeroSlider } from '@/components/blocks/hero-slider';
 import { DimensionsExplorer } from '@/components/interactive/dimensions-explorer';
 import { factoryTypes, processSteps } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
@@ -89,16 +90,8 @@ export function HomeContent() {
                 aria-hidden
                 className="absolute -inset-5 -z-10 rounded-[2.25rem] bg-gradient-to-br from-brand-500/25 via-transparent to-transparent blur-2xl"
               />
-              <div className="overflow-hidden rounded-2xl ring-1 ring-line">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={asset('/images/pages/home.jpeg')}
-                  alt={t('hero.imageAlt')}
-                  className="aspect-4/3 w-full object-cover"
-                  loading="eager"
-                />
-              </div>
-              <div className="absolute -bottom-6 left-6 right-6 rounded-xl border border-line bg-surface-raised/95 p-5 shadow-lift backdrop-blur-xl">
+              <HeroSlider />
+              <div className="mt-6 rounded-xl border border-line bg-surface-raised/95 p-5 shadow-lift">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">
                   {t('hero.badgeTitle')}
                 </p>
