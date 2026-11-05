@@ -69,10 +69,10 @@ export function PageHero({
             {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body">{intro}</p>}
 
             {meta && meta.length > 0 && (
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-line pt-8 sm:grid-cols-4">
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-8 lg:grid-cols-4">
                 {meta.map((item) => (
                   <div key={item.label}>
-                    <dt className="font-display text-2xl font-bold text-heading sm:text-3xl">
+                    <dt className="font-display text-lg font-bold leading-snug text-heading lg:text-xl">
                       {item.label}
                     </dt>
                   </div>
