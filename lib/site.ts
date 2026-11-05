@@ -23,10 +23,10 @@ export const site = {
   positioning: 'Software-Enabled. Analyst-Led. Evidence-Based.',
   url: 'https://www.readymynd.com',
   email: 'contact@readymynd.com',
-  phone: '+880 17 5562 8272',
-  phoneHref: '+8801755628272',
+  phone: '+880 13 4949 2761',
+  phoneHref: '+8801349492761',
   /** Digits only, in international format — used for wa.me / tel: deep links. */
-  whatsapp: '8801755628272',
+  whatsapp: '8801349492761',
   location: 'Bangladesh',
   hours: 'Sun – Thu, 9:00 AM – 6:00 PM (BST)',
   brochureHref: '/downloads/readymynd-corporate-brochure.pdf',

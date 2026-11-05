@@ -100,8 +100,8 @@ A floating action button (bottom-right, above the footer) expands into:
 | Action            | Behaviour                                                              |
 | ----------------- | ---------------------------------------------------------------------- |
 | Chat to ReadyMynd | Opens an inline chat panel with quick-reply prompts                    |
-| WhatsApp          | `https://wa.me/8801755628272` with a prefilled message                 |
-| Call us           | `tel:+8801755628272`                                                   |
+| WhatsApp          | `https://wa.me/8801349492761` with a prefilled message                 |
+| Call us           | `tel:+8801349492761`                                                   |
 | Send an enquiry   | Jumps to `/contact/#assessment-enquiry`                                |
 | Back to top       | Appears once the page is scrolled; smooth-scrolls to the top           |
 
