@@ -85,8 +85,13 @@ export function HeroSlider() {
         }
       }}
     >
-      {/* Full-bleed stage — sits outside the page container on purpose. */}
-      <div className="relative h-[20rem] overflow-hidden border-y border-line bg-surface-muted sm:h-[24rem] lg:h-[30rem]">
+      {/*
+       * Fullscreen stage. It starts at the very top of the document so the
+       * fixed header floats directly over it, with no gap between the menu
+       * and the image. svh keeps it honest on mobile, where a 100vh hero
+       * would slide under the browser chrome.
+       */}
+      <div className="relative h-screen [height:100svh] min-h-[34rem] overflow-hidden bg-surface-muted">
         {SLIDES.map((slide, i) => {
           const shown = visited.includes(i);
           return (
@@ -123,73 +128,91 @@ export function HeroSlider() {
             </div>
           );
         })}
-      </div>
 
-      {/* Caption and controls stay aligned with the rest of the page. */}
-      <div className="container-page">
-        <div className="mt-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent">
-              {t(`heroSlider.slides.${active.id}.eyebrow`)}
-            </p>
-            <p className="mt-1.5 font-display text-lg font-semibold leading-snug text-heading sm:text-xl">
-              {t(`heroSlider.slides.${active.id}.title`)}
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
-              {t(`heroSlider.slides.${active.id}.text`)}
-            </p>
-            <Link
-              href={active.href}
-              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-heading"
-            >
-              {t(`heroSlider.slides.${active.id}.cta`)}
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          </div>
+        {/*
+         * Scrims. The header is translucent glass, so a gradient from the
+         * surface colour sits behind it to keep the nav legible whatever the
+         * slide behind happens to be doing. The same trick carries the
+         * caption at the foot. Using the theme surface rather than black
+         * keeps this working in both light and dark.
+         */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface via-surface/75 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-surface via-surface/85 to-transparent"
+        />
 
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => go(index - 1)}
-              aria-label={t('heroSlider.prev')}
-              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-            >
-              <ChevronLeft className="size-4" aria-hidden />
-            </button>
-            <button
-              type="button"
-              onClick={() => go(index + 1)}
-              aria-label={t('heroSlider.next')}
-              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-            >
-              <ChevronRight className="size-4" aria-hidden />
-            </button>
-            <button
-              type="button"
-              onClick={() => setPaused((current) => !current)}
-              aria-label={paused ? t('heroSlider.play') : t('heroSlider.pause')}
-              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-            >
-              {paused ? (
-                <Play className="size-3.5" aria-hidden />
-              ) : (
-                <Pause className="size-3.5" aria-hidden />
-              )}
-            </button>
+        {/* Caption and controls, pinned to the foot and on the page grid. */}
+        <div className="absolute inset-x-0 bottom-0 pb-10 sm:pb-12 lg:pb-14">
+          <div className="container-page">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent">
+                  {t(`heroSlider.slides.${active.id}.eyebrow`)}
+                </p>
+                <p className="mt-1.5 font-display text-lg font-semibold leading-snug text-heading sm:text-xl">
+                  {t(`heroSlider.slides.${active.id}.title`)}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {t(`heroSlider.slides.${active.id}.text`)}
+                </p>
+                <Link
+                  href={active.href}
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-heading"
+                >
+                  {t(`heroSlider.slides.${active.id}.cta`)}
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </div>
 
-            <div className="ml-2 flex items-center gap-1.5">
-              {SLIDES.map((slide, i) => (
+              <div className="flex items-center gap-2">
                 <button
-                  key={slide.id}
                   type="button"
-                  onClick={() => go(i)}
-                  aria-label={t('heroSlider.goTo', { n: String(i + 1) })}
-                  aria-current={i === index}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === index ? 'w-6 bg-accent' : 'w-1.5 bg-line hover:bg-body-soft'
-                  }`}
-                />
-              ))}
+                  onClick={() => go(index - 1)}
+                  aria-label={t('heroSlider.prev')}
+                  className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+                >
+                  <ChevronLeft className="size-4" aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => go(index + 1)}
+                  aria-label={t('heroSlider.next')}
+                  className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+                >
+                  <ChevronRight className="size-4" aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPaused((current) => !current)}
+                  aria-label={paused ? t('heroSlider.play') : t('heroSlider.pause')}
+                  className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+                >
+                  {paused ? (
+                    <Play className="size-3.5" aria-hidden />
+                  ) : (
+                    <Pause className="size-3.5" aria-hidden />
+                  )}
+                </button>
+
+                <div className="ml-2 flex items-center gap-1.5">
+                  {SLIDES.map((slide, i) => (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      onClick={() => go(i)}
+                      aria-label={t('heroSlider.goTo', { n: String(i + 1) })}
+                      aria-current={i === index}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === index ? 'w-6 bg-accent' : 'w-1.5 bg-line hover:bg-body-soft'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

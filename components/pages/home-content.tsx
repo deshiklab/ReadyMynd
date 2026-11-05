@@ -22,7 +22,7 @@ export function HomeContent() {
   return (
     <>
       {/* ---------------------------------------------------------- Hero */}
-      <section className="section-hero overflow-hidden pb-24 pt-32 sm:pb-28 sm:pt-40 lg:pb-32 lg:pt-44">
+      <section className="section-hero overflow-hidden pb-24 sm:pb-28 lg:pb-32">
         <div
           aria-hidden
           className="grid-veil-light absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]"
