@@ -61,7 +61,7 @@ export function ThemeToggle({ variant = 'compact' }: { variant?: ControlVariant 
       aria-checked={theme === 'dark'}
       aria-label={nextIsDark ? t('controls.switchToDark') : t('controls.switchToLight')}
       title={nextIsDark ? t('controls.switchToDark') : t('controls.switchToLight')}
-      className={`inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-colors ${focusRing} ${
+      className={`inline-flex ${bare ? 'size-7' : 'size-9'} shrink-0 items-center justify-center rounded-full transition-colors ${focusRing} ${
         bare
           ? 'text-body hover:bg-surface-sunken hover:text-heading'
           : 'border border-line bg-surface-raised text-body hover:text-heading'
@@ -122,7 +122,7 @@ export function LanguageToggle({ variant = 'compact' }: { variant?: ControlVaria
           onClick={() => setLocale(code)}
           aria-pressed={locale === code}
           lang={localeLabels[code].htmlLang}
-          className={`rounded-full px-2.5 py-1.5 text-[0.6875rem] font-bold tracking-wide transition-colors ${focusRing} ${
+          className={`rounded-full ${bare ? 'px-2 py-0.5 text-[0.625rem]' : 'px-2.5 py-1.5 text-[0.6875rem]'} font-bold tracking-wide transition-colors ${focusRing} ${
             locale === code
               ? 'bg-brand-500 text-white'
               : 'text-body hover:bg-surface-sunken hover:text-heading'

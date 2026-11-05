@@ -70,37 +70,43 @@ export function Header() {
         solid ? 'glass border-b glass-ring shadow-soft' : 'glass-soft border-b border-transparent'
       }`}
     >
-      {/* Utility strip — only while the page is at the very top */}
-      <div
-        className={`hidden overflow-hidden border-b border-line/70 bg-surface-muted/50 text-body transition-all duration-300 lg:block ${
-          solid ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
-        }`}
-      >
-        <div className="container-page flex h-10 items-center justify-between text-xs">
-          <p className="tracking-wide">{t('header.utilityStrip')}</p>
-          <div className="flex items-center gap-6">
+      {/*
+       * Top utility bar — always visible on every breakpoint.
+       * Left: positioning line + direct contact details.
+       * Right: language and theme switches in a frosted pill.
+       */}
+      <div className="border-b border-line/60 bg-surface-muted/60 backdrop-blur-xl">
+        <div className="container-page flex h-9 items-center gap-4 text-xs">
+          <div className="flex min-w-0 items-center gap-4 text-body-soft">
+            <p className="hidden truncate xl:block">{t('header.utilityStrip')}</p>
             <a
               href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 hover:text-heading"
+              className="hidden items-center gap-1.5 transition-colors hover:text-heading sm:inline-flex"
             >
-              <Mail className="size-3.5" aria-hidden />
+              <Mail className="size-3 shrink-0" aria-hidden />
               {site.email}
             </a>
             <a
               href={`tel:${site.phoneHref}`}
-              className="inline-flex items-center gap-2 hover:text-heading"
+              className="hidden items-center gap-1.5 transition-colors hover:text-heading md:inline-flex"
             >
-              <Phone className="size-3.5" aria-hidden />
+              <Phone className="size-3 shrink-0" aria-hidden />
               {site.phone}
             </a>
+          </div>
+
+          <div className="glass-pill glass-ring ml-auto flex shrink-0 items-center gap-0.5 rounded-full border p-0.5">
+            <LanguageToggle variant="glass" />
+            <ThemeToggle variant="glass" />
           </div>
         </div>
       </div>
 
+      {/* Main navigation bar */}
       <div className="container-page">
         <div
           className={`flex items-center gap-4 transition-all duration-300 sm:gap-6 ${
-            solid ? 'h-16' : 'h-20'
+            solid ? 'h-16' : 'h-[4.5rem]'
           }`}
         >
           <Link
@@ -148,13 +154,8 @@ export function Header() {
             </ul>
           </nav>
 
-          {/* Right cluster: frosted controls + primary CTA + menu */}
+          {/* Right cluster: primary CTA + menu trigger */}
           <div className="ml-auto flex items-center gap-2 sm:gap-3">
-            <div className="glass-pill glass-ring flex items-center gap-0.5 rounded-full border p-1">
-              <LanguageToggle variant="glass" />
-              <ThemeToggle variant="glass" />
-            </div>
-
             <Link
               href="/contact/#assessment-enquiry"
               className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-[0.8125rem] font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.65)] transition-all hover:bg-brand-600 lg:inline-flex"
@@ -177,14 +178,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — the switches live in the top bar, so they are not repeated here */}
       <div
         id="mobile-nav"
         className={`fixed inset-0 top-0 -z-10 bg-surface transition-all duration-300 lg:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <div className="h-full overflow-y-auto px-5 pb-10 pt-24">
+        <div className="h-full overflow-y-auto px-5 pb-10 pt-32">
           <nav aria-label={t('nav.mobileMenu')}>
             <ul className="divide-y divide-line">
               {items.map((item) => (
@@ -217,11 +218,6 @@ export function Header() {
             {t('header.requestAssessment')}
             <ArrowRight className="size-4" aria-hidden />
           </Link>
-
-          <div className="mt-8 space-y-3">
-            <ThemeToggle variant="labelled" />
-            <LanguageToggle variant="labelled" />
-          </div>
 
           <div className="mt-8 space-y-2 border-t border-line pt-6 text-sm text-body">
             <a href={`mailto:${site.email}`} className="block hover:text-heading">
