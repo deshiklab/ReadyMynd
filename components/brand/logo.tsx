@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { asset } from '@/lib/site';
 
 const W = 1129;
 const H = 252;
@@ -23,7 +24,7 @@ export function Logo({
   return (
     <span className={`relative block ${className}`} style={{ aspectRatio: `${W} / ${H}` }}>
       <Image
-        src="/images/brand/logo-ink.png"
+        src={asset('/images/brand/logo-ink.png')}
         alt="ReadyMynd"
         width={W}
         height={H}
@@ -31,7 +32,7 @@ export function Logo({
         className="h-full w-full object-contain object-left dark:opacity-0"
       />
       <Image
-        src="/images/brand/logo-light.png"
+        src={asset('/images/brand/logo-light.png')}
         alt=""
         aria-hidden
         width={W}
