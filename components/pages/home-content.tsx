@@ -36,9 +36,13 @@ export function HomeContent() {
           className="absolute -right-24 top-40 -z-10 size-[26rem] rounded-full bg-brand-500/10 blur-[100px] dark:bg-brand-500/15"
         />
 
+        {/* Full-bleed slider sits outside the page container on purpose. */}
+        <Reveal>
+          <HeroSlider />
+        </Reveal>
+
         <div className="container-page">
-          <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
-            <div>
+          <div className="mt-16 max-w-4xl lg:mt-20">
               <Reveal>
                 <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-raised px-3 py-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-body-strong backdrop-blur">
                   <Sparkles className="size-3.5 text-accent" aria-hidden />
@@ -83,25 +87,19 @@ export function HomeContent() {
                   </ButtonLink>
                 </div>
               </Reveal>
-            </div>
-
-            <Reveal delay={240} className="relative">
-              <div
-                aria-hidden
-                className="absolute -inset-5 -z-10 rounded-[2.25rem] bg-gradient-to-br from-brand-500/25 via-transparent to-transparent blur-2xl"
-              />
-              <HeroSlider />
-              <div className="mt-6 rounded-xl border border-line bg-surface-raised/95 p-5 shadow-lift">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">
-                  {t('hero.badgeTitle')}
-                </p>
-                <p className="mt-2 font-display text-lg font-semibold text-heading">
-                  {t('hero.badgeHeading')}
-                </p>
-                <p className="mt-1 text-sm text-body">{t('hero.badgeBody')}</p>
-              </div>
-            </Reveal>
           </div>
+
+          <Reveal delay={240}>
+            <div className="mt-10 max-w-3xl rounded-xl border border-line bg-surface-raised/95 p-5 shadow-lift">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">
+                {t('hero.badgeTitle')}
+              </p>
+              <p className="mt-2 font-display text-lg font-semibold text-heading">
+                {t('hero.badgeHeading')}
+              </p>
+              <p className="mt-1 text-sm text-body">{t('hero.badgeBody')}</p>
+            </div>
+          </Reveal>
 
           <Reveal delay={400}>
             <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4">

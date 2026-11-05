@@ -7,12 +7,14 @@ import { useI18n } from '@/lib/i18n';
 import { asset } from '@/lib/site';
 
 /**
- * The eight page images are infographics, so the stage scales each one to fit
- * inside a fixed box with `object-contain` rather than cropping it to fill.
- * A fixed height also keeps every slide the same size, so the hero never
- * jumps when the image changes shape between 3:2 and 16:9.
+ * The eight page images carry infographics, so each slide shows the image
+ * whole rather than cropping it to fill. The frame is edge-to-edge, and the
+ * image sits over a heavily blurred copy of itself — the blur survives being
+ * cropped to fill, so the frame still reads as full-bleed while the
+ * infographic above it stays complete.
  */
 const SLIDES = [
+  { id: 'advisory', image: '/images/pages/advisory.jpeg', href: '/digital-advisory/' },
   { id: 'home', image: '/images/pages/home.jpeg', href: '/' },
   { id: 'dpp', image: '/images/pages/eu-dpp.jpeg', href: '/textile-digital-product-passport/' },
   {
@@ -21,9 +23,8 @@ const SLIDES = [
     href: '/textile-dpp-digital-readiness-assessment/',
   },
   { id: 'methodology', image: '/images/pages/methodology.jpeg', href: '/assessment-methodology/' },
-  { id: 'advisory', image: '/images/pages/advisory.jpeg', href: '/digital-advisory/' },
-  { id: 'insights', image: '/images/pages/insights.jpeg', href: '/insights/' },
   { id: 'about', image: '/images/pages/about.jpeg', href: '/about/' },
+  { id: 'insights', image: '/images/pages/insights.jpeg', href: '/insights/' },
   { id: 'contact', image: '/images/pages/contact.jpeg', href: '/contact/' },
 ] as const;
 
@@ -84,9 +85,11 @@ export function HeroSlider() {
         }
       }}
     >
-      <div className="overflow-hidden rounded-2xl ring-1 ring-line">
-        <div className="relative h-56 bg-surface-muted sm:h-64 lg:h-[25rem]">
-          {SLIDES.map((slide, i) => (
+      {/* Full-bleed stage — sits outside the page container on purpose. */}
+      <div className="relative h-[20rem] overflow-hidden border-y border-line bg-surface-muted sm:h-[24rem] lg:h-[30rem]">
+        {SLIDES.map((slide, i) => {
+          const shown = visited.includes(i);
+          return (
             <div
               key={slide.id}
               aria-hidden={i !== index}
@@ -94,83 +97,101 @@ export function HeroSlider() {
                 i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
-              {visited.includes(i) && (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={asset(slide.image)}
-                  alt={t(`heroSlider.slides.${slide.id}.alt`)}
-                  className="size-full object-contain"
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                />
+              {shown && (
+                <>
+                  {/* Ambient fill. Cropping is fine here — it is blurred. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(slide.image)}
+                    alt=""
+                    aria-hidden
+                    className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                  {/* The infographic itself, shown whole. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(slide.image)}
+                    alt={t(`heroSlider.slides.${slide.id}.alt`)}
+                    className="absolute inset-0 size-full object-contain"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                </>
               )}
             </div>
-          ))}
-        </div>
-
-        <div className="border-t border-line bg-surface-raised px-5 py-4 sm:px-6">
-          <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent">
-            {t(`heroSlider.slides.${active.id}.eyebrow`)}
-          </p>
-          <p className="mt-1.5 font-display text-base font-semibold leading-snug text-heading sm:text-lg">
-            {t(`heroSlider.slides.${active.id}.title`)}
-          </p>
-          <p className="mt-1.5 text-sm leading-relaxed text-body">
-            {t(`heroSlider.slides.${active.id}.text`)}
-          </p>
-          <Link
-            href={active.href}
-            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-heading"
-          >
-            {t(`heroSlider.slides.${active.id}.cta`)}
-            <ArrowRight className="size-4" aria-hidden />
-          </Link>
-        </div>
+          );
+        })}
       </div>
 
-      <div className="mt-4 flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => go(index - 1)}
-          aria-label={t('heroSlider.prev')}
-          className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-        >
-          <ChevronLeft className="size-4" aria-hidden />
-        </button>
-        <button
-          type="button"
-          onClick={() => go(index + 1)}
-          aria-label={t('heroSlider.next')}
-          className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-        >
-          <ChevronRight className="size-4" aria-hidden />
-        </button>
-        <button
-          type="button"
-          onClick={() => setPaused((current) => !current)}
-          aria-label={paused ? t('heroSlider.play') : t('heroSlider.pause')}
-          className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
-        >
-          {paused ? (
-            <Play className="size-3.5" aria-hidden />
-          ) : (
-            <Pause className="size-3.5" aria-hidden />
-          )}
-        </button>
+      {/* Caption and controls stay aligned with the rest of the page. */}
+      <div className="container-page">
+        <div className="mt-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent">
+              {t(`heroSlider.slides.${active.id}.eyebrow`)}
+            </p>
+            <p className="mt-1.5 font-display text-lg font-semibold leading-snug text-heading sm:text-xl">
+              {t(`heroSlider.slides.${active.id}.title`)}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+              {t(`heroSlider.slides.${active.id}.text`)}
+            </p>
+            <Link
+              href={active.href}
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-heading"
+            >
+              {t(`heroSlider.slides.${active.id}.cta`)}
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
 
-        <div className="ml-auto flex items-center gap-1.5">
-          {SLIDES.map((slide, i) => (
+          <div className="flex items-center gap-2">
             <button
-              key={slide.id}
               type="button"
-              onClick={() => go(i)}
-              aria-label={t('heroSlider.goTo', { n: String(i + 1) })}
-              aria-current={i === index}
-              className={`h-1.5 rounded-full transition-all ${
-                i === index ? 'w-6 bg-accent' : 'w-1.5 bg-line hover:bg-body-soft'
-              }`}
-            />
-          ))}
+              onClick={() => go(index - 1)}
+              aria-label={t('heroSlider.prev')}
+              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+            >
+              <ChevronLeft className="size-4" aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(index + 1)}
+              aria-label={t('heroSlider.next')}
+              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+            >
+              <ChevronRight className="size-4" aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={() => setPaused((current) => !current)}
+              aria-label={paused ? t('heroSlider.play') : t('heroSlider.pause')}
+              className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
+            >
+              {paused ? (
+                <Play className="size-3.5" aria-hidden />
+              ) : (
+                <Pause className="size-3.5" aria-hidden />
+              )}
+            </button>
+
+            <div className="ml-2 flex items-center gap-1.5">
+              {SLIDES.map((slide, i) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => go(i)}
+                  aria-label={t('heroSlider.goTo', { n: String(i + 1) })}
+                  aria-current={i === index}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === index ? 'w-6 bg-accent' : 'w-1.5 bg-line hover:bg-body-soft'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
