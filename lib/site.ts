@@ -55,7 +55,7 @@ export const mainNav: NavItem[] = [
   {
     label: 'Digital Advisory',
     full: 'Digital Advisory Services',
-    href: '/digital-advisory-services/',
+    href: '/digital-advisory/',
     description: 'Focused post-assessment technical advisory: data, systems, integration.',
   },
   { label: 'About', full: 'About ReadyMynd', href: '/about/', description: 'Who we are and how we work.' },

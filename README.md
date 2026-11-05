@@ -113,7 +113,7 @@ A floating action button (bottom-right, above the footer) expands into:
 | 02 | EU Textile Digital Product Passport       | `/textile-digital-product-passport/`           |
 | 03 | Textile DPP Digital Readiness Assessment  | `/textile-dpp-digital-readiness-assessment/`   |
 | 04 | Assessment Methodology & Process          | `/assessment-methodology/`                     |
-| 05 | Digital Advisory Services                 | `/digital-advisory-services/`                  |
+| 05 | Digital Advisory Services                 | `/digital-advisory/`                           |
 | 06 | About ReadyMynd                           | `/about/`                                      |
 | 07 | Textile DPP Resources & Insights          | `/insights/` + `/insights/<slug>/`             |
 | 08 | Contact ReadyMynd                         | `/contact/`                                    |

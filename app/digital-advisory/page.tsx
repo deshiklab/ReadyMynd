@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Digital Advisory Services',
   description:
     'Independent, vendor-neutral post-assessment advisory across three technical areas: data advisory, digital systems advisory and system integration advisory.',
-  alternates: { canonical: '/digital-advisory-services/' },
+  alternates: { canonical: '/digital-advisory/' },
 };
 
 export default function AdvisoryPage() {

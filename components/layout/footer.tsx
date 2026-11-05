@@ -10,7 +10,7 @@ const serviceHrefs = [
   '/textile-digital-product-passport/',
   '/textile-dpp-digital-readiness-assessment/',
   '/assessment-methodology/',
-  '/digital-advisory-services/',
+  '/digital-advisory/',
 ];
 
 const serviceKeys = ['dpp', 'assessment', 'methodology', 'advisory'] as const;
