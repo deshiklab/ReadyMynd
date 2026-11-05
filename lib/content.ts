@@ -639,8 +639,18 @@ export const insights: Insight[] = [
       en: 'Regulation (EU) 2024/1781 establishes the framework for Digital Product Passports, with textiles among the priority product groups. Legal responsibility may sit with the operator placing a product on the EU market — but the information itself sits with manufacturers. We explain where that leaves Bangladesh suppliers during the preparation window.',
       bn: 'Regulation (EU) 2024/1781 ডিজিটাল প্রোডাক্ট পাসপোর্টের কাঠামো প্রতিষ্ঠা করেছে, যেখানে টেক্সটাইল অগ্রাধিকারপ্রাপ্ত পণ্যগোষ্ঠীর মধ্যে রয়েছে। আইনি দায়িত্ব ইইউ বাজারে পণ্য স্থাপনকারীর ওপর থাকতে পারে — কিন্তু তথ্য থাকে উৎপাদকদের কাছে। প্রস্তুতির এই সময়ে বাংলাদেশের সরবরাহকারীরা কোথায় দাঁড়িয়ে আছেন, তা আমরা ব্যাখ্যা করেছি।',
     },
-    date: '2026-10-30',
+    date: '2026-09-07',
     readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    image: '/images/insights/what-espr-means-for-bangladesh-suppliers.jpg',
+    imageAlt: {
+      en: 'EU regulation documents beside folded textile samples',
+      bn: 'ভাঁজ করা টেক্সটাইল নমুনার পাশে ইইউ বিধিমালার দলিল',
+    },
+    tags: [
+      { en: 'ESPR', bn: 'ESPR' },
+      { en: 'Regulation', bn: 'বিধিমালা' },
+      { en: 'Suppliers', bn: 'সরবরাহকারী' },
+    ],
     featured: true,
     body: [
       { en: 'Regulation (EU) 2024/1781 — the Ecodesign for Sustainable Products Regulation — establishes the framework for introducing Digital Product Passports across covered product groups. Textiles and apparel are named among the priority groups, which is why the topic has moved from sustainability conferences into sourcing conversations.', bn: 'Regulation (EU) 2024/1781 — টেকসই পণ্যের জন্য ইকোডিজাইন বিধিমালা — অন্তর্ভুক্ত পণ্যগোষ্ঠীগুলোতে ডিজিটাল প্রোডাক্ট পাসপোর্ট চালুর কাঠামো প্রতিষ্ঠা করেছে। টেক্সটাইল ও পোশাককে অগ্রাধিকারপ্রাপ্ত গোষ্ঠীর মধ্যে উল্লেখ করা হয়েছে, আর এ কারণেই বিষয়টি টেকসইতার সম্মেলন থেকে সোর্সিং আলোচনায় চলে এসেছে।' },
@@ -667,8 +677,18 @@ export const insights: Insight[] = [
       en: 'European buyers may increasingly request structured, reliable and traceable information from manufacturing partners well before textile-specific obligations are finalised. Factories that understand their existing information capabilities respond faster and negotiate from a stronger position.',
       bn: 'টেক্সটাইল-নির্দিষ্ট বাধ্যবাধকতা চূড়ান্ত হওয়ার অনেক আগেই ইউরোপীয় ক্রেতারা উৎপাদন অংশীদারদের কাছে কাঠামোবদ্ধ, নির্ভরযোগ্য ও ট্রেসেবল তথ্য চাইতে পারেন। যে কারখানাগুলো নিজেদের বিদ্যমান তথ্য-সক্ষমতা বোঝে, তারা দ্রুত উত্তর দেয় এবং আরও শক্ত অবস্থান থেকে আলোচনা করে।',
     },
-    date: '2026-10-30',
+    date: '2026-09-14',
     readTime: { en: '4 min read', bn: '৪ মিনিটের পাঠ' },
+    image: '/images/insights/buyer-requests-before-legal-deadlines.jpg',
+    imageAlt: {
+      en: 'A buyer and supplier reviewing a product information request',
+      bn: 'পণ্য-তথ্যের অনুরোধ পর্যালোচনা করছেন একজন ক্রেতা ও সরবরাহকারী',
+    },
+    tags: [
+      { en: 'Buyers', bn: 'ক্রেতা' },
+      { en: 'Requests', bn: 'অনুরোধ' },
+      { en: 'Timing', bn: 'সময়' },
+    ],
     featured: true,
     body: [
       { en: 'There is a persistent assumption in the supply chain that preparation can wait until the textile-specific Digital Product Passport rules are finalised. Commercially, that assumption is expensive.', bn: 'সাপ্লাই চেইনে একটি ধারণা দীর্ঘদিন ধরে টিকে আছে যে টেক্সটাইল-নির্দিষ্ট ডিজিটাল প্রোডাক্ট পাসপোর্টের বিধি চূড়ান্ত না হওয়া পর্যন্ত প্রস্তুতি অপেক্ষা করতে পারে। ব্যবসায়িক দৃষ্টিকোণ থেকে এই ধারণার দাম বেশি।' },
@@ -692,8 +712,18 @@ export const insights: Insight[] = [
       en: 'Manual data, digital data, integration, validation and governance. Readiness is not one number — it is a profile across five dimensions, and the shape of that profile determines which improvements are worth making first.',
       bn: 'ম্যানুয়াল তথ্য, ডিজিটাল তথ্য, সংযোজন, যাচাই ও শাসন। প্রস্তুতি একটি সংখ্যা নয় — এটি পাঁচটি মাত্রার একটি প্রোফাইল, আর সেই প্রোফাইলের আকৃতিই নির্ধারণ করে আগে কোন উন্নয়নগুলো করা মূল্যবান।',
     },
-    date: '2026-10-30',
+    date: '2026-09-21',
     readTime: { en: '7 min read', bn: '৭ মিনিটের পাঠ' },
+    image: '/images/insights/five-dimensions-of-digital-readiness.jpg',
+    imageAlt: {
+      en: 'Five layered blocks representing the readiness dimensions',
+      bn: 'প্রস্তুতির মাত্রা নির্দেশক পাঁচটি স্তরযুক্ত ব্লক',
+    },
+    tags: [
+      { en: 'Dimensions', bn: 'মাত্রা' },
+      { en: 'Framework', bn: 'কাঠামো' },
+      { en: 'Assessment', bn: 'মূল্যায়ন' },
+    ],
     featured: true,
     body: [
       { en: 'Readiness is often discussed as if it were a score. In practice it is a profile, and the shape of that profile determines which improvements are worth making first.', bn: 'প্রস্তুতি সম্পর্কে প্রায়ই এমনভাবে কথা বলা হয় যেন তা একটি স্কোর। বাস্তবে এটি একটি প্রোফাইল, আর সেই প্রোফাইলের আকৃতিই নির্ধারণ করে কোন উন্নয়নগুলো আগে করা মূল্যবান।' },
@@ -719,8 +749,18 @@ export const insights: Insight[] = [
       en: 'New platforms are often bought to solve problems that are actually data problems. This piece sets out why an evidence-based diagnostic should precede system selection, and how to tell the two apart.',
       bn: 'নতুন প্ল্যাটফর্ম কেনা হয় প্রায়ই এমন সমস্যা সমাধানে যা আসলে তথ্যের সমস্যা। কেন সিস্টেম নির্বাচনের আগে প্রমাণ-ভিত্তিক রোগনির্ণয় করা উচিত এবং দুটিকে কীভাবে আলাদা করা যায় — তা এই লেখায় তুলে ধরা হয়েছে।',
     },
-    date: '2026-10-30',
+    date: '2026-09-28',
     readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    image: '/images/insights/better-data-before-bigger-technology.jpg',
+    imageAlt: {
+      en: 'Data records being reviewed before a software selection meeting',
+      bn: 'সফটওয়্যার নির্বাচন সভার আগে তথ্য-রেকর্ড পর্যালোচনা',
+    },
+    tags: [
+      { en: 'Digital systems', bn: 'ডিজিটাল সিস্টেম' },
+      { en: 'Investment', bn: 'বিনিয়োগ' },
+      { en: 'Sequencing', bn: 'ধারাবাহিকতা' },
+    ],
     body: [
       { en: 'When a factory struggles to answer a product information request, the reflex is to buy a platform. It is an understandable reflex and frequently the wrong one.', bn: 'কোনো কারখানা পণ্য-তথ্যের অনুরোধের উত্তর দিতে হিমশিম খেলে স্বাভাবিক প্রতিক্রিয়া হয় একটি প্ল্যাটফর্ম কেনা। এটি বোধগম্য প্রতিক্রিয়া, কিন্তু প্রায়ই ভুল।' },
       { en: 'Most information failures are not caused by absent software. They are caused by absent definitions — two departments using the same field to mean different things, a specification that was never updated after a material substitution, a supplier declaration that exists but cannot be found. No platform resolves any of those. A platform records them more tidily.', bn: 'অধিকাংশ তথ্য-ব্যর্থতার কারণ সফটওয়্যার না থাকা নয়, বরং সংজ্ঞা না থাকা — দুটি বিভাগ একই ক্ষেত্রটি ভিন্ন ভিন্ন অর্থে ব্যবহার করছে, উপকরণ বদলের পর কোনো স্পেসিফিকেশন আর হালনাগাদ হয়নি, সরবরাহকারীর ঘোষণা আছে কিন্তু খুঁজে পাওয়া যাচ্ছে না। এর কোনোটিরই সমাধান কোনো প্ল্যাটফর্ম করতে পারে না। প্ল্যাটফর্ম কেবল সেগুলো আরও গুছিয়ে লিপিবদ্ধ করে।' },
@@ -746,8 +786,18 @@ export const insights: Insight[] = [
       en: 'Most Bangladesh facilities run a mix of paper files, spreadsheets and enterprise applications. Traceability has to work across all three — and the handover points are where information is most often lost.',
       bn: 'বাংলাদেশের অধিকাংশ প্রতিষ্ঠানে কাগজের ফাইল, স্প্রেডশিট ও এন্টারপ্রাইজ অ্যাপ্লিকেশন একসাথে চলে। ট্রেসেবিলিটিকে এই তিনটিতেই কাজ করতে হবে — আর হস্তান্তর বিন্দুতেই তথ্য সবচেয়ে বেশি হারিয়ে যায়।',
     },
-    date: '2026-10-30',
+    date: '2026-10-12',
     readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    image: '/images/insights/traceability-across-manual-and-digital-records.jpg',
+    imageAlt: {
+      en: 'Paper files, spreadsheets and an enterprise application side by side',
+      bn: 'কাগজের ফাইল, স্প্রেডশিট ও একটি এন্টারপ্রাইজ অ্যাপ্লিকেশন পাশাপাশি',
+    },
+    tags: [
+      { en: 'Traceability', bn: 'ট্রেসেবিলিটি' },
+      { en: 'Records', bn: 'রেকর্ড' },
+      { en: 'Handovers', bn: 'হস্তান্তর' },
+    ],
     body: [
       { en: 'Almost every Bangladesh facility we encounter runs three information environments at once: paper files, spreadsheets, and at least one enterprise application. Traceability has to work across all three, and it almost always breaks at the joins.', bn: 'আমরা বাংলাদেশের যত প্রতিষ্ঠান দেখি, প্রায় প্রতিটিই একসাথে তিনটি তথ্য-পরিবেশ চালায়: কাগজের ফাইল, স্প্রেডশিট, এবং অন্তত একটি এন্টারপ্রাইজ অ্যাপ্লিকেশন। ট্রেসেবিলিটিকে এই তিনটিতেই কাজ করতে হবে, আর প্রায় সব সময়ই তা ভাঙে জোড়ের জায়গায়।' },
       { en: 'The paper layer is not the problem it is often made out to be. Physical records can be perfectly traceable if they are filed consistently and someone knows where they are. They become a problem when filing depends on one person, or when the file was never completed in the first place.', bn: 'কাগজের স্তরটি ততটা সমস্যা নয় যতটা প্রায়ই বলা হয়। ভৌত রেকর্ড নিখুঁতভাবে ট্রেসেবল হতে পারে যদি সেগুলো ধারাবাহিকভাবে ফাইল করা হয় এবং কেউ জানে সেগুলো কোথায় আছে। সমস্যা তখনই হয় যখন ফাইল করা একজনের ওপর নির্ভর করে, কিংবা ফাইলটি প্রথম থেকেই কখনো পূর্ণ করা হয়নি।' },
@@ -770,8 +820,18 @@ export const insights: Insight[] = [
       en: 'Environmental and end-of-life information is among the most evidence-dependent passport categories. A practical look at what suppliers can assemble now, from records they already hold.',
       bn: 'পরিবেশ ও জীবনান্ত তথ্য সবচেয়ে প্রমাণ-নির্ভর পাসপোর্ট বিভাগের মধ্যে অন্যতম। সরবরাহকারীরা তাদের হাতে থাকা রেকর্ড থেকে এখনই কী সংকলিত করতে পারেন, তার একটি ব্যবহারিক দৃষ্টিভঙ্গি।',
     },
-    date: '2026-10-30',
+    date: '2026-10-19',
     readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    image: '/images/insights/preparing-circularity-evidence.jpg',
+    imageAlt: {
+      en: 'Environmental certificates and test reports organised for review',
+      bn: 'পর্যালোচনার জন্য সাজানো পরিবেশ সার্টিফিকেট ও পরীক্ষা-প্রতিবেদন',
+    },
+    tags: [
+      { en: 'Circularity', bn: 'বৃত্তাকারতা' },
+      { en: 'Evidence', bn: 'প্রমাণ' },
+      { en: 'Certificates', bn: 'সার্টিফিকেট' },
+    ],
     body: [
       { en: 'Environmental and end-of-life information is among the most evidence-dependent categories in any product passport discussion — and among the least prepared in most factories.', bn: 'যেকোনো পণ্য পাসপোর্ট আলোচনায় পরিবেশ ও জীবনান্ত তথ্য সবচেয়ে প্রমাণ-নির্ভর বিভাগের মধ্যে অন্যতম — আর অধিকাংশ কারখানায় সবচেয়ে কম প্রস্তুত থাকা বিভাগগুলোরও একটি।' },
       { en: 'The reason is structural. Composition, supplier and production data are generated by your own operations. Environmental and circularity claims usually depend on information from somewhere else: a mill certificate, a chemical supplier declaration, a test report from a third-party laboratory, a footprint calculation built on assumptions someone else made.', bn: 'কারণটি কাঠামোগত। গঠন, সরবরাহকারী ও উৎপাদনের তথ্য আপনার নিজের কার্যক্রমেই তৈরি হয়। পরিবেশ ও বৃত্তাকারতার দাবি সাধারণত অন্য কোথাও থেকে আসা তথ্যের ওপর নির্ভর করে: একটি মিল সার্টিফিকেট, রাসায়নিক সরবরাহকারীর ঘোষণা, তৃতীয় পক্ষের ল্যাবের পরীক্ষা-প্রতিবেদন, কেউ অন্যের করা অনুমানের ওপর দাঁড়ানো একটি ফুটপ্রিন্ট হিসাব।' },
@@ -786,4 +846,534 @@ export const insights: Insight[] = [
       { en: 'Durability and end-of-life statements are governance decisions, not records.', bn: 'স্থায়িত্ব ও জীবনান্ত সংক্রান্ত বক্তব্য রেকর্ড নয়, শাসন-সিদ্ধান্ত।' },
     ],
   },
+  {
+    slug: 'data-carriers-qr-rfid-nfc-explained',
+    image: '/images/insights/data-carriers-qr-rfid-nfc-explained.jpg',
+    imageAlt: {
+      en: 'A garment care label carrying a QR code beside a spool of RFID tags',
+      bn: 'RFID ট্যাগের রিলের পাশে QR কোডযুক্ত একটি পোশাকের কেয়ার লেবেল',
+    },
+    title: {
+      en: 'Data Carriers Explained: QR, RFID and NFC on a Garment',
+      bn: 'ডেটা ক্যারিয়ার ব্যাখ্যা: পোশাকে QR, RFID ও NFC',
+    },
+    topic: {
+      en: 'DPP Standards & Technical Infrastructure',
+      bn: 'ডিপিপি মান ও কারিগরি অবকাঠামো',
+    },
+    excerpt: {
+      en: 'A passport is only useful if the information can be reached from the product itself. QR codes, RFID tags and NFC each carry different payloads, survive factory conditions differently and sit at very different price points.',
+      bn: 'যে তথ্য পণ্য থেকেই পাওয়া যায় না, সেই পাসপোর্ট কাজে লাগে না। QR কোড, RFID ট্যাগ ও NFC ভিন্ন পরিমাণ তথ্য বহন করে, কারখানার পরিবেশে ভিন্নভাবে টিকে এবং দামেও ব্যাপক পার্থক্য রয়েছে।',
+    },
+    date: '2026-11-10',
+    readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Data carriers', bn: 'ডেটা ক্যারিয়ার' },
+      { en: 'Standards', bn: 'মান' },
+      { en: 'Interoperability', bn: 'আন্তঃকার্যক্ষমতা' },
+    ],
+    body: [
+      {
+        en: 'Every digital product passport conversation eventually arrives at a physical question: what is actually on the garment? The regulation describes what information must be accessible, but the mechanism that links a physical item to a digital record is a separate engineering decision — and one factories are increasingly being asked to have a view on.',
+        bn: 'প্রতিটি ডিজিটাল পণ্য পাসপোর্ট আলোচনা শেষ পর্যন্ত একটি বস্তুগত প্রশ্নে এসে পৌঁছায়: পোশাকে আসলে কী থাকে? বিধিমালা বলে কোন তথ্য প্রবেশযোগ্য থাকতে হবে, কিন্তু একটি বস্তুগত পণ্যকে ডিজিটাল রেকর্ডের সাথে যুক্ত করার পদ্ধতি আলাদা একটি প্রকৌশল সিদ্ধান্ত — আর কারখানাগুলোর কাছে ক্রমেই এ বিষয়ে মতামত চাওয়া হচ্ছে।',
+      },
+      {
+        en: 'The first thing to be clear about is that none of these technologies holds the passport. A QR code is a pointer, not a container. It encodes a link, and the link resolves to a record that lives somewhere else. This matters because the hard part is never printing the code — it is maintaining the record behind it, for every style, for as long as anyone might scan it.',
+        bn: 'প্রথমেই স্পষ্ট হওয়া দরকার যে এই প্রযুক্তিগুলোর কোনোটিই পাসপোর্ট ধরে রাখে না। একটি QR কোড হলো পয়েন্টার, ধারক নয়। এটি একটি লিংক এনকোড করে, আর সেই লিংক অন্য কোথাও থাকা একটি রেকর্ডে পৌঁছায়। বিষয়টি গুরুত্বপূর্ণ কারণ কঠিন অংশ কখনোই কোড ছাপানো নয় — কঠিন অংশ হলো তার পেছনের রেকর্ড প্রতিটি স্টাইলের জন্য টিকিয়ে রাখা, যতদিন কেউ স্ক্যান করতে পারে।',
+      },
+      {
+        en: 'A printed QR code costs almost nothing, works with any smartphone camera and survives normal laundering if it is specified properly. Its weaknesses are equally plain: it must be visible to be read, it can be damaged, and it is trivially copied onto a counterfeit. For a single garment scanned at point of sale or by a consumer, these trade-offs are usually acceptable.',
+        bn: 'ছাপানো একটি QR কোডের প্রায় কোনো খরচ নেই, যেকোনো স্মার্টফোন ক্যামেরায় কাজ করে এবং সঠিকভাবে নির্দিষ্ট করলে স্বাভাবিক ধোয়ার পরও টিকে থাকে। এর দুর্বলতাগুলোও সমান স্পষ্ট: পড়তে হলে তা দৃশ্যমান হতে হবে, ক্ষতিগ্রস্ত হতে পারে, আর নকল পণ্যে সহজেই কপি করা যায়। বিক্রয়স্থলে বা ভোক্তার দ্বারা স্ক্যান করা একক পোশাকের ক্ষেত্রে এই আপস-সমঝোতা সাধারণত গ্রহণযোগ্য।',
+      },
+      {
+        en: 'RFID carries an identifier that a reader can pick up without line of sight, which is why it dominates in warehouse and inventory handling rather than on the shop floor. It costs more per unit, requires readers at every point where the tag is expected to be read, and introduces a decision about whether the tag stays on the garment after sale. NFC is a near-field variant with a shorter range and better resistance to casual interception, and it is the technology most consumer phones can already read.',
+        bn: 'RFID এমন একটি শনাক্তকারী বহন করে যা দৃষ্টিসীমা ছাড়াই একটি রিডার পড়তে পারে, আর সে কারণেই এটি দোকানের তলার চেয়ে গুদাম ও ইনভেন্টরি ব্যবস্থাপনায় বেশি ব্যবহৃত হয়। প্রতি ইউনিটে এর খরচ বেশি, ট্যাগ পড়ার প্রতিটি স্থানে রিডার প্রয়োজন, আর বিক্রয়ের পর ট্যাগ পোশাকে থেকে যাবে কি না সে বিষয়ে একটি সিদ্ধান্ত আসে। NFC একটি নিকট-ক্ষেত্র সংস্করণ যার পৌঁছানোর পরিসর কম এবং আকস্মিক আটকানোর বিরুদ্ধে ভালো প্রতিরোধ, আর অধিকাংশ ভোক্তা ফোনই এটি পড়তে পারে।',
+      },
+      {
+        en: 'The practical advice is unglamorous: choose the carrier based on where the scan actually happens and who does it, not on which technology is newest. A factory shipping to several brands will in any case be told what to apply. What is worth deciding now is not the carrier but whether the record it points at exists, is complete, and can be maintained per style — because a code that resolves to an empty page is worse than no code at all.',
+        bn: 'ব্যবহারিক পরামর্শ সাদাসিধা: কোন প্রযুক্তি নতুন তার ওপর নয়, স্ক্যানটি আসলে কোথায় ও কার দ্বারা হবে তার ওপর ভিত্তি করে ক্যারিয়ার বেছে নিন। একাধিক ব্র্যান্ডে পণ্য পাঠানো কারখানাকে যাই হোক বলে দেওয়া হবে কী লাগাতে হবে। এখন যে সিদ্ধান্তটি নেওয়া মূল্যবান তা ক্যারিয়ার নয়, বরং এটি যে রেকর্ডের দিকে নির্দেশ করে তা আছে কি, সম্পূর্ণ কি, আর স্টাইলভিত্তিক রক্ষণাবেক্ষণ করা যায় কি না — কারণ যে কোড একটি ফাঁকা পৃষ্ঠায় পৌঁছায়, তা কোনো কোড না থাকার চেয়েও খারাপ।',
+      },
+    ],
+    takeaways: [
+      { en: 'A data carrier holds a reference, not the passport itself.', bn: 'একটি ডেটা ক্যারিয়ার পাসপোর্ট নয়, একটি রেফারেন্স ধরে রাখে।' },
+      { en: 'QR is cheapest and most compatible; RFID suits high-volume handling.', bn: 'QR সবচেয়ে সস্তা ও সবচেয়ে সামঞ্জস্যপূর্ণ; RFID বড় আকারের হ্যান্ডলিংয়ের উপযুক্ত।' },
+      { en: 'Choose based on where the scan happens, not on novelty.', bn: 'নতুনত্বের ওপর নয়, স্ক্যান কোথায় হবে তার ওপর ভিত্তি করে বেছে নিন।' },
+      { en: 'A code that resolves to nothing is worse than no code.', bn: 'যে কোড কিছুতেই পৌঁছায় না, তা কোনো কোড না থাকার চেয়েও খারাপ।' },
+    ],
+  },
+
+  {
+    slug: 'espr-working-plan-textile-timeline',
+    image: '/images/insights/espr-working-plan-textile-timeline.jpg',
+    imageAlt: {
+      en: 'A policy timeline document with highlighted milestone dates',
+      bn: 'হাইলাইট করা মাইলস্টোন তারিখসহ একটি নীতি-সময়সীমার দলিল',
+    },
+    title: {
+      en: 'The ESPR Working Plan: Reading the Textile Timeline Without Over-Reading It',
+      bn: 'ESPR কর্মপরিকল্পনা: টেক্সটাইল সময়সীমা অতি-পাঠ ছাড়াই পড়া',
+    },
+    topic: {
+      en: 'EU Regulations & Policy Developments',
+      bn: 'ইইউ নিয়ম ও নীতি উন্নয়ন',
+    },
+    excerpt: {
+      en: 'The working plan sets out which product groups the Commission intends to prioritise. It is a direction of travel, not a deadline — and confusing the two is what drives both panic buying and complacency.',
+      bn: 'কর্মপরিকল্পনায় বলা হয় কমিশন কোন পণ্যগোষ্ঠীগুলোকে অগ্রাধিকার দিতে চায়। এটি একটি দিকনির্দেশ, কোনো সময়সীমা নয় — আর এই দুটিকে গুলিয়ে ফেলাই আতঙ্কিত কেনাকাটা ও উদাসীনতা দুটোরই জন্ম দেয়।',
+    },
+    date: '2026-11-17',
+    readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    tags: [
+      { en: 'ESPR', bn: 'ESPR' },
+      { en: 'Working plan', bn: 'কর্মপরিকল্পনা' },
+      { en: 'Timeline', bn: 'সময়সীমা' },
+    ],
+    body: [
+      {
+        en: 'Regulation (EU) 2024/1781 establishes the framework for Digital Product Passports but does not itself set out what a textile passport must contain. That detail arrives through separate acts adopted per product group. The working plan is the document that indicates which groups the Commission intends to take first — and it is routinely read as something more binding than it is.',
+        bn: 'বিধিমালা (EU) ২০২৪/১৭৮১ ডিজিটাল পণ্য পাসপোর্টের কাঠামো প্রতিষ্ঠা করে, কিন্তু নিজে বলে না যে একটি টেক্সটাইল পাসপোর্টে কী থাকতে হবে। সেই বিস্তারিত প্রতিটি পণ্যগোষ্ঠীর জন্য আলাদা আইনের মাধ্যমে আসে। কর্মপরিকল্পনাই সেই দলিল যা ইঙ্গিত দেয় কমিশন কোন গোষ্ঠীগুলো প্রথমে নিতে চায় — আর এটিকে নিয়মিতই যতটা বাধ্যতামূলক নয়, তার চেয়ে বেশি বাধ্যতামূলক হিসেবে পড়া হয়।',
+      },
+      {
+        en: 'Two mistakes follow from that misreading. The first is treating the plan as a compliance deadline and buying technology against a specification that does not exist yet. The second is treating it as speculative and doing nothing, on the reasoning that nothing is final. Both cost money; the first spends it on the wrong thing, the second spends it later and under time pressure.',
+        bn: 'এই ভুল পাঠ থেকে দুটি ভুল হয়। প্রথমটি হলো পরিকল্পনাকে সম্মতির সময়সীমা হিসেবে দেখা এবং এমন একটি বিশদ বিবরণের বিপরীতে প্রযুক্তি কেনা যা এখনো নেই। দ্বিতীয়টি হলো এটিকে অনুমাননির্ভর ভেবে কিছু না করা, এই যুক্তিতে যে কিছুই চূড়ান্ত নয়। দুটোতেই খরচ হয়; প্রথমটি ভুল জিনিসে খরচ করে, দ্বিতীয়টি পরে ও সময়ের চাপে খরচ করে।',
+      },
+      {
+        en: 'What is genuinely settled is narrower but still useful. Textiles and apparel are named among the priority groups. The framework legislation exists and is in force. The Commission has committed to a sequence of implementing measures. And the commercial pressure from buyers is already operating independently of any of it, because brands with their own sustainability commitments need supplier data now, whatever the passport timetable does.',
+        bn: 'যা সত্যিই নিষ্পত্তি হয়েছে তা সীমিত কিন্তু তবুও কাজের। টেক্সটাইল ও পোশাককে অগ্রাধিকারপ্রাপ্ত গোষ্ঠীর মধ্যে উল্লেখ করা হয়েছে। কাঠামোগত আইন রয়েছে এবং কার্যকর আছে। কমিশন বাস্তবায়ন ব্যবস্থার একটি ধারাবাহিকতায় প্রতিশ্রুতিবদ্ধ। আর ক্রেতাদের বাণিজ্যিক চাপ ইতোমধ্যেই এসবের থেকে স্বাধীনভাবে কাজ করছে, কারণ নিজস্ব টেকসইতা প্রতিশ্রুতি থাকা ব্র্যান্ডদের সরবরাহকারীর তথ্য এখনই দরকার — পাসপোর্টের সময়সূচি যাই করুক না কেন।',
+      },
+      {
+        en: 'The useful way to read the plan is as a statement about the shape of the eventual requirement, not its date. It tells you which product groups, in which order, and therefore which internal systems and records are most likely to be in scope. That is enough to justify preparatory work that is worth doing regardless of the final specification.',
+        bn: 'পরিকল্পনাটি পড়ার কাজের উপায় হলো এটিকে চূড়ান্ত শর্তের তারিখ নয়, তার আকৃতি সম্পর্কিত বক্তব্য হিসেবে দেখা। এটি বলে কোন পণ্যগোষ্ঠী, কোন ক্রমে, আর ফলে কোন অভ্যন্তরীণ সিস্টেম ও রেকর্ডগুলোর সম্ভাব্য পরিধিতে পড়ার কথা। চূড়ান্ত বিশদ বিবরণ যাই হোক না কেন, যে প্রস্তুতিমূলক কাজের মূল্য আছে তা ন্যায্যতা পেতে এটুকুই যথেষ্ট।',
+      },
+      {
+        en: 'Practically, that means investing in knowing what you hold rather than in a specific output format. Formats, fields and deadlines will be revised; the underlying question of whether you can locate, verify and evidence product information per style will not. Preparation aimed at that question holds its value whichever way the timetable moves.',
+        bn: 'ব্যবহারিকভাবে এর অর্থ হলো একটি নির্দিষ্ট আউটপুট ফরম্যাটে নয়, আপনার কাছে যা আছে তা জানার বিষয়ে বিনিয়োগ করা। ফরম্যাট, ক্ষেত্র ও সময়সীমা সংশোধিত হবে; স্টাইলভিত্তিক পণ্য-তথ্য খুঁজে পাওয়া, যাচাই করা ও প্রমাণ করা যায় কি না সেই মৌলিক প্রশ্নটি সংশোধিত হবে না। সেই প্রশ্নের দিকে নির্দেশিত প্রস্তুতি সময়সূচি যেদিকেই যাক, তার মূল্য ধরে রাখে।',
+      },
+    ],
+    takeaways: [
+      { en: 'The working plan signals priority, not a binding deadline.', bn: 'কর্মপরিকল্পনা অগ্রাধিকারের ইঙ্গিত দেয়, বাধ্যতামূলক সময়সীমা নয়।' },
+      { en: 'Textile-specific requirements arrive through separate delegated acts.', bn: 'টেক্সটাইল-নির্দিষ্ট শর্তাবলি আলাদা প্রতিনিধি আইনের মাধ্যমে আসে।' },
+      { en: 'Dates move; the underlying data requirements largely do not.', bn: 'তারিখ বদলায়; মৌলিক তথ্য-শর্তাবলি মূলত বদলায় না।' },
+      { en: 'Buyer pressure is already running ahead of the regulatory timetable.', bn: 'ক্রেতাদের চাপ ইতোমধ্যেই নিয়ন্ত্রক সময়সূচির চেয়ে এগিয়ে চলছে।' },
+    ],
+  },
+
+  {
+    slug: 'reading-a-readiness-score',
+    image: '/images/insights/reading-a-readiness-score.jpg',
+    imageAlt: {
+      en: 'A readiness profile chart showing scores across five dimensions',
+      bn: 'পাঁচটি মাত্রায় স্কোর দেখানো একটি প্রস্তুতি প্রোফাইল চার্ট',
+    },
+    title: {
+      en: 'How to Read a Readiness Score — and What It Is Not',
+      bn: 'প্রস্তুতি স্কোর কীভাবে পড়বেন — আর এটি কী নয়',
+    },
+    topic: {
+      en: 'Product Data & Information Management',
+      bn: 'পণ্য-তথ্য ও তথ্য ব্যবস্থাপনা',
+    },
+    excerpt: {
+      en: 'A single readiness number is useful for getting attention and dangerous for making decisions. The score is a summary of a profile, and the shape of that profile is what determines what you should do next.',
+      bn: 'একক একটি প্রস্তুতি সংখ্যা মনোযোগ আকর্ষণে কাজের, কিন্তু সিদ্ধান্ত নেওয়ার ক্ষেত্রে বিপজ্জনক। স্কোর একটি প্রোফাইলের সারসংক্ষেপ, আর সেই প্রোফাইলের আকৃতিই নির্ধারণ করে পরে কী করা উচিত।',
+    },
+    date: '2026-11-24',
+    readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Readiness score', bn: 'প্রস্তুতি স্কোর' },
+      { en: 'Assessment', bn: 'মূল্যায়ন' },
+      { en: 'Interpretation', bn: 'ব্যাখ্যা' },
+    ],
+    body: [
+      {
+        en: 'Management teams ask for a number, and a number is what the assessment software produces. The risk is that the number then becomes the objective. It should not be, for a reason that is structural rather than philosophical: two factories with the same overall score can need completely different work.',
+        bn: 'ব্যবস্থাপনা দল একটি সংখ্যা চায়, আর মূল্যায়ন সফটওয়্যার একটি সংখ্যাই তৈরি করে। ঝুঁকি হলো সেই সংখ্যাটি পরে উদ্দেশ্যে পরিণত হয়। হওয়া উচিত নয়, আর এর কারণ দার্শনিক নয়, কাঠামোগত: একই সামগ্রিক স্কোর থাকা দুটি কারখানার সম্পূর্ণ ভিন্ন কাজের প্রয়োজন হতে পারে।',
+      },
+      {
+        en: 'Consider two facilities both scoring in the middle of the range. The first holds good records that nobody can retrieve on request — a retrieval and accessibility problem. The second can retrieve everything quickly, but nothing is checked before it leaves — a validation problem. Identical scores, opposite remedies, and a budget spent on the wrong one is simply wasted.',
+        bn: 'দুটি কারখানার কথা ভাবুন, দুটোরই স্কোর গড় সীমার মধ্যে। প্রথমটির কাছে ভালো রেকর্ড আছে যা চাওয়ার সময় কেউ খুঁজে পায় না — একটি পুনরুদ্ধার ও প্রবেশযোগ্যতার সমস্যা। দ্বিতীয়টি সবকিছু দ্রুত খুঁজে পায়, কিন্তু বের হওয়ার আগে কিছুই যাচাই হয় না — একটি বৈধতা-যাচাইয়ের সমস্যা। স্কোর অভিন্ন, প্রতিকার বিপরীত, আর ভুলটিতে ব্যয় করা বাজেট নিছক নষ্ট।',
+      },
+      {
+        en: 'This is why the assessment reports across five dimensions rather than one. Manual data and digital data describe where information lives. Integration describes whether it moves between the departments that need it. Validation describes whether anyone checks it and whether a claim can be substantiated. Governance describes whether any of it survives staff turnover. The profile across those five is the finding; the single score is a headline for it.',
+        bn: 'এ কারণেই মূল্যায়ন একটি নয়, পাঁচটি মাত্রায় প্রতিবেদন দেয়। ম্যানুয়াল তথ্য ও ডিজিটাল তথ্য বর্ণনা করে তথ্য কোথায় থাকে। সংহতকরণ বর্ণনা করে তা প্রয়োজনীয় বিভাগগুলোর মধ্যে চলাচল করে কি না। বৈধতা-যাচাই বর্ণনা করে কেউ তা পরীক্ষা করে কি না এবং কোনো দাবি প্রমাণ করা যায় কি না। শাসন বর্ণনা করে কর্মী বদলের পরেও এর কিছু টিকে থাকে কি না। সেই পাঁচটির ওপর প্রোফাইলটিই হলো ফলাফল; একক স্কোর তার একটি শিরোনাম মাত্র।',
+      },
+      {
+        en: 'There is a second caution. A readiness score describes the agreed scope — one representative product at one physical factory. It is not a certificate, it does not predict compliance with a regulation whose final fields are still being written, and it is not comparable to another factory’s score unless both were assessed on the same scope. Treating it as a grade invites exactly the over-reading the framework warns against.',
+        bn: 'আরেকটি সতর্কতা আছে। একটি প্রস্তুতি স্কোর সম্মত পরিধি বর্ণনা করে — একটি প্রতিনিধিত্বমূলক পণ্য, একটি নির্দিষ্ট কারখানা। এটি কোনো সার্টিফিকেট নয়, যে বিধিমালার চূড়ান্ত ক্ষেত্র এখনো লেখা হচ্ছে তার সাথে সম্মতির পূর্বাভাস দেয় না, আর সমান পরিধিতে মূল্যায়ন না করা হলে অন্য কারখানার স্কোরের সাথে তুলনীয় নয়। এটিকে গ্রেড হিসেবে দেখলে ঠিক সেই অতি-পাঠের দিকেই যাওয়া হয় যা কাঠামোর বিরুদ্ধে সতর্ক করে।',
+      },
+      {
+        en: 'Read the score as a starting question rather than an answer. Where the profile dips is where a buyer request is most likely to expose you, and where the first improvement cycle should go. That reading is what turns a diagnostic into a plan — and it is the part that needs professional interpretation, because the software can produce the profile but cannot tell you which dip matters most in your operation.',
+        bn: 'স্কোরটিকে উত্তর নয়, একটি শুরুর প্রশ্ন হিসেবে পড়ুন। প্রোফাইল যেখানে নামে, সেখানেই ক্রেতার অনুরোধ আপনাকে সবচেয়ে বেশি উন্মুক্ত করতে পারে, আর প্রথম উন্নয়ন চক্র সেখানেই যাওয়া উচিত। সেই পাঠই একটি রোগনির্ণয়কে পরিকল্পনায় রূপ দেয় — আর এটিই সেই অংশ যার পেশাদার ব্যাখ্যা প্রয়োজন, কারণ সফটওয়্যার প্রোফাইল তৈরি করতে পারে কিন্তু বলতে পারে না আপনার কার্যক্রমে কোন ঘাটতিটি সবচেয়ে বেশি গুরুত্বপূর্ণ।',
+      },
+    ],
+    takeaways: [
+      { en: 'Readiness is a profile across five dimensions, not a single grade.', bn: 'প্রস্তুতি একটি গ্রেড নয়, পাঁচ মাত্রার একটি প্রোফাইল।' },
+      { en: 'Identical scores can need opposite remedies.', bn: 'অভিন্ন স্কোরের বিপরীত প্রতিকার প্রয়োজন হতে পারে।' },
+      { en: 'A score describes the agreed scope — it is not certification.', bn: 'স্কোর সম্মত পরিধি বর্ণনা করে — এটি প্রত্যয়ন নয়।' },
+      { en: 'Where the profile dips is where a buyer request will expose you first.', bn: 'প্রোফাইল যেখানে নামে, ক্রেতার অনুরোধ সেখানেই প্রথমে আপনাকে উন্মুক্ত করবে।' },
+    ],
+  },
+
+  {
+    slug: 'supplier-data-without-a-portal',
+    image: '/images/insights/supplier-data-without-a-portal.jpg',
+    imageAlt: {
+      en: 'A sourcing officer reviewing supplier declarations across printed and digital records',
+      bn: 'ছাপা ও ডিজিটাল রেকর্ড জুড়ে সরবরাহকারীর ঘোষণা পর্যালোচনা করছেন একজন সোর্সিং কর্মকর্তা',
+    },
+    title: {
+      en: 'Collecting Supplier Data Without Building a Portal',
+      bn: 'পোর্টাল না বানিয়েই সরবরাহকারীর তথ্য সংগ্রহ',
+    },
+    topic: {
+      en: 'Supply Chain Traceability',
+      bn: 'সরবরাহ শৃঙ্খল ট্রেসেবিলিটি',
+    },
+    excerpt: {
+      en: 'Traceability programmes stall on the assumption that supplier data collection requires a platform. Most of what a buyer asks for at tier 1 and tier 2 can be assembled with a template, a deadline and someone who owns the follow-up.',
+      bn: 'ট্রেসেবিলিটি কর্মসূচি এই অনুমানে আটকে যায় যে সরবরাহকারীর তথ্য সংগ্রহে একটি প্ল্যাটফর্ম দরকার। টায়ার ১ ও টায়ার ২-এ ক্রেতা যা চান তার বেশিরভাগই একটি টেমপ্লেট, একটি সময়সীমা এবং ফলো-আপের দায়িত্বে থাকা কাউকে দিয়ে সংগ্রহ করা যায়।',
+    },
+    date: '2026-12-01',
+    readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Suppliers', bn: 'সরবরাহকারী' },
+      { en: 'Traceability', bn: 'ট্রেসেবিলিটি' },
+      { en: 'Data collection', bn: 'তথ্য সংগ্রহ' },
+    ],
+    body: [
+      {
+        en: 'When a factory is asked for upstream information — fibre origin, mill identity, processing facilities — the reflex is to scope a supplier portal. That instinct is understandable and usually premature. A portal solves the problem of collecting data at scale from many suppliers repeatedly; it does not solve the prior problem, which is that nobody has agreed what to ask for or who will chase it.',
+        bn: 'যখন কোনো কারখানাকে আপস্ট্রিম তথ্য চাওয়া হয় — তন্তুর উৎস, মিলের পরিচয়, প্রক্রিয়াকরণ ইউনিট — প্রথম প্রতিক্রিয়া হয় একটি সরবরাহকারী পোর্টালের পরিকল্পনা করা। এই প্রবৃত্তি বোধগম্য এবং সাধারণত অপরিপক্ব। একটি পোর্টাল অনেক সরবরাহকারীর কাছ থেকে বারবার বড় আকারে তথ্য সংগ্রহের সমস্যা সমাধান করে; এটি আগের সমস্যাটি সমাধান করে না — আর তা হলো কী চাওয়া হবে বা কে তাড়া দেবে তা নিয়ে কেউ একমত হয়নি।',
+      },
+      {
+        en: 'Start with the smallest useful artefact: a single template per information type, sent to a named contact, with a date attached. Ask only for what a passport or a buyer request actually needs. Every extra field reduces your response rate, and a partially completed declaration returned on time is more useful than a comprehensive one that never arrives.',
+        bn: 'সবচেয়ে ছোট কাজের জিনিস দিয়ে শুরু করুন: প্রতিটি তথ্য-ধরনের জন্য একটি মাত্র টেমপ্লেট, নাম্বারযুক্ত একজন যোগাযোগকারীর কাছে পাঠানো, তারিখসহ। কেবল তাই চান যা একটি পাসপোর্ট বা ক্রেতার অনুরোধে সত্যিই দরকার। প্রতিটি অতিরিক্ত ক্ষেত্র আপনার সাড়ার হার কমিয়ে দেয়, আর সময়মতো ফেরত আসা আংশিকভাবে পূরণ করা একটি ঘোষণা সেই ব্যাপক ঘোষণার চেয়ে বেশি কাজের যা কখনোই আসে না।',
+      },
+      {
+        en: 'Tier 1 is usually solvable this way within weeks. Tier 2 and beyond is where it gets genuinely hard, because your suppliers’ suppliers have no relationship with you and no obligation to answer. The workable approach there is to move the request up one level: ask each tier 1 supplier to obtain and vouch for the information from their own upstream, and make that a condition of the commercial relationship rather than a favour.',
+        bn: 'টায়ার ১ সাধারণত এইভাবে কয়েক সপ্তাহের মধ্যে সমাধানযোগ্য। টায়ার ২ ও তার পরে আসল কঠিন জায়গা, কারণ আপনার সরবরাহকারীদের সরবরাহকারীদের সাথে আপনার কোনো সম্পর্ক নেই এবং উত্তর দেওয়ার কোনো বাধ্যবাধকতাও নেই। সেখানে কাজের পদ্ধতি হলো অনুরোধটি এক ধাপ ওপরে নেওয়া: প্রতিটি টায়ার ১ সরবরাহকারীকে নিজেদের আপস্ট্রিম থেকে তথ্য সংগ্রহ করে তার নিশ্চয়তা দিতে বলুন, আর এটিকে অনুগ্রহ নয়, বাণিজ্যিক সম্পর্কের শর্ত বানান।',
+      },
+      {
+        en: 'What matters more than the collection mechanism is what happens to the answer. A declaration that arrives as a PDF and is filed in a folder is not traceability — it is a document you cannot query when a buyer asks about a specific style. The minimum viable step is to record, against each product, which supplier declarations you hold, what period they cover and where the evidence sits.',
+        bn: 'সংগ্রহ পদ্ধতির চেয়ে বেশি গুরুত্বপূর্ণ হলো উত্তরটির কী হয়। যে ঘোষণা একটি PDF হিসেবে আসে এবং ফোল্ডারে রাখা হয় তা ট্রেসেবিলিটি নয় — এটি এমন একটি দলিল যা ক্রেতা নির্দিষ্ট স্টাইল সম্পর্কে প্রশ্ন করলে আপনি অনুসন্ধান করতে পারবেন না। সবচেয়ে ছোট কার্যকর পদক্ষেপ হলো প্রতিটি পণ্যের বিপরীতে লিপিবদ্ধ করা যে আপনার কাছে কোন সরবরাহকারীর ঘোষণা আছে, সেগুলো কোন সময়কাল কভার করে আর প্রমাণ কোথায় আছে।',
+      },
+      {
+        en: 'Once that record exists and is being maintained, a portal becomes a reasonable purchase — because you now know what you are automating. Buying it first is the common inversion, and it is why so many traceability platforms end up holding incomplete data they were never going to be able to collect on their own.',
+        bn: 'এই রেকর্ডটি একবার তৈরি ও রক্ষণাবেক্ষণ শুরু হলে, একটি পোর্টাল যৌক্তিক কেনাকাটা হয়ে ওঠে — কারণ তখন আপনি জানেন আপনি কী স্বয়ংক্রিয় করছেন। প্রথমে সেটি কেনাই সাধারণ বিপর্যয়, আর সে কারণেই এত ট্রেসেবিলিটি প্ল্যাটফর্মের কাছে অসম্পূর্ণ তথ্য পড়ে থাকে যা তারা নিজেরা কখনোই সংগ্রহ করতে পারত না।',
+      },
+    ],
+    takeaways: [
+      { en: 'A template, a deadline and an owner beat a premature platform.', bn: 'একটি টেমপ্লেট, একটি সময়সীমা ও একজন দায়িত্বশীল ব্যক্তি অপরিপক্ব প্ল্যাটফর্মের চেয়ে ভালো।' },
+      { en: 'Every extra field you ask for lowers your response rate.', bn: 'আপনি যত বেশি ক্ষেত্র চান, সাড়ার হার তত কমে।' },
+      { en: 'Push tier-2 requests up through tier-1 suppliers as a commercial condition.', bn: 'টায়ার ২-এর অনুরোধ টায়ার ১ সরবরাহকারীদের মাধ্যমে বাণিজ্যিক শর্ত হিসেবে পাঠান।' },
+      { en: 'A filed PDF is not traceability — record it against the product.', bn: 'ফাইল করা PDF ট্রেসেবিলিটি নয় — পণ্যের বিপরীতে লিপিবদ্ধ করুন।' },
+    ],
+  },
+
+  {
+    slug: 'bangladesh-rmg-where-factories-stand',
+    title: {
+      en: 'Where Bangladesh Factories Actually Stand on Product Data',
+      bn: 'পণ্য-তথ্যে বাংলাদেশের কারখানাগুলো আসলে কোথায় দাঁড়িয়ে',
+    },
+    topic: {
+      en: 'Bangladesh Textile DPP Readiness',
+      bn: 'বাংলাদেশের টেক্সটাইল ডিপিপি প্রস্তুতি',
+    },
+    excerpt: {
+      en: 'Most Bangladesh factories run paper files, spreadsheets and an ERP at the same time, and each holds a different version of the same product truth. That is not a failure — it is the starting point, and it is more workable than it looks.',
+      bn: 'অধিকাংশ বাংলাদেশি কারখানায় কাগজের ফাইল, স্প্রেডশিট ও একটি ERP একই সাথে চলে, আর প্রতিটিতে একই পণ্য-সত্যের ভিন্ন সংস্করণ থাকে। এটি ব্যর্থতা নয় — এটি শুরুর বিন্দু, আর দেখতে যতটা কঠিন মনে হয় তার চেয়ে বেশি কাজ করা যায়।',
+    },
+    date: '2026-12-08',
+    readTime: { en: '7 min read', bn: '৭ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Bangladesh', bn: 'বাংলাদেশ' },
+      { en: 'RMG', bn: 'আরএমজি' },
+      { en: 'Readiness', bn: 'প্রস্তুতি' },
+    ],
+    body: [
+      {
+        en: 'Descriptions of factory data environments tend toward two extremes: either the fully manual operation with paper Tech Packs, or the digitised enterprise running a modern PLM. Neither describes most of Bangladesh’s apparel industry. The typical facility runs all three regimes at once, often for the same style.',
+        bn: 'কারখানার তথ্য-পরিবেশের বর্ণনা সাধারণত দুটি চরম দিকে যায়: হয় কাগজের টেক প্যাক সহ সম্পূর্ণ ম্যানুয়াল কার্যক্রম, না হয় আধুনিক PLM চালানো ডিজিটালাইজড প্রতিষ্ঠান। কোনোটিই বাংলাদেশের পোশাক শিল্পের বেশিরভাগকে বর্ণনা করে না। সাধারণ কারখানা তিনটি ব্যবস্থাই একসাথে চালায়, প্রায়ই একই স্টাইলের জন্য।',
+      },
+      {
+        en: 'A merchandising team may hold the approved Tech Pack as a printed file and a PDF. Production records sit in an ERP. Quality data lives in spreadsheets maintained by one person who has done it for nine years. Compliance certificates arrive as email attachments and are filed in a shared drive. None of this is unusual, and none of it is disqualifying.',
+        bn: 'একটি মার্চেন্ডাইজিং দল অনুমোদিত টেক প্যাক ছাপা ফাইল ও PDF হিসেবে রাখতে পারে। উৎপাদনের রেকর্ড ERP-তে থাকে। গুণমানের তথ্য এমন একজনের রক্ষিত স্প্রেডশিটে থাকে যিনি নয় বছর ধরে এটি করছেন। সম্মতির সার্টিফিকেট ইমেইল সংযুক্তি হিসেবে আসে এবং একটি শেয়ার্ড ড্রাইভে রাখা হয়। এর কোনোটিই অস্বাভাবিক নয়, আর কোনোটিই অযোগ্যতার কারণ নয়।',
+      },
+      {
+        en: 'What it does produce is a specific and predictable set of gaps. The first is retrieval: the information exists but cannot be assembled for one style within a working day. The second is consistency: the same field is recorded three different ways across three systems. The third is evidence: a claim can be made but the supporting document cannot be produced on request.',
+        bn: 'তবে এটি একটি নির্দিষ্ট ও পূর্বানুমেয় ঘাটতির সেট তৈরি করে। প্রথমটি হলো পুনরুদ্ধার: তথ্য আছে কিন্তু একটি কর্মদিবসের মধ্যে এক স্টাইলের জন্য একত্রিত করা যায় না। দ্বিতীয়টি হলো সামঞ্জস্য: একই ক্ষেত্র তিনটি সিস্টেমে তিনভাবে লিপিবদ্ধ। তৃতীয়টি হলো প্রমাণ: একটি দাবি করা যায় কিন্তু চাওয়ার সময় সমর্থক দলিল পেশ করা যায় না।',
+      },
+      {
+        en: 'These gaps are worth naming precisely because they are cheaper to close than they appear. Retrieval is largely an indexing and ownership question. Consistency improves once one system is designated the reference for each field, rather than trying to make all three agree. Evidence is an inventory exercise — establishing which certificates you hold, for which period, and linking them to the product record.',
+        bn: 'এই ঘাটতিগুলো সুনির্দিষ্টভাবে নামকরণের মতো মূল্যবান, কারণ এগুলো বন্ধ করা দেখতে যতটা কঠিন তার চেয়ে সস্তা। পুনরুদ্ধার মূলত একটি সূচীকরণ ও মালিকানার প্রশ্ন। একবার প্রতিটি ক্ষেত্রের জন্য একটি সিস্টেমকে রেফারেন্স হিসেবে নির্দিষ্ট করলে সামঞ্জস্য উন্নত হয় — তিনটিকেই মিলিয়ে নেওয়ার চেষ্টা করার চেয়ে। প্রমাণ একটি তালিকা-করণ অনুশীলন — নির্ধারণ করা যে আপনার কাছে কোন সার্টিফিকেট আছে, কোন সময়ের জন্য, আর সেগুলো পণ্য-রেকর্ডের সাথে যুক্ত করা।',
+      },
+      {
+        en: 'The honest position is that Bangladesh’s manufacturers are not behind on technology; they are behind on the connective tissue between records they already keep. That is a better starting point than it sounds. It means the first improvement cycle is usually about structure, ownership and retrieval — work that costs attention rather than capital, and that no software purchase can do on a factory’s behalf.',
+        bn: 'সৎ অবস্থান হলো বাংলাদেশের উৎপাদকরা প্রযুক্তিতে পিছিয়ে নেই; তারা ইতোমধ্যে রাখা রেকর্ডগুলোর মধ্যে সংযোগের ক্ষেত্রে পিছিয়ে আছে। এটি শোনা যতটা খারাপ তার চেয়ে ভালো শুরুর বিন্দু। এর অর্থ হলো প্রথম উন্নয়ন চক্র সাধারণত কাঠামো, মালিকানা ও পুনরুদ্ধার নিয়ে — যে কাজে মূলধনের চেয়ে মনোযোগ বেশি লাগে, আর কোনো সফটওয়্যার কেনাই কারখানার হয়ে করতে পারে না।',
+      },
+    ],
+    takeaways: [
+      { en: 'Most factories run paper, spreadsheets and ERP simultaneously — that is the baseline.', bn: 'অধিকাংশ কারখানায় কাগজ, স্প্রেডশিট ও ERP একসাথে চলে — এটিই ভিত্তিস্তর।' },
+      { en: 'The predictable gaps are retrieval, consistency and evidence.', bn: 'পূর্বানুমেয় ঘাটতিগুলো হলো পুনরুদ্ধার, সামঞ্জস্য ও প্রমাণ।' },
+      { en: 'Naming one system as the reference per field beats reconciling all three.', bn: 'তিনটিকে মেলানোর চেয়ে প্রতি ক্ষেত্রে একটি সিস্টেমকে রেফারেন্স ধরা ভালো।' },
+      { en: 'The first cycle costs attention more than capital.', bn: 'প্রথম চক্রে মূলধনের চেয়ে মনোযোগ বেশি লাগে।' },
+    ],
+  },
+
+  {
+    slug: 'durability-repair-end-of-life-data',
+    title: {
+      en: 'Durability, Repair and End-of-Life: The Data Nobody Has Yet',
+      bn: 'স্থায়িত্ব, মেরামত ও জীবনান্ত: যে তথ্য কারোরই এখনো নেই',
+    },
+    topic: {
+      en: 'Sustainability & Circularity',
+      bn: 'টেকসইতা ও বৃত্তাকারতা',
+    },
+    excerpt: {
+      en: 'Composition and supplier data are records of what happened. Durability, repairability and end-of-life guidance are forward-looking statements that someone has to stand behind — which makes them a governance question before they are a data one.',
+      bn: 'গঠন ও সরবরাহকারীর তথ্য হলো যা ঘটেছে তার রেকর্ড। স্থায়িত্ব, মেরামতযোগ্যতা ও জীবনান্ত নির্দেশনা হলো ভবিষ্যৎমুখী বক্তব্য যার পেছনে কাউকে দাঁড়াতে হয় — যা এগুলোকে তথ্যের আগে একটি শাসনের প্রশ্ন বানায়।',
+    },
+    date: '2026-12-15',
+    readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Circularity', bn: 'বৃত্তাকারতা' },
+      { en: 'Durability', bn: 'স্থায়িত্ব' },
+      { en: 'Governance', bn: 'শাসন' },
+    ],
+    body: [
+      {
+        en: 'Most passport fields describe the product as it was made: fibre composition, material suppliers, processing facilities, test evidence. A factory can, in principle, reconstruct all of it from records it already holds. Durability, repairability and end-of-life handling are different in kind.',
+        bn: 'অধিকাংশ পাসপোর্ট ক্ষেত্র পণ্যটি যেভাবে তৈরি হয়েছে তা বর্ণনা করে: তন্তুর গঠন, উপকরণ সরবরাহকারী, প্রক্রিয়াকরণ ইউনিট, পরীক্ষার প্রমাণ। একটি কারখানা নীতিগতভাবে এসব ইতোমধ্যে থাকা রেকর্ড থেকে পুনর্গঠন করতে পারে। স্থায়িত্ব, মেরামতযোগ্যতা ও জীবনান্ত ব্যবস্থাপনা প্রকৃতিগতভাবে আলাদা।',
+      },
+      {
+        en: 'These are statements about the future. How many washes a garment should withstand, whether it can be repaired, how it should be recycled or disposed of — none of these are recorded by the production process. They are asserted, which means someone in the organisation has to decide what the assertion is and accept responsibility for it.',
+        bn: 'এগুলো ভবিষ্যৎ সম্পর্কিত বক্তব্য। একটি পোশাক কতবার ধোয়া সহ্য করবে, সেটি মেরামতযোগ্য কি না, সেটি কীভাবে পুনর্ব্যবহার বা নিষ্পত্তি করা হবে — উৎপাদন প্রক্রিয়া এগুলোর কোনোটিই লিপিবদ্ধ করে না। সেগুলো দাবি করা হয়, যার অর্থ প্রতিষ্ঠানে কাউকে সিদ্ধান্ত নিতে হবে দাবিটি কী এবং তার দায় নিতে হবে।',
+      },
+      {
+        en: 'This is where circularity preparation usually goes wrong. Factories wait for a specification, expecting the required fields to be handed down. But the specification will define what must be stated, not what the statement should say. The substantive work — testing, defining care expectations, deciding what end-of-life advice you are prepared to give for each material combination — has to happen inside the business regardless.',
+        bn: 'এখানেই বৃত্তাকারতার প্রস্তুতি সাধারণত ভুল পথে যায়। কারখানাগুলো একটি বিশদ বিবরণের জন্য অপেক্ষা করে, প্রত্যাশা করে প্রয়োজনীয় ক্ষেত্রগুলো উপর থেকে দেওয়া হবে। কিন্তু বিশদ বিবরণটি নির্ধারণ করবে কী বলতে হবে, সেই বক্তব্যে কী বলা উচিত তা নয়। মূল কাজ — পরীক্ষা, যত্ন প্রত্যাশা সংজ্ঞায়িত করা, প্রতিটি উপকরণ-সমন্বয়ের জন্য কী জীবনান্ত পরামর্শ দিতে আপনি প্রস্তুত তা সিদ্ধান্ত নেওয়া — যাই হোক ব্যবসার ভেতরেই করতে হবে।',
+      },
+      {
+        en: 'There is a practical middle path. You do not need a finished position on every material to start. Begin with the combinations that make up most of your volume, and for each establish three things: what testing evidence already exists, what care and repair guidance the brand or your own experience supports, and who owns the decision. Volume concentrates quickly — most factories find that a small number of constructions account for the majority of output.',
+        bn: 'একটি ব্যবহারিক মধ্যপন্থা আছে। শুরু করতে প্রতিটি উপকরণে চূড়ান্ত অবস্থান থাকার দরকার নেই। আপনার উৎপাদনের বেশিরভাগ অংশ যে সমন্বয়গুলো নিয়ে গঠিত তা দিয়ে শুরু করুন, আর প্রতিটির জন্য তিনটি বিষয় নিশ্চিত করুন: কী পরীক্ষা-প্রমাণ ইতোমধ্যে আছে, ব্র্যান্ড বা নিজের অভিজ্ঞতা কী যত্ন ও মেরামত নির্দেশনা সমর্থন করে, আর সিদ্ধান্তের মালিক কে। পরিমাণ দ্রুত কেন্দ্রীভূত হয় — অধিকাংশ কারখানা দেখে যে অল্প কিছু কাঠামোই উৎপাদনের বেশিরভাগ অংশ দখল করে।',
+      },
+      {
+        en: 'Treating this as governance rather than data changes what you do next. It stops being a collection exercise and becomes a decision register: a short, owned list of statements the business is prepared to make, with the evidence behind each one and a named person responsible for keeping it current. That register is what a passport request will actually draw on.',
+        bn: 'এটিকে তথ্য নয়, শাসন হিসেবে দেখলে পরের কাজ বদলে যায়। এটি সংগ্রহের অনুশীলন না হয়ে একটি সিদ্ধান্ত-নিবন্ধনে পরিণত হয়: ব্যবসা যে বক্তব্যগুলো দিতে প্রস্তুত তার একটি সংক্ষিপ্ত, দায়িত্বযুক্ত তালিকা, প্রতিটির পেছনে প্রমাণসহ এবং সেগুলো হালনাগাদ রাখার দায়িত্বে নাম্বারযুক্ত একজন। সেই নিবন্ধনই হলো যা একটি পাসপোর্ট অনুরোধ আসলে ব্যবহার করবে।',
+      },
+    ],
+    takeaways: [
+      { en: 'Durability and end-of-life are assertions, not records.', bn: 'স্থায়িত্ব ও জীবনান্ত রেকর্ড নয়, দাবি।' },
+      { en: 'A future specification defines what to state, not what to say.', bn: 'ভবিষ্যৎ বিশদ বিবরণ কী বলতে হবে তা নির্ধারণ করে, কী বলা হবে তা নয়।' },
+      { en: 'Start with the constructions that carry most of your volume.', bn: 'যে কাঠামোগুলো আপনার উৎপাদনের বেশিরভাগ বহন করে তা দিয়ে শুরু করুন।' },
+      { en: 'Keep a decision register with named owners rather than a data dump.', bn: 'তথ্য-গুদাম নয়, দায়িত্বযুক্ত মালিকসহ একটি সিদ্ধান্ত-নিবন্ধন রাখুন।' },
+    ],
+  },
+
+  {
+    slug: 'forty-eight-hour-buyer-data-drill',
+    title: {
+      en: 'The 48-Hour Drill: If a Buyer Asked for Data Tomorrow',
+      bn: '৪৮ ঘণ্টার মহড়া: ক্রেতা যদি কাল তথ্য চেয়ে বসে',
+    },
+    topic: {
+      en: 'Bangladesh Textile DPP Readiness',
+      bn: 'বাংলাদেশের টেক্সটাইল ডিপিপি প্রস্তুতি',
+    },
+    excerpt: {
+      en: 'The cheapest readiness test costs nothing and takes two days. Pick one live style and try to assemble everything a European buyer might reasonably ask for, within 48 hours, using only what you can actually find.',
+      bn: 'সবচেয়ে সস্তা প্রস্তুতি পরীক্ষার কোনো খরচ নেই আর সময় লাগে দুই দিন। একটি চলমান স্টাইল বেছে নিন আর ৪৮ ঘণ্টার মধ্যে, কেবল আপনার সত্যিই খুঁজে পাওয়া তথ্য ব্যবহার করে, একজন ইউরোপীয় ক্রেতা যা যুক্তিসঙ্গতভাবে চাইতে পারেন তা একত্রিত করার চেষ্টা করুন।',
+    },
+    date: '2026-12-22',
+    readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Preparedness', bn: 'প্রস্তুতি' },
+      { en: 'Buyer requests', bn: 'ক্রেতার অনুরোধ' },
+      { en: 'Exercise', bn: 'মহড়া' },
+    ],
+    body: [
+      {
+        en: 'Readiness discussions tend to stay abstract until someone tries to produce something. The most useful exercise we know is also the simplest: choose one style currently in production and attempt to assemble a full information pack for it within 48 hours, without asking any supplier for anything new.',
+        bn: 'কেউ কিছু তৈরির চেষ্টা না করা পর্যন্ত প্রস্তুতি নিয়ে আলোচনা বিমূর্ত থাকে। আমাদের জানা সবচেয়ে কাজের অনুশীলনটিও সবচেয়ে সহজ: বর্তমানে উৎপাদনে থাকা একটি স্টাইল বেছে নিন আর ৪৮ ঘণ্টার মধ্যে, কারো কাছে নতুন কিছু না চেয়ে, তার জন্য একটি পূর্ণ তথ্য-প্যাক একত্রিত করার চেষ্টা করুন।',
+      },
+      {
+        en: 'Ask for the things a buyer would: fibre composition with tolerances, material and trim suppliers with facility names, processing and finishing locations, production records for the specific order, quality inspection results, and the compliance certificates that apply. Then try to produce them, exactly as you would if the request were real.',
+        bn: 'যা একজন ক্রেতা চাইবেন তা চান: সহনশীলতাসহ তন্তুর গঠন, ইউনিটের নামসহ উপকরণ ও ট্রিম সরবরাহকারী, প্রক্রিয়াকরণ ও ফিনিশিংয়ের অবস্থান, নির্দিষ্ট অর্ডারের উৎপাদন রেকর্ড, গুণমান পরিদর্শনের ফলাফল, আর প্রযোজ্য সম্মতি সার্টিফিকেট। এরপর সেগুলো তৈরির চেষ্টা করুন, ঠিক যেভাবে করতেন যদি অনুরোধটি বাস্তব হতো।',
+      },
+      {
+        en: 'What happens next is the point. Almost always, most of the pack arrives quickly, and a small number of items absorb nearly all of the time. Those items are the finding. They are usually not the exotic ones — they are things like a trim supplier’s facility address that only one person knows, a test report filed against a previous season, or a composition figure that differs between the Tech Pack and the ERP.',
+        bn: 'এরপর যা ঘটে তাই আসল বিষয়। প্রায় সবসময়ই প্যাকের বেশিরভাগ দ্রুত এসে যায়, আর অল্প কিছু বিষয় প্রায় পুরো সময় নিয়ে নেয়। সেই বিষয়গুলোই ফলাফল। সাধারণত সেগুলো অদ্ভুত কিছু নয় — সেগুলো হলো এমন কিছু যেমন একটি ট্রিম সরবরাহকারীর ইউনিটের ঠিকানা যা কেবল একজন জানে, আগের মৌসুমের বিপরীতে ফাইল করা একটি পরীক্ষা-প্রতিবেদন, বা টেক প্যাক ও ERP-তে ভিন্ন ভিন্ন একটি গঠনের সংখ্যা।',
+      },
+      {
+        en: 'Write those down and resist the urge to fix them immediately. The value of the drill is diagnostic: it tells you where retrieval breaks, which records are not linked to the product, and where a single person is the only route to information. That is a dependency map, and it is more actionable than any score.',
+        bn: 'সেগুলো লিখে রাখুন আর সাথে সাথে ঠিক করার তাড়া সংবরণ করুন। মহড়ার মূল্য রোগনির্ণয়মূলক: এটি বলে কোথায় পুনরুদ্ধার ভেঙে পড়ে, কোন রেকর্ডগুলো পণ্যের সাথে যুক্ত নয়, আর কোথায় একজন মানুষই তথ্যের একমাত্র পথ। এটি একটি নির্ভরতা-মানচিত্র, আর যেকোনো স্কোরের চেয়ে বেশি কার্যকর।',
+      },
+      {
+        en: 'Run it again in three months with a different style and a shorter window. If the same items absorb the time, they are structural and worth fixing properly. If different items do, the problem is process rather than any specific record — and process problems respond well to a named owner and a routine.',
+        bn: 'তিন মাস পর ভিন্ন একটি স্টাইল ও আরও ছোট সময়সীমা দিয়ে আবার চালান। যদি একই বিষয়গুলো সময় নেয়, সেগুলো কাঠামোগত আর সঠিকভাবে ঠিক করার মতো। যদি ভিন্ন বিষয় সময় নেয়, সমস্যাটি কোনো নির্দিষ্ট রেকর্ডের নয়, প্রক্রিয়ার — আর প্রক্রিয়ার সমস্যা দায়িত্বপ্রাপ্ত একজন মালিক ও একটি রুটিনে ভালো সাড়া দেয়।',
+      },
+    ],
+    takeaways: [
+      { en: 'Pick one live style and try to assemble a full pack in 48 hours.', bn: 'একটি চলমান স্টাইল বেছে নিন আর ৪৮ ঘণ্টায় পূর্ণ প্যাক একত্রিত করার চেষ্টা করুন।' },
+      { en: 'The items that eat the time are the finding — note them, do not fix them yet.', bn: 'যে বিষয়গুলো সময় নিয়ে নেয় সেগুলোই ফলাফল — সেগুলো নোট করুন, এখনই ঠিক করবেন না।' },
+      { en: 'The output is a dependency map, which beats an abstract score.', bn: 'ফলাফল হলো একটি নির্ভরতা-মানচিত্র, যা বিমূর্ত স্কোরের চেয়ে ভালো।' },
+      { en: 'Repeat with a new style: recurring blockers are structural, varying ones are process.', bn: 'নতুন স্টাইল দিয়ে পুনরাবৃত্তি করুন: বারবার আসা বাধা কাঠামোগত, বদলানো বাধা প্রক্রিয়াগত।' },
+    ],
+  },
+
+  {
+    slug: 'data-governance-baseline',
+    title: {
+      en: 'A Data Governance Baseline You Can Build Before Any System',
+      bn: 'যে তথ্য-শাসনের ভিত্তি যেকোনো সিস্টেমের আগেই গড়া যায়',
+    },
+    topic: {
+      en: 'Product Data & Information Management',
+      bn: 'পণ্য-তথ্য ও তথ্য ব্যবস্থাপনা',
+    },
+    excerpt: {
+      en: 'Governance sounds like a policy document. In practice it is four mundane things: someone owns each field, someone knows when it was last checked, changes leave a trace, and access is deliberate. None of that requires new software.',
+      bn: 'শাসন মানে একটি নীতি-দলিল শোনায়। বাস্তবে এটি চারটি সাধারণ বিষয়: প্রতিটি ক্ষেত্রের মালিক কেউ আছে, কেউ জানে তা শেষ কবে যাচাই হয়েছে, পরিবর্তনের চিহ্ন থাকে, আর প্রবেশাধিকার ইচ্ছাকৃত। এর কোনোটিতেই নতুন সফটওয়্যার লাগে না।',
+    },
+    date: '2026-12-29',
+    readTime: { en: '6 min read', bn: '৬ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Governance', bn: 'শাসন' },
+      { en: 'Ownership', bn: 'মালিকানা' },
+      { en: 'Data quality', bn: 'তথ্যের গুণমান' },
+    ],
+    body: [
+      {
+        en: 'Governance is the least appealing item on any readiness list and the one that most often determines whether the others hold. It is also the cheapest to start, because the first version is a register rather than a system.',
+        bn: 'যেকোনো প্রস্তুতি তালিকায় শাসনই সবচেয়ে কম আকর্ষণীয় বিষয় এবং প্রায়ই সেটিই নির্ধারণ করে বাকিগুলো টিকবে কি না। শুরু করাও সবচেয়ে সস্তা, কারণ প্রথম সংস্করণটি একটি সিস্টেম নয়, একটি নিবন্ধন।',
+      },
+      {
+        en: 'Four things make up a workable baseline. Ownership: every significant product-data field has a named person accountable for it, not a department. Currency: each has a last-reviewed date someone actually maintains. Traceability: when a value changes, there is a record of what it was and why. Access: it is deliberate who can change what.',
+        bn: 'একটি কার্যকর ভিত্তি চারটি বিষয়ে গঠিত। মালিকানা: প্রতিটি গুরুত্বপূর্ণ পণ্য-তথ্য ক্ষেত্রের জন্য নাম্বারযুক্ত একজন দায়ী, কোনো বিভাগ নয়। সাম্প্রতিকতা: প্রতিটির একটি শেষ-পর্যালোচিত তারিখ আছে যা কেউ সত্যিই রক্ষণাবেক্ষণ করে। ট্রেসেবিলিটি: কোনো মান বদলালে সেটি কী ছিল ও কেন বদলালো তার একটি রেকর্ড থাকে। প্রবেশাধিকার: কে কী বদলাতে পারবে তা ইচ্ছাকৃত।',
+      },
+      {
+        en: 'Ownership is the one that changes things fastest. In most factories, ambiguous fields are ambiguous because everyone touches them and nobody owns them. Assigning a name does not require authority or budget — it requires a decision, and it converts a data quality argument into a conversation with a specific person.',
+        bn: 'মালিকানাই সবচেয়ে দ্রুত পরিবর্তন আনে। অধিকাংশ কারখানায় অস্পষ্ট ক্ষেত্রগুলো অস্পষ্ট থাকে কারণ সবাই সেগুলো স্পর্শ করে আর কেউ মালিকানা নেয় না। একটি নাম বরাদ্দ করতে ক্ষমতা বা বাজেট লাগে না — লাগে একটি সিদ্ধান্ত, আর এটি তথ্যের গুণমান নিয়ে তর্ককে একজন নির্দিষ্ট ব্যক্তির সাথে কথোপকথনে রূপ দেয়।',
+      },
+      {
+        en: 'Currency is where good intentions usually die, because review dates are easy to set and tedious to maintain. The fix is to attach the review to something that already happens — a season handover, a buyer submission, an internal audit — rather than to a calendar reminder nobody will honour. Routines that ride on existing events survive; standalone ones do not.',
+        bn: 'সাম্প্রতিকতাই সেখানে যেখানে সদিচ্ছা সাধারণত মারা যায়, কারণ পর্যালোচনার তারিখ নির্ধারণ করা সহজ কিন্তু রক্ষণাবেক্ষণ করা ক্লান্তিকর। সমাধান হলো পর্যালোচনাটি এমন কিছুর সাথে যুক্ত করা যা ইতোমধ্যে ঘটে — একটি মৌসুম হস্তান্তর, ক্রেতার কাছে জমা, একটি অভ্যন্তরীণ নিরীক্ষা — কোনো ক্যালেন্ডার রিমাইন্ডারের সাথে নয় যা কেউ মানবে না। বিদ্যমান ঘটনায় চড়ে থাকা রুটিন টিকে; স্বতন্ত্র রুটিন টিকে না।',
+      },
+      {
+        en: 'None of this needs a platform, and doing it first makes any later platform purchase considerably more likely to succeed. Software can enforce ownership and traceability, but it cannot decide them. Factories that buy first and govern later end up with a system that faithfully records nobody’s responsibility.',
+        bn: 'এর কোনোটিতেই প্ল্যাটফর্ম লাগে না, আর প্রথমে এটি করলে পরের যেকোনো প্ল্যাটফর্ম কেনা সফল হওয়ার সম্ভাবনা অনেক বেড়ে যায়। সফটওয়্যার মালিকানা ও ট্রেসেবিলিটি বলবৎ করতে পারে, কিন্তু সেগুলো সিদ্ধান্ত নিতে পারে না। যে কারখানা প্রথমে কেনে আর পরে শাসন করে, তার শেষ পর্যন্ত এমন একটি সিস্টেমে পড়ে থাকে যা বিশ্বস্তভাবে কারোরই দায়িত্ব লিপিবদ্ধ করে।',
+      },
+    ],
+    takeaways: [
+      { en: 'The baseline is ownership, currency, traceability and deliberate access.', bn: 'ভিত্তি হলো মালিকানা, সাম্প্রতিকতা, ট্রেসেবিলিটি ও ইচ্ছাকৃত প্রবেশাধিকার।' },
+      { en: 'Ambiguous fields are ambiguous because nobody owns them.', bn: 'অস্পষ্ট ক্ষেত্র অস্পষ্ট থাকে কারণ কেউ মালিকানা নেয় না।' },
+      { en: 'Attach reviews to events that already happen, not to calendar reminders.', bn: 'ক্যালেন্ডার রিমাইন্ডারে নয়, ইতোমধ্যে ঘটে যাওয়া ঘটনার সাথে পর্যালোচনা যুক্ত করুন।' },
+      { en: 'Software can enforce governance but cannot decide it.', bn: 'সফটওয়্যার শাসন বলবৎ করতে পারে, কিন্তু তা সিদ্ধান্ত নিতে পারে না।' },
+    ],
+  },
+
+  {
+    slug: 'product-identity-and-item-coding',
+    title: {
+      en: 'Product Identity: Getting Item Coding Right Before Passports Arrive',
+      bn: 'পণ্য পরিচয়: পাসপোর্ট আসার আগেই আইটেম কোডিং ঠিক করা',
+    },
+    topic: {
+      en: 'DPP Standards & Technical Infrastructure',
+      bn: 'ডিপিপি মান ও কারিগরি অবকাঠামো',
+    },
+    excerpt: {
+      en: 'A passport is attached to a product, and a product has to be identifiable. Style, colour and size codes that work for production often do not survive contact with a buyer’s data request.',
+      bn: 'একটি পাসপোর্ট একটি পণ্যের সাথে সংযুক্ত থাকে, আর একটি পণ্যকে শনাক্তযোগ্য হতে হবে। উৎপাদনের জন্য কাজ করা স্টাইল, রং ও সাইজ কোড প্রায়ই ক্রেতার তথ্য-অনুরোধের মুখোমুখি হলে টিকে না।',
+    },
+    date: '2027-01-05',
+    readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Product identity', bn: 'পণ্য পরিচয়' },
+      { en: 'Coding', bn: 'কোডিং' },
+      { en: 'Standards', bn: 'মান' },
+    ],
+    body: [
+      {
+        en: 'Before any question of carriers or platforms, there is a more basic one: what identifier actually refers to the thing being described? Passport requirements will attach information to a product, and if a factory’s internal codes cannot be mapped unambiguously to what a buyer calls the same item, everything downstream is built on guesswork.',
+        bn: 'ক্যারিয়ার বা প্ল্যাটফর্মের যেকোনো প্রশ্নের আগে আরও মৌলিক একটি প্রশ্ন আছে: কোন শনাক্তকারী আসলে যে জিনিসটি বর্ণনা করা হচ্ছে তা নির্দেশ করে? পাসপোর্টের শর্তাবলি একটি পণ্যের সাথে তথ্য যুক্ত করবে, আর যদি কোনো কারখানার অভ্যন্তরীণ কোডগুলোকে ক্রেতা একই পণ্য যা বলেন তার সাথে অদ্ব্যর্থভাবে ম্যাপ করা না যায়, তবে এর পরের সবকিছু অনুমানের ওপর দাঁড়ায়।',
+      },
+      {
+        en: 'The common failure is not that codes are missing but that they are inconsistent in meaning. A style code may persist across seasons with changed materials. A colour code may differ between the merchandising team and the ERP. A size may be recorded differently in production and in quality records. Each is individually harmless and collectively fatal to a per-style query.',
+        bn: 'সাধারণ ব্যর্থতা কোড অনুপস্থিত থাকা নয়, বরং সেগুলোর অর্থে অসামঞ্জস্য থাকা। একটি স্টাইল কোড উপকরণ বদলের পরও মৌসুম পেরিয়ে টিকে থাকতে পারে। মার্চেন্ডাইজিং দল ও ERP-তে একটি রং-কোড ভিন্ন হতে পারে। উৎপাদন ও গুণমান রেকর্ডে একটি সাইজ ভিন্নভাবে লিপিবদ্ধ হতে পারে। প্রতিটি আলাদাভাবে ক্ষতিকর নয়, কিন্তু সম্মিলিতভাবে স্টাইলভিত্তিক অনুসন্ধানের জন্য মারাত্মক।',
+      },
+      {
+        en: 'The remedy is to designate one identifier as the reference for external purposes and maintain a mapping to everything else. This does not require re-coding the factory. It requires deciding which code travels outward, ensuring it is unique per sellable item, and keeping a simple cross-reference that someone owns.',
+        bn: 'প্রতিকার হলো বাহ্যিক উদ্দেশ্যে একটি শনাক্তকারীকে রেফারেন্স হিসেবে নির্দিষ্ট করা এবং বাকি সবকিছুর সাথে একটি ম্যাপিং রক্ষণাবেক্ষণ করা। এর জন্য কারখানা পুনরায় কোড করতে হবে না। এর জন্য সিদ্ধান্ত নিতে হবে কোন কোডটি বাইরে যাবে, নিশ্চিত করতে হবে তা প্রতিটি বিক্রয়যোগ্য পণ্যের জন্য অনন্য, আর এমন একটি সাধারণ ক্রস-রেফারেন্স রাখতে হবে যার মালিক কেউ আছে।',
+      },
+      {
+        en: 'It is also worth being realistic about granularity. Buyer requests may arrive at style level, at order level, or at item level depending on who is asking and why. A factory that can answer at style level today and knows precisely what it would take to answer at item level is in a far better position than one that assumed a single level and guessed wrong.',
+        bn: 'সূক্ষ্মতা সম্পর্কেও বাস্তবসম্মত হওয়া জরুরি। কে কেন জানতে চাইছেন তার ওপর ভিত্তি করে ক্রেতার অনুরোধ স্টাইল স্তরে, অর্ডার স্তরে বা আইটেম স্তরে আসতে পারে। যে কারখানা আজ স্টাইল স্তরে উত্তর দিতে পারে আর সঠিক জানে আইটেম স্তরে উত্তর দিতে কী লাগবে, সেটি সেই কারখানার চেয়ে অনেক ভালো অবস্থানে যেটি একটি মাত্র স্তর ধরে নিয়েছিল আর ভুল অনুমান করেছিল।',
+      },
+      {
+        en: 'This is unglamorous work with an unusually high return. Product identity is the join every other passport field depends on: composition, suppliers, processing, tests and certificates all attach to something. Get the join wrong and accurate data still produces a wrong answer.',
+        bn: 'এটি অদ্ভুতভাবে বেশি প্রতিদানসহ একটি নিরস কাজ। পণ্য পরিচয় সেই সংযোগ যার ওপর অন্য প্রতিটি পাসপোর্ট ক্ষেত্র নির্ভর করে: গঠন, সরবরাহকারী, প্রক্রিয়াকরণ, পরীক্ষা ও সার্টিফিকেট সবই কোনো কিছুর সাথে যুক্ত হয়। সংযোগটি ভুল হলে নির্ভুল তথ্য থেকেও ভুল উত্তর আসে।',
+      },
+    ],
+    takeaways: [
+      { en: 'Decide which internal code travels outward and keep it unique per sellable item.', bn: 'কোন অভ্যন্তরীণ কোড বাইরে যাবে তা সিদ্ধান্ত নিন আর প্রতিটি বিক্রয়যোগ্য পণ্যের জন্য অনন্য রাখুন।' },
+      { en: 'The risk is inconsistent meaning, not missing codes.', bn: 'ঝুঁকি কোড অনুপস্থিত থাকা নয়, অর্থের অসামঞ্জস্য।' },
+      { en: 'You do not need to re-code the factory — maintain a mapping someone owns.', bn: 'কারখানা পুনরায় কোড করতে হবে না — মালিকযুক্ত একটি ম্যাপিং রাখুন।' },
+      { en: 'Product identity is the join every other passport field depends on.', bn: 'পণ্য পরিচয় সেই সংযোগ যার ওপর অন্য প্রতিটি পাসপোর্ট ক্ষেত্র নির্ভর করে।' },
+    ],
+  },
+
+  {
+    slug: 'cost-of-waiting',
+    title: {
+      en: 'The Cost of Waiting: What Delay Actually Costs a Factory',
+      bn: 'অপেক্ষার খরচ: বিলম্বে একটি কারখানার আসলে কী ক্ষতি হয়',
+    },
+    topic: {
+      en: 'EU Regulations & Policy Developments',
+      bn: 'ইইউ নিয়ম ও নীতি উন্নয়ন',
+    },
+    excerpt: {
+      en: 'Waiting for the final rules feels prudent and is usually expensive. The cost is rarely a fine — it is compressed timelines, weaker negotiating positions and improvement work done under pressure.',
+      bn: 'চূড়ান্ত নিয়মের জন্য অপেক্ষা করা বিচক্ষণ মনে হয় এবং সাধারণত ব্যয়বহুল। খরচটি কদাচিৎ কোনো জরিমানা — এটি সংকুচিত সময়সীমা, দুর্বল আলোচনার অবস্থান আর চাপে করা উন্নয়ন কাজ।',
+    },
+    date: '2027-01-12',
+    readTime: { en: '5 min read', bn: '৫ মিনিটের পাঠ' },
+    tags: [
+      { en: 'Business case', bn: 'ব্যবসায়িক যুক্তি' },
+      { en: 'Timing', bn: 'সময়' },
+      { en: 'Risk', bn: 'ঝুঁকি' },
+    ],
+    body: [
+      {
+        en: 'The argument for waiting is reasonable on its face: the textile-specific requirements are not final, so why spend now against a moving specification? The flaw is that it treats readiness as a compliance task with a start date, when it is closer to a capability that takes time to build.',
+        bn: 'অপেক্ষার যুক্তিটি উপরিভাগে যুক্তিসঙ্গত: টেক্সটাইল-নির্দিষ্ট শর্তাবলি চূড়ান্ত নয়, তবে একটি বদলানো বিশদ বিবরণের বিপরীতে এখনই কেন খরচ করবেন? ত্রুটিটি হলো এটি প্রস্তুতিকে একটি শুরুর তারিখ থাকা সম্মতির কাজ হিসেবে দেখে, অথচ এটি একটি সক্ষমতার কাছাকাছি যা গড়তে সময় লাগে।',
+      },
+      {
+        en: 'The first cost is time compression. When a requirement does land, it will not arrive with a long runway. Factories that have done the foundational work — knowing what they hold, who owns it, how it is retrieved — can respond in weeks. Those starting from nothing face the same work under a deadline, with less room to choose suppliers or negotiate terms.',
+        bn: 'প্রথম খরচ হলো সময় সংকোচন। একটি শর্ত যখনই আসুক, তা দীর্ঘ সময়সীমা নিয়ে আসবে না। যে কারখানাগুলো ভিত্তিমূলক কাজ করেছে — তাদের কাছে কী আছে, কার মালিকানায়, কীভাবে খুঁজে পাওয়া যায় — তারা সপ্তাহের মধ্যে সাড়া দিতে পারে। যারা শূন্য থেকে শুরু করছে তারা একই কাজ সময়সীমার চাপে পড়ে করে, সরবরাহকারী বেছে নেওয়া বা শর্ত নিয়ে আলোচনার কম জায়গা নিয়ে।',
+      },
+      {
+        en: 'The second cost is negotiating position, and it is the one management notices. A buyer asking for structured information is also assessing how easy the factory is to work with. The factory that answers quickly with evidence becomes a preferred partner; the one that needs three weeks and several reminders becomes a risk to be managed. That judgement affects order allocation long before any passport requirement bites.',
+        bn: 'দ্বিতীয় খরচ হলো আলোচনার অবস্থান, আর এটিই ব্যবস্থাপনা লক্ষ করে। কাঠামোবদ্ধ তথ্য চাওয়া একজন ক্রেতা একই সাথে মূল্যায়ন করছে কারখানার সাথে কাজ করা কতটা সহজ। যে কারখানা প্রমাণসহ দ্রুত উত্তর দেয় সে পছন্দের অংশীদার হয়; যাকে তিন সপ্তাহ ও কয়েকটি অনুস্মারক লাগে সে এমন একটি ঝুঁকি হয়ে ওঠে যা সামলাতে হয়। যেকোনো পাসপোর্টের শর্ত কার্যকর হওয়ার অনেক আগেই সেই বিচার অর্ডার বরাদ্দে প্রভাব ফেলে।',
+      },
+      {
+        en: 'The third cost is the quality of the work itself. Improvement done under time pressure is improvement done badly: systems chosen before requirements are understood, data captured without ownership, suppliers asked for everything at once. The same budget spent earlier buys a considered programme; spent later it buys a scramble.',
+        bn: 'তৃতীয় খরচ হলো কাজের গুণমান নিজেই। সময়ের চাপে করা উন্নয়ন খারাপভাবে করা উন্নয়ন: শর্ত বোঝার আগেই সিস্টেম বেছে নেওয়া, মালিকানা ছাড়া তথ্য ধরা, সরবরাহকারীদের কাছে একসাথে সবকিছু চাওয়া। একই বাজেট আগে খরচ করলে একটি চিন্তিত কর্মসূচি কেনা যায়; পরে খরচ করলে কেনা যায় একটি হুড়োহুড়ি।',
+      },
+      {
+        en: 'None of this argues for buying technology against a specification that does not exist. It argues for doing now the work that is worth doing whatever the specification turns out to be: knowing what information you hold, who owns it, whether it can be evidenced, and how quickly you can produce it per style. That groundwork is cheap, holds its value, and is the difference between responding to a deadline and being driven by one.',
+        bn: 'এর কোনোটিই এমন একটি বিশদ বিবরণের বিপরীতে প্রযুক্তি কেনার পক্ষে যুক্তি দেয় না যা নেই। এটি এখনই সেই কাজ করার পক্ষে যুক্তি দেয় যা বিশদ বিবরণ যাই হোক না কেন করার মতো: আপনার কাছে কী তথ্য আছে, কার মালিকানায়, তা প্রমাণ করা যায় কি, আর স্টাইলভিত্তিক কত দ্রুত তা পেশ করা যায়। সেই ভিত্তিপ্রস্তুতি সস্তা, এর মূল্য টিকে থাকে, আর একটি সময়সীমায় সাড়া দেওয়া ও সময়সীমার তাড়ায় চালিত হওয়ার মধ্যে এটিই পার্থক্য।',
+      },
+    ],
+    takeaways: [
+      { en: 'Readiness is a capability to build, not a task with a start date.', bn: 'প্রস্তুতি একটি শুরুর তারিখ থাকা কাজ নয়, গড়ে তোলার সক্ষমতা।' },
+      { en: 'The real costs are compressed timelines and weaker negotiating position.', bn: 'আসল খরচ হলো সংকুচিত সময়সীমা ও দুর্বল আলোচনার অবস্থান।' },
+      { en: 'Buyers judge ease of working with you long before any rule bites.', bn: 'কোনো নিয়ম কার্যকর হওয়ার অনেক আগেই ক্রেতারা আপনার সাথে কাজের সহজতা বিচার করেন।' },
+      { en: 'Foundational work is cheap now and expensive under a deadline.', bn: 'ভিত্তিমূলক কাজ এখন সস্তা, সময়সীমার চাপে ব্যয়বহুল।' },
+    ],
+  },
+
 ];
