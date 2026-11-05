@@ -15,7 +15,44 @@ Built from the approved **Website Content v1.8** and **Master Menu v1.8** specif
 | Styling      | Tailwind CSS v4 (CSS-first config, custom `@theme` tokens)      |
 | Fonts        | `@fontsource-variable/inter` + `@fontsource-variable/sora` + `@fontsource-variable/noto-sans-bengali` (self-hosted, no external requests) |
 | Icons        | `lucide-react`                                                  |
-| Deployment   | Static-first: 23 prerendered pages + 1 API route. Vercel-ready. |
+| Deployment   | GitHub Pages (static export) or any Node host. Vercel-ready.    |
+
+## Deployment
+
+### GitHub Pages (live)
+
+<https://deshiklab.github.io/ReadyMynd/>
+
+Pushing to `arena/4bb7d9fd-readymynd` runs `.github/workflows/deploy-pages.yml`,
+which builds a static export and publishes it. GitHub Pages can only serve
+files, so `GITHUB_PAGES=true` switches the build into that mode:
+
+| Setting                       | Why                                                        |
+| ----------------------------- | ---------------------------------------------------------- |
+| `output: 'export'`            | Pages cannot run Node or Route Handlers                    |
+| `basePath` / `assetPrefix`    | the site is served from `/ReadyMynd`, not the domain root   |
+| `images.unoptimized`          | no `/_next/image` endpoint on a static host                |
+| `NEXT_PUBLIC_STATIC_SITE`     | the contact form falls back to a `mailto:` hand-off        |
+
+Gotchas worth knowing before editing:
+
+- **`asset()` (`lib/site.ts`) is required for raw `<img src>` and `<a href>`.**
+  `next/link` and `next/image` apply `basePath` themselves, but plain tags do
+  not — and `next/image` skips it entirely when `unoptimized: true`. Anything
+  under `public/` referenced outside a `Link`/`Image` must go through
+  `asset()` or it will 404 on Pages while working fine locally.
+- `app/api` is moved aside for the export build, so server-only code must not
+  live where page code imports it. The enquiry types and validation are in
+  `lib/enquiry.ts` for exactly this reason.
+- `robots.ts` and `sitemap.ts` declare `dynamic = 'force-static'`; route
+  handlers must opt in under `output: 'export'`.
+- `.nojekyll` is written into `out/` so Pages does not skip the `_next/` folder.
+
+### Node hosting (Vercel, container, `npm start`)
+
+The default build keeps the `/api/enquiries` route, image optimisation and the
+security headers, so the contact form posts normally and no `basePath` is
+applied.
 
 ## Getting started
 
