@@ -25,19 +25,23 @@ export function CtaBand({
   const { t } = useI18n();
 
   return (
-    <section className="section-ink overflow-hidden py-20 sm:py-24">
-      <div aria-hidden className="grid-veil absolute inset-0 -z-10 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-      <div aria-hidden className="absolute -bottom-32 left-1/2 -z-10 size-[34rem] -translate-x-1/2 rounded-full bg-brand-500/20 blur-[110px]" />
+    <section className="section-cta overflow-hidden py-20 sm:py-24">
+      <div
+        aria-hidden
+        className="grid-veil-light absolute inset-0 -z-10 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
+      />
+      <div
+        aria-hidden
+        className="absolute -bottom-32 left-1/2 -z-10 size-[34rem] -translate-x-1/2 rounded-full bg-brand-500/10 blur-[110px] dark:bg-brand-500/20"
+      />
 
       <div className="container-page">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <Eyebrow tone="light" className="justify-center">
-            {eyebrow ?? t('cta.requestAssessment')}
-          </Eyebrow>
-          <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
+          <Eyebrow className="justify-center">{eyebrow ?? t('cta.requestAssessment')}</Eyebrow>
+          <h2 className="mt-5 text-3xl font-bold leading-tight text-heading sm:text-4xl lg:text-[2.75rem]">
             {title}
           </h2>
-          {intro && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-onink">{intro}</p>}
+          {intro && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-body">{intro}</p>}
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href={primary.href} size="lg">
@@ -47,7 +51,7 @@ export function CtaBand({
             <ButtonLink
               href={secondary?.href ?? brochureCta.href}
               size="lg"
-              variant="outlineLight"
+              variant="outline"
               className="gap-2"
             >
               <Download className="size-4" aria-hidden />
@@ -55,7 +59,7 @@ export function CtaBand({
             </ButtonLink>
           </div>
 
-          {note && <p className="mt-6 text-sm leading-relaxed text-onink-muted">{note}</p>}
+          {note && <p className="mt-6 text-sm leading-relaxed text-body-soft">{note}</p>}
         </Reveal>
       </div>
     </section>

@@ -201,6 +201,50 @@
 }
 
 /* Ink band: dark in both themes. */
+/* ---------------------------------------------------------- glassmorphism */
+@utility glass-soft {
+  background-color: color-mix(in srgb, var(--color-surface) 55%, transparent);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+}
+
+@utility glass {
+  background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+}
+
+@utility glass-pill {
+  background-color: color-mix(in srgb, var(--color-surface-raised) 50%, transparent);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+@utility glass-ring {
+  border-color: color-mix(in srgb, var(--color-line) 90%, transparent);
+}
+
+/* -------------------------------------------- theme-aware light/dark bands */
+@utility section-hero {
+  background-color: var(--color-surface-muted);
+  background-image: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-muted) 100%);
+  color: var(--color-body);
+  position: relative;
+  isolation: isolate;
+}
+
+@utility section-cta {
+  background-color: var(--color-surface-sunken);
+  background-image: radial-gradient(
+    ellipse 68% 130% at 50% 128%,
+    color-mix(in srgb, var(--color-accent) 14%, transparent),
+    transparent 72%
+  );
+  color: var(--color-body);
+  position: relative;
+  isolation: isolate;
+}
+
 @utility section-ink {
   background-color: var(--color-ink);
   color: var(--color-onink);

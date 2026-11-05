@@ -50,7 +50,7 @@ const initialState = (purpose: Purpose): FormState => ({
 });
 
 const fieldClass =
-  'mt-2 block w-full rounded-xl border border-line-strong bg-surface-raised px-4 py-3 text-[0.9375rem] text-heading placeholder:text-onink-soft transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20';
+  'mt-2 block w-full rounded-xl border border-line-strong bg-surface-raised px-4 py-3 text-[0.9375rem] text-heading placeholder:text-body-soft transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20';
 
 const labelClass = 'text-sm font-semibold text-heading';
 

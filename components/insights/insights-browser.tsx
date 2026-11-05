@@ -52,7 +52,7 @@ export function InsightsBrowser() {
           aria-pressed={topicIndex === null}
           className={`rounded-full border px-4 py-2 text-[0.8125rem] font-semibold transition-all ${
             topic === null
-              ? 'border-ink bg-ink text-white'
+              ? 'border-ink bg-ink text-white dark:border-white dark:bg-white dark:text-ink'
               : 'border-line bg-surface-raised text-body hover:border-line-strong hover:text-heading'
           }`}
         >

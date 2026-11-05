@@ -21,51 +21,51 @@ export function HomeContent() {
   return (
     <>
       {/* ---------------------------------------------------------- Hero */}
-      <section className="section-ink overflow-hidden pb-24 pt-32 sm:pb-28 sm:pt-40 lg:pb-32 lg:pt-44">
+      <section className="section-hero overflow-hidden pb-24 pt-32 sm:pb-28 sm:pt-40 lg:pb-32 lg:pt-44">
         <div
           aria-hidden
-          className="grid-veil absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]"
+          className="grid-veil-light absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]"
         />
         <div
           aria-hidden
-          className="absolute -top-48 left-1/2 -z-10 size-[46rem] -translate-x-1/2 rounded-full bg-brand-500/20 blur-[130px]"
+          className="absolute -top-48 left-1/2 -z-10 size-[46rem] -translate-x-1/2 rounded-full bg-brand-500/10 blur-[130px] dark:bg-brand-500/20"
         />
         <div
           aria-hidden
-          className="absolute -right-24 top-40 -z-10 size-[26rem] rounded-full bg-brand-700/20 blur-[100px]"
+          className="absolute -right-24 top-40 -z-10 size-[26rem] rounded-full bg-brand-500/10 blur-[100px] dark:bg-brand-500/15"
         />
 
         <div className="container-page">
           <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div>
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-onink backdrop-blur">
-                  <Sparkles className="size-3.5 text-brand-300" aria-hidden />
+                <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-raised px-3 py-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-body-strong backdrop-blur">
+                  <Sparkles className="size-3.5 text-accent" aria-hidden />
                   {t('hero.eyebrow')}
                 </span>
               </Reveal>
 
               <Reveal delay={80}>
-                <h1 className="mt-7 text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-[3.75rem]">
+                <h1 className="mt-7 text-4xl font-bold leading-[1.05] text-heading sm:text-5xl lg:text-[3.75rem]">
                   {t('hero.titleA')}
-                  <span className="mt-2 block bg-gradient-to-r from-white via-white to-brand-300 bg-clip-text text-transparent">
+                  <span className="mt-2 block bg-gradient-to-r from-heading via-heading to-accent bg-clip-text text-transparent">
                     {t('hero.titleB')}
                   </span>
                 </h1>
               </Reveal>
 
               <Reveal delay={160}>
-                <p className="mt-7 max-w-2xl text-lg leading-relaxed text-onink">
+                <p className="mt-7 max-w-2xl text-lg leading-relaxed text-body">
                   {t('hero.introA')}
                 </p>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-onink-soft">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-body-soft">
                   {t('hero.introB')}
                 </p>
               </Reveal>
 
               <Reveal delay={240}>
-                <p className="mt-8 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-brand-400/30 bg-brand-500/10 px-4 py-2.5 font-display text-sm font-semibold tracking-tight text-white">
-                  <ShieldCheck className="size-4 text-brand-300" aria-hidden />
+                <p className="mt-8 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-accent-line bg-accent-soft px-4 py-2.5 font-display text-sm font-semibold tracking-tight text-heading">
+                  <ShieldCheck className="size-4 text-accent" aria-hidden />
                   {t('hero.principle')}
                 </p>
               </Reveal>
@@ -76,7 +76,7 @@ export function HomeContent() {
                     {t('hero.ctaPrimary')}
                     <ArrowRight className="size-4" aria-hidden />
                   </ButtonLink>
-                  <ButtonLink href={brochureCta.href} size="lg" variant="outlineLight">
+                  <ButtonLink href={brochureCta.href} size="lg" variant="outline">
                     <Download className="size-4" aria-hidden />
                     {t('hero.ctaSecondary')}
                   </ButtonLink>
@@ -89,7 +89,7 @@ export function HomeContent() {
                 aria-hidden
                 className="absolute -inset-5 -z-10 rounded-[2.25rem] bg-gradient-to-br from-brand-500/25 via-transparent to-transparent blur-2xl"
               />
-              <div className="overflow-hidden rounded-2xl ring-1 ring-white/15">
+              <div className="overflow-hidden rounded-2xl ring-1 ring-line">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/pages/home.jpeg"
@@ -98,24 +98,24 @@ export function HomeContent() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-6 left-6 right-6 rounded-xl border border-white/10 bg-ink-soft/90 p-5 backdrop-blur-xl">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-300">
+              <div className="absolute -bottom-6 left-6 right-6 rounded-xl border border-line bg-surface-raised/95 p-5 shadow-lift backdrop-blur-xl">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">
                   {t('hero.badgeTitle')}
                 </p>
-                <p className="mt-2 font-display text-lg font-semibold text-white">
+                <p className="mt-2 font-display text-lg font-semibold text-heading">
                   {t('hero.badgeHeading')}
                 </p>
-                <p className="mt-1 text-sm text-onink-soft">{t('hero.badgeBody')}</p>
+                <p className="mt-1 text-sm text-body">{t('hero.badgeBody')}</p>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={400}>
-            <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
+            <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4">
               {heroStatValues.map((value, index) => (
-                <div key={value} className="bg-ink px-5 py-6 text-center sm:px-6 sm:py-8">
-                  <dt className="font-display text-3xl font-bold text-white sm:text-4xl">{value}</dt>
-                  <dd className="mt-2 text-xs uppercase tracking-[0.12em] text-onink-soft">
+                <div key={value} className="bg-surface-raised px-5 py-6 text-center sm:px-6 sm:py-8">
+                  <dt className="font-display text-3xl font-bold text-heading sm:text-4xl">{value}</dt>
+                  <dd className="mt-2 text-xs uppercase tracking-[0.12em] text-body-soft">
                     {statLabels[index]}
                   </dd>
                 </div>
