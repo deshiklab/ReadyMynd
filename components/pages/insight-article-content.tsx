@@ -1,13 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, CalendarDays, Clock, Lightbulb } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CalendarDays, Clock, Lightbulb, Tag, User } from 'lucide-react';
 import { PageHero } from '@/components/blocks/page-hero';
 import { CtaBand } from '@/components/blocks/cta-band';
 import { Notice } from '@/components/blocks/notice';
+import { Comments } from '@/components/insights/comments';
+import { ShareBar } from '@/components/insights/share-bar';
 import { Reveal } from '@/components/ui/reveal';
 import { Eyebrow, Section } from '@/components/ui/section';
-import { insights } from '@/lib/content';
+import { defaultAuthor, insights } from '@/lib/content';
+import { asset, site } from '@/lib/site';
 import { useI18n, type Locale } from '@/lib/i18n';
 
 function formatDate(iso: string, locale: Locale) {
@@ -22,9 +25,19 @@ function formatDate(iso: string, locale: Locale) {
 export function InsightArticleContent({ slug }: { slug: string }) {
   const { t, tx, locale } = useI18n();
   const insight = insights.find((item) => item.slug === slug);
-  const related = insights.filter((item) => item.slug !== slug).slice(0, 3);
 
   if (!insight) return null;
+
+  // Same topic first, then the rest — relevance beats recency for "read next".
+  const related = [
+    ...insights.filter((item) => item.slug !== slug && tx(item.topic) === tx(insight.topic)),
+    ...insights.filter((item) => item.slug !== slug && tx(item.topic) !== tx(insight.topic)),
+  ].slice(0, 3);
+
+  // site.url already carries the deploy base path, so the path is appended
+  // rather than resolved with new URL(), which would discard it.
+  const shareUrl = `${site.url}/insights/${insight.slug}/`;
+  const author = insight.author ?? defaultAuthor;
 
   return (
     <>
@@ -58,9 +71,30 @@ export function InsightArticleContent({ slug }: { slug: string }) {
               <Clock className="size-4" aria-hidden />
               {tx(insight.readTime)}
             </span>
+            <span className="inline-flex items-center gap-2">
+              <User className="size-4" aria-hidden />
+              {tx(author)}
+            </span>
             <span className="rounded-full bg-surface-sunken px-2.5 py-1 text-xs font-semibold text-body-strong">
               {tx(insight.topic)}
             </span>
+          </Reveal>
+
+          {insight.image && (
+            <Reveal className="mt-8 overflow-hidden rounded-2xl ring-1 ring-line">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(insight.image)}
+                alt={insight.imageAlt ? tx(insight.imageAlt) : tx(insight.title)}
+                className="aspect-3/2 w-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </Reveal>
+          )}
+
+          <Reveal className="mt-8 border-b border-line pb-6">
+            <ShareBar url={shareUrl} title={tx(insight.title)} />
           </Reveal>
 
           <div className="mt-10 space-y-6">
@@ -74,6 +108,23 @@ export function InsightArticleContent({ slug }: { slug: string }) {
               </Reveal>
             ))}
           </div>
+
+          {insight.tags && insight.tags.length > 0 && (
+            <Reveal className="mt-10 flex flex-wrap items-center gap-2 border-t border-line pt-6">
+              <span className="mr-1 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-body-soft">
+                <Tag className="size-3.5" aria-hidden />
+                {t('insights.aTags')}
+              </span>
+              {insight.tags.map((tag) => (
+                <span
+                  key={tx(tag)}
+                  className="rounded-full border border-line bg-surface-raised px-3 py-1.5 text-xs font-medium text-body"
+                >
+                  {tx(tag)}
+                </span>
+              ))}
+            </Reveal>
+          )}
 
           <Reveal className="mt-12 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
             <span className="grid size-11 place-items-center rounded-xl bg-accent-soft text-accent ring-1 ring-accent-line">
@@ -97,6 +148,12 @@ export function InsightArticleContent({ slug }: { slug: string }) {
               <p>{t('insights.aNotice')}</p>
             </Notice>
           </Reveal>
+
+          <Reveal className="mt-10 border-t border-line pt-6">
+            <ShareBar url={shareUrl} title={tx(insight.title)} />
+          </Reveal>
+
+          <Comments />
 
           <Reveal className="mt-10">
             <Link

@@ -611,8 +611,20 @@ export type Insight = {
   date: string;
   readTime: Bi;
   featured?: boolean;
+  /** Path under /public. Rendered as the article's lead image. */
+  image?: string;
+  imageAlt?: Bi;
+  author?: Bi;
+  /** Free-form keywords; the browser searches these alongside title and excerpt. */
+  tags?: Bi[];
   body: Bi[];
   takeaways: Bi[];
+};
+
+/** Default byline for articles that do not name a specific author. */
+export const defaultAuthor: Bi = {
+  en: 'ReadyMynd Enterprise Analysts',
+  bn: 'ReadyMynd এন্টারপ্রাইজ বিশ্লেষকবৃন্দ',
 };
 
 export const insights: Insight[] = [

@@ -53,6 +53,13 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
     NEXT_PUBLIC_SITE_URL: siteUrl,
+    // GitHub Discussions-backed comments. Leave GISCUS_CATEGORY_ID unset and
+    // the widget stays hidden; see README "Comments" for the one-time setup.
+    NEXT_PUBLIC_GISCUS_REPO: process.env.NEXT_PUBLIC_GISCUS_REPO ?? 'deshiklab/ReadyMynd',
+    NEXT_PUBLIC_GISCUS_REPO_ID:
+      process.env.NEXT_PUBLIC_GISCUS_REPO_ID ?? 'R_kgDOVjQV7g',
+    NEXT_PUBLIC_GISCUS_CATEGORY: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? 'Insights',
+    NEXT_PUBLIC_GISCUS_CATEGORY_ID: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
   },
   ...(isPages
     ? {
