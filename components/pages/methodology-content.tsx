@@ -11,14 +11,6 @@ import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
 import { evidenceSources, processSteps } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
 
-const readyMyndResponsibilities = [
-  'r1',
-  'r2',
-  'r3',
-  'r4',
-  'r5',
-] as const;
-
 export function MethodologyContent() {
   const { t, tx, tl } = useI18n();
 
@@ -154,14 +146,14 @@ export function MethodologyContent() {
           <Reveal className="rounded-2xl border border-line bg-surface-raised p-6 shadow-soft sm:p-8">
             <Eyebrow>{t('methodology.rOursTitle')}</Eyebrow>
             <div className="mt-5">
-              <CheckList items={readyMyndResponsibilities.map((key) => t(`methodology.rOurs.${key}`))} />
+              <CheckList items={tl('methodology.rOurs')} />
             </div>
           </Reveal>
           <Reveal delay={80} className="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
             <Eyebrow>{t('methodology.rTheirsTitle')}</Eyebrow>
             <div className="mt-5">
               <CheckList
-                items={readyMyndResponsibilities.map((key) => t(`methodology.rTheirs.${key}`))}
+                items={tl('methodology.rTheirs')}
               />
             </div>
           </Reveal>
