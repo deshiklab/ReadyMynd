@@ -18,6 +18,17 @@ const isPages = process.env.GITHUB_PAGES === 'true';
 const repoName = 'ReadyMynd';
 const basePath = isPages ? `/${repoName}` : '';
 
+/**
+ * Absolute origin every canonical, Open Graph and sitemap URL is built from.
+ * Next resolves relative metadata paths against `metadataBase`, so this has to
+ * match wherever the build is actually served — otherwise the Pages deployment
+ * hands out canonicals pointing at the production domain, which does not serve
+ * it. Defaults per build mode; set NEXT_PUBLIC_SITE_URL to override either.
+ */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (isPages ? `https://deshiklab.github.io/${repoName}` : 'https://www.readymynd.com');
+
 const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
@@ -37,9 +48,11 @@ const nextConfig = {
     // Static hosting has no /_next/image endpoint.
     unoptimized: isPages,
   },
-  // Lets <img src> / <a href> (which Next does not prefix) build correct URLs.
+  // Lets <img src> / <a href> (which Next does not prefix) build correct URLs,
+  // and lets lib/site.ts resolve the deployed origin.
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_URL: siteUrl,
   },
   ...(isPages
     ? {

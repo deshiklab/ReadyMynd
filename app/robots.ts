@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { site } from '@/lib/site';
+import { asset, site } from '@/lib/site';
 
 // Static export (GitHub Pages) cannot render route handlers dynamically.
 export const dynamic = 'force-static';
@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: new URL('/sitemap.xml', site.url).toString(),
+    sitemap: new URL(asset('/sitemap.xml'), site.url).toString(),
     host: site.url,
   };
 }

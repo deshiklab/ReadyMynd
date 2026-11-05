@@ -21,7 +21,13 @@ export const site = {
   legalName: 'ReadyMynd',
   tagline: 'Textile DPP Readiness & Digital Advisory',
   positioning: 'Software-Enabled. Analyst-Led. Evidence-Based.',
-  url: 'https://www.readymynd.com',
+  /**
+   * Absolute origin for canonicals, Open Graph tags and the sitemap. Inlined
+   * at build time from NEXT_PUBLIC_SITE_URL, which next.config.mjs defaults
+   * per build mode so the GitHub Pages export points at the Pages origin
+   * rather than the production domain.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.readymynd.com',
   email: 'contact@readymynd.com',
   phone: '+880 13 4949 2761',
   phoneHref: '+8801349492761',

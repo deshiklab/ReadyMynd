@@ -33,9 +33,19 @@ files, so `GITHUB_PAGES=true` switches the build into that mode:
 | `basePath` / `assetPrefix`    | the site is served from `/ReadyMynd`, not the domain root   |
 | `images.unoptimized`          | no `/_next/image` endpoint on a static host                |
 | `NEXT_PUBLIC_STATIC_SITE`     | the contact form falls back to a `mailto:` hand-off        |
+| `NEXT_PUBLIC_SITE_URL`        | canonicals, OG tags and the sitemap point at the Pages URL |
 
 Gotchas worth knowing before editing:
 
+- **`site.url` is inlined at build time.** `next.config.mjs` derives it from
+  `NEXT_PUBLIC_SITE_URL`, defaulting to the Pages origin in export mode and to
+  `https://www.readymynd.com` otherwise. Every canonical, `og:url` and sitemap
+  entry is resolved against it, so the deployed build advertises the host it is
+  actually served from. Set the variable explicitly to override either default.
+- **Absolute paths passed to `new URL()` discard the base path.**
+  `new URL('/about/', 'https://deshiklab.github.io/ReadyMynd')` loses the
+  `/ReadyMynd`, so `sitemap.ts` and `robots.ts` run paths through `asset()`
+  before resolving them.
 - **`asset()` (`lib/site.ts`) is required for raw `<img src>` and `<a href>`.**
   `next/link` and `next/image` apply `basePath` themselves, but plain tags do
   not — and `next/image` skips it entirely when `unoptimized: true`. Anything
