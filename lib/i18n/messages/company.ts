@@ -141,6 +141,8 @@ export const companyEn: Messages = {
     submitting: 'Submitting…',
     secureNote: 'Submitted for enquiry response only. Never sold or shared for advertising.',
     successTitle: 'Enquiry received',
+    mailtoHint:
+      'If your email app did not open, please send the details above to contact@readymynd.com.',
     successBrochureTitle: 'Your brochure is ready',
     successBody: 'Thank you. Our advisory team will review your enquiry and contact you regarding the proposed engagement.',
     successBrochureBody: 'Thank you. The ReadyMynd service brochure is available below, and a copy of your request has been logged.',
@@ -306,6 +308,8 @@ export const companyBn: Messages = {
     submitting: 'জমা হচ্ছে…',
     secureNote: 'কেবল অনুসন্ধানের উত্তর দেওয়ার জন্য জমা দেওয়া হয়। বিজ্ঞাপনের জন্য কখনো বিক্রি বা শেয়ার করা হয় না।',
     successTitle: 'অনুসন্ধান গৃহীত হয়েছে',
+    mailtoHint:
+      'আপনার ইমেইল অ্যাপ না খুললে, অনুগ্রহ করে উপরের বিবরণ contact@readymynd.com-এ পাঠান।',
     successBrochureTitle: 'আপনার ব্রোশিওর প্রস্তুত',
     successBody: 'ধন্যবাদ। আমাদের পরামর্শক দল আপনার অনুসন্ধান পর্যালোচনা করে প্রস্তাবিত চুক্তি সম্পর্কে যোগাযোগ করবে।',
     successBrochureBody: 'ধন্যবাদ। ReadyMynd সেবা ব্রোশিওর নিচে পাওয়া যাচ্ছে, এবং আপনার অনুরোধের একটি অনুলিপি সংরক্ষিত হয়েছে।',

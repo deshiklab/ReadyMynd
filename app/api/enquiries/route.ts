@@ -1,63 +1,7 @@
 import { NextResponse } from 'next/server';
+import { asString, validate, type EnquiryPayload, type EnquiryPurpose } from '@/lib/enquiry';
 
 export const runtime = 'nodejs';
-
-export type EnquiryPurpose = 'assessment' | 'brochure' | 'general';
-
-const purposes: EnquiryPurpose[] = ['assessment', 'brochure', 'general'];
-
-const requiredFields: Record<EnquiryPurpose, (keyof EnquiryPayload)[]> = {
-  assessment: ['fullName', 'designation', 'company', 'factoryType', 'email', 'phone'],
-  brochure: ['fullName', 'company', 'email'],
-  general: ['fullName', 'email', 'message'],
-};
-
-export type EnquiryPayload = {
-  purpose: EnquiryPurpose;
-  fullName: string;
-  designation: string;
-  company: string;
-  factoryType: string;
-  email: string;
-  phone: string;
-  message: string;
-  privacy: boolean;
-  marketing: boolean;
-};
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-function asString(value: unknown) {
-  return typeof value === 'string' ? value.trim().slice(0, 2000) : '';
-}
-
-function validate(payload: EnquiryPayload) {
-  const errors: Record<string, string> = {};
-
-  if (!purposes.includes(payload.purpose)) {
-    errors.purpose = 'Select an enquiry purpose.';
-  }
-
-  for (const field of requiredFields[payload.purpose] ?? requiredFields.general) {
-    if (!payload[field]) {
-      errors[field] = 'This field is required.';
-    }
-  }
-
-  if (payload.email && !emailPattern.test(payload.email)) {
-    errors.email = 'Enter a valid business email address.';
-  }
-
-  if (payload.phone && !/^[+()\d][\d\s\-()]{5,20}$/.test(payload.phone)) {
-    errors.phone = 'Enter a valid contact number.';
-  }
-
-  if (!payload.privacy) {
-    errors.privacy = 'Please acknowledge the privacy notice to continue.';
-  }
-
-  return errors;
-}
 
 export async function POST(request: Request) {
   let body: unknown;

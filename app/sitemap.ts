@@ -1,6 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { legalNav, mainNav, site } from '@/lib/site';
 
+// Static export (GitHub Pages) cannot render route handlers dynamically.
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 

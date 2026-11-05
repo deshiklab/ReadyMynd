@@ -11,7 +11,7 @@ import {
   Lock,
   Send,
 } from 'lucide-react';
-import type { EnquiryPurpose } from '@/app/api/enquiries/route';
+import type { EnquiryPurpose } from '@/lib/enquiry';
 import { site } from '@/lib/site';
 import { useI18n } from '@/lib/i18n';
 
@@ -53,6 +53,12 @@ const fieldClass =
   'mt-2 block w-full rounded-xl border border-line-strong bg-surface-raised px-4 py-3 text-[0.9375rem] text-heading placeholder:text-body-soft transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20';
 
 const labelClass = 'text-sm font-semibold text-heading';
+
+/**
+ * True when the site is a static export (GitHub Pages). There is no server
+ * route to POST to, so the enquiry is handed to the visitor's mail client.
+ */
+const STATIC_SITE = process.env.NEXT_PUBLIC_STATIC_SITE === 'true';
 
 export function EnquiryForm() {
   const { t, tl, tr } = useI18n();
@@ -133,6 +139,34 @@ export function EnquiryForm() {
       return;
     }
 
+    if (STATIC_SITE) {
+      const reference = `RM-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+      const purposeLabel = purposes.find((item) => item.id === form.purpose)?.label ?? form.purpose;
+      const body = [
+        `Reference: ${reference}`,
+        `Purpose: ${purposeLabel}`,
+        '',
+        `Name: ${form.fullName}`,
+        form.designation ? `Designation: ${form.designation}` : '',
+        `Factory / company: ${form.company}`,
+        form.factoryType ? `Factory type: ${form.factoryType}` : '',
+        `Business email: ${form.email}`,
+        form.phone ? `Contact number: ${form.phone}` : '',
+        form.message ? `\nMessage:\n${form.message}` : '',
+        form.marketing ? '\nPlease send me ReadyMynd updates.' : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
+
+      setReference(reference);
+      setStatus('success');
+      window.location.href =
+        `mailto:${site.email}` +
+        `?subject=${encodeURIComponent(`[Website enquiry] ${purposeLabel} — ${form.company || form.fullName}`)}` +
+        `&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
     setStatus('submitting');
     try {
       const response = await fetch('/api/enquiries/', {
@@ -185,6 +219,10 @@ export function EnquiryForm() {
               <p className="mt-3 inline-flex rounded-lg bg-surface-raised px-3 py-1.5 font-mono text-xs font-semibold text-heading ring-1 ring-line">
                 Reference {reference}
               </p>
+            )}
+
+            {STATIC_SITE && (
+              <p className="mt-3 text-sm leading-relaxed text-body">{t('form.mailtoHint')}</p>
             )}
 
             {form.purpose === 'brochure' && (
