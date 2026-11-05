@@ -66,9 +66,35 @@ export const cookieSections: LegalSection[] = [
         'Before publication, ReadyMynd will maintain an accurate record of relevant cookies, including their purpose, provider, and duration.',
         'প্রকাশের আগে ReadyMynd প্রাসঙ্গিক কুকির একটি নিখুঁত রেকর্ড রাখবে, যাতে থাকবে সেগুলোর উদ্দেশ্য, প্রদানকারী ও স্থায়িত্ব।',
       ),
+      p(
+        'ReadyMynd does not set advertising cookies. The website does not use analytics, advertising or behavioural tracking technologies.',
+        'ReadyMynd বিজ্ঞাপনমূলক কুকি সেট করে না। ওয়েবসাইটে কোনো অ্যানালিটিক্স, বিজ্ঞাপন বা আচরণগত ট্র্যাকিং প্রযুক্তি ব্যবহার করা হয় না।',
+      ),
+      p(
+        'The website does not set cookies of its own. It stores two preferences in your browser’s local storage so that your choices persist between visits:',
+        'ওয়েবসাইটটি নিজের কোনো কুকি সেট করে না। পরিদর্শনের মধ্যে আপনার পছন্দ বজায় রাখতে এটি আপনার ব্রাউজারের লোকাল স্টোরেজে দুটি পছন্দ সংরক্ষণ করে:',
+      ),
+      list([
+        bi(
+          'readymynd-locale — remembers the selected language (English or Bengali). Retained until cleared.',
+          'readymynd-locale — নির্বাচিত ভাষা (ইংরেজি বা বাংলা) মনে রাখে। মুছে না ফেলা পর্যন্ত থাকে।',
+        ),
+        bi(
+          'readymynd-theme — remembers the selected appearance (light or dark). Retained until cleared.',
+          'readymynd-theme — নির্বাচিত চেহারা (হালকা বা গাঢ়) মনে রাখে। মুছে না ফেলা পর্যন্ত থাকে।',
+        ),
+      ]),
+      p(
+        'Local storage entries remain on your device, are not transmitted to us, and can be removed at any time through your browser settings or by clearing site data.',
+        'লোকাল স্টোরেজের এন্ট্রিগুলো আপনার ডিভাইসেই থাকে, আমাদের কাছে প্রেরিত হয় না, আর ব্রাউজার সেটিংস থেকে বা সাইট ডেটা মুছে ফেলে যেকোনো সময় সরিয়ে ফেলা যায়।',
+      ),
+      p(
+        'Where the comments feature is enabled on an insight article, the discussion is delivered by giscus through GitHub Discussions. Loading that component may set cookies on the giscus.app or github.com domain to identify a signed-in session. Those cookies are set by GitHub and are governed by GitHub’s own privacy and cookie policies, not by this policy.',
+        'যেখানে কোনো বিশ্লেষণ নিবন্ধে মন্তব্য সুবিধা চালু থাকে, সেখানে আলোচনা giscus-এর মাধ্যমে GitHub Discussions থেকে সরবরাহ করা হয়। সেই উপাদান লোড হওয়ার সময় সাইন-ইন সেশন শনাক্ত করতে giscus.app বা github.com ডোমেইনে কুকি সেট হতে পারে। সেই কুকিগুলো GitHub সেট করে এবং এই নীতিমালা নয়, GitHub-এর নিজস্ব গোপনীয়তা ও কুকি নীতিমালা দ্বারা পরিচালিত হয়।',
+      ),
       note(
-        'Cookie inventory: to be completed after technical verification of the deployed website.',
-        'কুকি তালিকা: ওয়েবসাইট চালু করার পর কারিগরি যাচাই শেষে সম্পন্ন করা হবে।',
+        'If analytics or additional third-party services are introduced in future, this section will be updated before they are activated, and any non-essential technology will be subject to the consent arrangements described below.',
+        'ভবিষ্যতে যদি অ্যানালিটিক্স বা অতিরিক্ত তৃতীয় পক্ষের সেবা যোগ করা হয়, সেগুলো চালু করার আগেই এই বিভাগ হালনাগাদ করা হবে, আর যেকোনো অনাবশ্যক প্রযুক্তি নিচে বর্ণিত সম্মতি ব্যবস্থার আওতাধীন হবে।',
       ),
     ],
   },
