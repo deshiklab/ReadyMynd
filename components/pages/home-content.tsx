@@ -10,7 +10,7 @@ import { BrochureCta } from '@/components/blocks/brochure-cta';
 import { DimensionsExplorer } from '@/components/interactive/dimensions-explorer';
 import { factoryTypes, processSteps } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
-import { brochureCta } from '@/lib/site';
+import {brochureCta, asset } from '@/lib/site';
 
 const heroStatValues = ['5', '7', '10–15', '1:1'];
 
@@ -92,7 +92,7 @@ export function HomeContent() {
               <div className="overflow-hidden rounded-2xl ring-1 ring-line">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/pages/home.jpeg"
+                  src={asset('/images/pages/home.jpeg')}
                   alt={t('hero.imageAlt')}
                   className="aspect-4/3 w-full object-cover"
                   loading="eager"
@@ -153,7 +153,7 @@ export function HomeContent() {
             <div className="overflow-hidden rounded-2xl shadow-lift ring-1 ring-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/pages/eu-dpp.jpeg"
+                src={asset('/images/pages/eu-dpp.jpeg')}
                 alt={t('why.imageAlt')}
                 className="aspect-4/3 w-full object-cover"
                 loading="lazy"

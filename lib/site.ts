@@ -7,6 +7,15 @@ export type NavItem = {
   description?: string;
 };
 
+/**
+ * Prefix a public path with the deployment basePath.
+ *
+ * next/link and next/image apply `basePath` automatically, but plain
+ * <img src> and <a href> do not — they need the prefix added by hand, which
+ * matters when the site is exported to GitHub Pages under /ReadyMynd.
+ */
+export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
+
 export const site = {
   name: 'ReadyMynd',
   legalName: 'ReadyMynd',

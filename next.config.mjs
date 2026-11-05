@@ -37,6 +37,10 @@ const nextConfig = {
     // Static hosting has no /_next/image endpoint.
     unoptimized: isPages,
   },
+  // Lets <img src> / <a href> (which Next does not prefix) build correct URLs.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   ...(isPages
     ? {
         output: 'export',

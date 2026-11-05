@@ -12,6 +12,7 @@ import { Section, SectionHeading } from '@/components/ui/section';
 import { DimensionsExplorer } from '@/components/interactive/dimensions-explorer';
 import { assessmentBenefits, reportOutputs } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
+import { asset } from '@/lib/site';
 
 export function AssessmentContent() {
   const { t, tx, tl } = useI18n();
@@ -52,7 +53,7 @@ export function AssessmentContent() {
             <div className="overflow-hidden rounded-2xl ring-1 ring-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/generated/dimensions.jpg"
+                src={asset('/images/generated/dimensions.jpg')}
                 alt={t('assessment.oImageAlt')}
                 className="aspect-square w-full object-cover"
                 loading="lazy"

@@ -12,7 +12,7 @@ import {
   Send,
 } from 'lucide-react';
 import type { EnquiryPurpose } from '@/lib/enquiry';
-import { site } from '@/lib/site';
+import {site, asset } from '@/lib/site';
 import { useI18n } from '@/lib/i18n';
 
 type Purpose = EnquiryPurpose;
@@ -228,7 +228,7 @@ export function EnquiryForm() {
             {form.purpose === 'brochure' && (
               <a
                 ref={downloadRef}
-                href={site.brochureHref}
+                href={asset(site.brochureHref)}
                 download="ReadyMynd-Corporate-Brochure.pdf"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.6)] transition-colors hover:bg-brand-600"
               >

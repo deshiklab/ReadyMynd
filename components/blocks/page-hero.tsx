@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/section';
+import { asset } from '@/lib/site';
 
 type Crumb = { label: string; href?: string };
 
@@ -105,7 +106,7 @@ export function PageHero({
               <div className="overflow-hidden rounded-2xl ring-1 ring-line">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={image}
+                  src={asset(image)}
                   alt={imageAlt}
                   className="aspect-4/3 w-full object-cover"
                   loading="eager"

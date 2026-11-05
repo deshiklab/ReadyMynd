@@ -9,6 +9,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
 import { informationAreas } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
+import { asset } from '@/lib/site';
 
 type TimelineItem = { phase: string; title: string; body: string };
 type PairCard = { title: string; body: string };
@@ -60,7 +61,7 @@ export function EuDppContent() {
             <div className="overflow-hidden rounded-2xl ring-1 ring-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/generated/dpp-passport.jpg"
+                src={asset('/images/generated/dpp-passport.jpg')}
                 alt={t('dpp.u1ImageAlt')}
                 className="aspect-square w-full object-cover"
                 loading="lazy"
