@@ -31,11 +31,25 @@ export const site = {
   email: 'contact@readymynd.com',
   phone: '+880 13 4949 2761',
   phoneHref: '+8801349492761',
+  /** Corporate line of the parent organisation, shown alongside the main one. */
+  corporatePhone: '+880 1844 680068',
+  corporatePhoneHref: '+8801844680068',
   /** Digits only, in international format — used for wa.me / tel: deep links. */
   whatsapp: '8801349492761',
   location: 'Bangladesh',
+  address: 'House: 33, Road 15, Sector 11, Uttara, Dhaka-1230',
+  addressHref: 'https://deshikconsulting.com/#',
   hours: 'Sun – Thu, 9:00 AM – 6:00 PM (BST)',
   brochureHref: '/downloads/readymynd-corporate-brochure.pdf',
+} as const;
+
+/**
+ * ReadyMynd is a brand of DeSHiK Consulting. Credited in the footer as
+ * required, with the link pointing at the parent organisation's site.
+ */
+export const parentBrand = {
+  name: 'DeSHiK Consulting',
+  url: 'https://deshikconsulting.com/',
 } as const;
 
 export const mainNav: NavItem[] = [

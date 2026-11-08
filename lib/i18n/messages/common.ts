@@ -63,6 +63,8 @@ export const commonEn: Messages = {
     rights: 'All rights reserved.',
     disclaimer:
       'Independent diagnostic and advisory services. Not a DPP certification or regulatory compliance audit.',
+    corporate: 'Corporate',
+    brandOf: 'This is a Brand of {brand}',
   },
 
   controls: {
@@ -212,6 +214,8 @@ export const commonBn: Messages = {
     rights: 'সর্বস্বত্ব সংরক্ষিত।',
     disclaimer:
       'স্বাধীন রোগনির্ণয়মূলক ও পরামর্শমূলক সেবা। এটি কোনো ডিপিপি সার্টিফিকেশন বা নিয়ন্ত্রক সম্মতি নিরীক্ষা নয়।',
+    corporate: 'কর্পোরেট',
+    brandOf: 'এটি {brand} এর একটি ব্র্যান্ড',
   },
 
   controls: {
