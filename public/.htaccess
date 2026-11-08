@@ -1,0 +1,61 @@
+# ReadyMynd — Apache/cPanel configuration
+#
+# Drop-in for the static export built with STATIC_ROOT=true. The export is
+# plain files, so the security headers Next applies in Node mode (see
+# next.config.mjs) have to be set here instead.
+
+DirectoryIndex index.html
+
+# The export emits /about/index.html for the /about/ route.
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------- security
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ----------------------------------------------------------------- caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Build assets are content-hashed, so they can be cached hard.
+  ExpiresByType text/css              "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml         "access plus 1 year"
+  ExpiresByType image/jpeg            "access plus 1 month"
+  ExpiresByType image/png             "access plus 1 month"
+  ExpiresByType image/webp            "access plus 1 month"
+  ExpiresByType application/pdf       "access plus 1 month"
+  # HTML must be revalidated or edits will not show up after a re-upload.
+  ExpiresByType text/html             "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|pdf)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------ compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css \
+    application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# ------------------------------------------------------------------- HTTPS
+# Uncomment once an SSL certificate is installed for readymynd.com.
+# Enabling it without a valid certificate will make the site unreachable.
+#
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
