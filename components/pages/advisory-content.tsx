@@ -20,8 +20,8 @@ export function AdvisoryContent() {
         title={t('advisory.title')}
         intro={t('advisory.intro')}
         crumbs={[{ label: t('nav.home'), href: '/' }, { label: t('nav.advisoryFull') }]}
-        image="/images/pages/advisory.jpeg"
-        imageAlt={t('advisory.imageAlt')}
+        image="/images/pages/home.jpeg"
+        imageAlt={t('hero.imageAlt')}
         meta={tl('advisory.meta').map((label) => ({ label }))}
         actions={[
           { href: '/contact/', label: t('cta.contactReadyMynd') },
