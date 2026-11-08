@@ -1,23 +1,18 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Pause,
-  Play,
-} from "lucide-react";
-import { useI18n } from "@/lib/i18n";
-import { asset } from "@/lib/site";
-import { HERO_SLIDES } from "@/lib/hero-slides";
+import { useCallback, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { useI18n } from '@/lib/i18n';
+import { asset } from '@/lib/site';
+import { HERO_SLIDES } from '@/lib/hero-slides';
+
+/** 1280x720 twin of each slide, generated alongside the 2560x1440 master. */
+const small = (image: string) => image.replace(/\.jpeg$/, '-1280.jpeg');
 
 const INTERVAL_MS = 6000;
 
-export function HeroSlider({
-  initialSlide = 0,
-}: { initialSlide?: number } = {}) {
+export function HeroSlider({ initialSlide = 0 }: { initialSlide?: number } = {}) {
   const { t } = useI18n();
   const [index, setIndex] = useState(initialSlide);
   const [paused, setPaused] = useState(false);
@@ -28,18 +23,15 @@ export function HeroSlider({
   const [visited, setVisited] = useState<number[]>([initialSlide]);
 
   useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(query.matches);
-    const onChange = (event: MediaQueryListEvent) =>
-      setReducedMotion(event.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
+    const onChange = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
+    query.addEventListener('change', onChange);
+    return () => query.removeEventListener('change', onChange);
   }, []);
 
   const go = useCallback((next: number) => {
-    setIndex(
-      ((next % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length,
-    );
+    setIndex(((next % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length);
   }, []);
 
   useEffect(() => {
@@ -60,17 +52,17 @@ export function HeroSlider({
     <div
       role="region"
       aria-roledescription="carousel"
-      aria-label={t("heroSlider.region")}
+      aria-label={t('heroSlider.region')}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
       onKeyDown={(event) => {
-        if (event.key === "ArrowLeft") {
+        if (event.key === 'ArrowLeft') {
           event.preventDefault();
           go(index - 1);
         }
-        if (event.key === "ArrowRight") {
+        if (event.key === 'ArrowRight') {
           event.preventDefault();
           go(index + 1);
         }
@@ -90,28 +82,34 @@ export function HeroSlider({
               key={slide.id}
               aria-hidden={i !== index}
               className={`absolute inset-0 transition-opacity duration-500 ${
-                i === index ? "opacity-100" : "pointer-events-none opacity-0"
+                i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
               {shown && (
                 <>
-                  {/* Ambient fill. Cropping is fine here — it is blurred. */}
+                  {/*
+                   * Ambient fill. Always the small file: it is blurred and
+                   * scaled past the point where extra pixels show, so there
+                   * is no reason to spend the bandwidth on it.
+                   */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={asset(slide.image)}
+                    src={asset(small(slide.image))}
                     alt=""
                     aria-hidden
                     className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl"
-                    loading={i === initialSlide ? "eager" : "lazy"}
+                    loading={i === initialSlide ? 'eager' : 'lazy'}
                     decoding="async"
                   />
                   {/* The infographic itself, shown whole. */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={asset(slide.image)}
+                    srcSet={`${asset(small(slide.image))} 1280w, ${asset(slide.image)} 2560w`}
+                    sizes="100vw"
                     alt={t(`heroSlider.slides.${slide.id}.alt`)}
                     className="absolute inset-0 size-full object-contain"
-                    loading={i === initialSlide ? "eager" : "lazy"}
+                    loading={i === initialSlide ? 'eager' : 'lazy'}
                     decoding="async"
                   />
                 </>
@@ -163,7 +161,7 @@ export function HeroSlider({
                 <button
                   type="button"
                   onClick={() => go(index - 1)}
-                  aria-label={t("heroSlider.prev")}
+                  aria-label={t('heroSlider.prev')}
                   className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
                 >
                   <ChevronLeft className="size-4" aria-hidden />
@@ -171,7 +169,7 @@ export function HeroSlider({
                 <button
                   type="button"
                   onClick={() => go(index + 1)}
-                  aria-label={t("heroSlider.next")}
+                  aria-label={t('heroSlider.next')}
                   className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
                 >
                   <ChevronRight className="size-4" aria-hidden />
@@ -179,9 +177,7 @@ export function HeroSlider({
                 <button
                   type="button"
                   onClick={() => setPaused((current) => !current)}
-                  aria-label={
-                    paused ? t("heroSlider.play") : t("heroSlider.pause")
-                  }
+                  aria-label={paused ? t('heroSlider.play') : t('heroSlider.pause')}
                   className="glass-pill glass-ring inline-flex size-9 items-center justify-center rounded-full text-body-strong transition-colors hover:text-heading"
                 >
                   {paused ? (
@@ -197,12 +193,10 @@ export function HeroSlider({
                       key={slide.id}
                       type="button"
                       onClick={() => go(i)}
-                      aria-label={t("heroSlider.goTo", { n: String(i + 1) })}
+                      aria-label={t('heroSlider.goTo', { n: String(i + 1) })}
                       aria-current={i === index}
                       className={`h-1.5 rounded-full transition-all ${
-                        i === index
-                          ? "w-6 bg-accent"
-                          : "w-1.5 bg-line hover:bg-body-soft"
+                        i === index ? 'w-6 bg-accent' : 'w-1.5 bg-line hover:bg-body-soft'
                       }`}
                     />
                   ))}
@@ -214,7 +208,7 @@ export function HeroSlider({
       </div>
 
       <p className="sr-only" aria-live="polite">
-        {t("heroSlider.slideOf", {
+        {t('heroSlider.slideOf', {
           current: String(index + 1),
           total: String(HERO_SLIDES.length),
         })}

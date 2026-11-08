@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { ButtonLink } from "@/components/ui/button";
-import { Eyebrow } from "@/components/ui/section";
-import { asset } from "@/lib/site";
-import { HeroSlider } from "@/components/blocks/hero-slider";
-import { HERO_SLIDE_ORDER } from "@/lib/hero-slides";
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
+import { ButtonLink } from '@/components/ui/button';
+import { Eyebrow } from '@/components/ui/section';
+import { asset } from '@/lib/site';
+import { HeroSlider } from '@/components/blocks/hero-slider';
+import { HERO_SLIDE_ORDER } from '@/lib/hero-slides';
 
 type Crumb = { label: string; href?: string };
 
@@ -16,7 +16,7 @@ export function PageHero({
   actions,
   meta,
   image,
-  imageAlt = "",
+  imageAlt = '',
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -25,7 +25,7 @@ export function PageHero({
   actions?: {
     href: string;
     label: string;
-    variant?: "primary" | "outlineLight";
+    variant?: 'primary' | 'outlineLight';
   }[];
   meta?: { label: string }[];
   image?: string;
@@ -63,16 +63,11 @@ export function PageHero({
                   <li key={i} className="flex items-center gap-1.5">
                     {i > 0 && <ChevronRight className="size-3" aria-hidden />}
                     {crumb.href ? (
-                      <Link
-                        href={crumb.href}
-                        className="transition-colors hover:text-heading"
-                      >
+                      <Link href={crumb.href} className="transition-colors hover:text-heading">
                         {crumb.label}
                       </Link>
                     ) : (
-                      <span className="font-medium text-body-strong">
-                        {crumb.label}
-                      </span>
+                      <span className="font-medium text-body-strong">{crumb.label}</span>
                     )}
                   </li>
                 ))}
@@ -81,18 +76,14 @@ export function PageHero({
           )}
 
           <div
-            className={`grid items-center gap-12 ${image ? "lg:grid-cols-[1.05fr_0.95fr]" : ""}`}
+            className={`grid items-center gap-12 ${image ? 'lg:grid-cols-[1.05fr_0.95fr]' : ''}`}
           >
             <div className="max-w-3xl">
               <Eyebrow>{eyebrow}</Eyebrow>
               <h1 className="mt-5 text-4xl font-bold leading-[1.08] text-heading sm:text-5xl lg:text-[3.5rem]">
                 {title}
               </h1>
-              {intro && (
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body">
-                  {intro}
-                </p>
-              )}
+              {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body">{intro}</p>}
 
               {meta && meta.length > 0 && (
                 <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-8 lg:grid-cols-4">
@@ -113,11 +104,7 @@ export function PageHero({
                       key={action.href + action.label}
                       href={action.href}
                       /* `outline` is theme-aware, so it reads correctly on the light hero. */
-                      variant={
-                        action.variant === "outlineLight"
-                          ? "outline"
-                          : "primary"
-                      }
+                      variant={action.variant === 'outlineLight' ? 'outline' : 'primary'}
                       size="lg"
                     >
                       {action.label}

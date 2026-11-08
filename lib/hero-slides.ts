@@ -7,32 +7,30 @@
  */
 export const HERO_SLIDES = [
   {
-    id: "advisory",
-    image: "/images/pages/advisory.jpeg",
-    href: "/digital-advisory/",
+    id: 'advisory',
+    image: '/images/pages/advisory.jpeg',
+    href: '/digital-advisory/',
   },
-  { id: "home", image: "/images/pages/home.jpeg", href: "/" },
+  { id: 'home', image: '/images/pages/home.jpeg', href: '/' },
   {
-    id: "dpp",
-    image: "/images/pages/eu-dpp.jpeg",
-    href: "/textile-digital-product-passport/",
-  },
-  {
-    id: "assessment",
-    image: "/images/pages/assessment.jpeg",
-    href: "/textile-dpp-digital-readiness-assessment/",
+    id: 'dpp',
+    image: '/images/pages/eu-dpp.jpeg',
+    href: '/textile-digital-product-passport/',
   },
   {
-    id: "methodology",
-    image: "/images/pages/methodology.jpeg",
-    href: "/assessment-methodology/",
+    id: 'assessment',
+    image: '/images/pages/assessment.jpeg',
+    href: '/textile-dpp-digital-readiness-assessment/',
   },
-  { id: "about", image: "/images/pages/about.jpeg", href: "/about/" },
-  { id: "insights", image: "/images/pages/insights.jpeg", href: "/insights/" },
-  { id: "contact", image: "/images/pages/contact.jpeg", href: "/contact/" },
+  {
+    id: 'methodology',
+    image: '/images/pages/methodology.jpeg',
+    href: '/assessment-methodology/',
+  },
+  { id: 'about', image: '/images/pages/about.jpeg', href: '/about/' },
+  { id: 'insights', image: '/images/pages/insights.jpeg', href: '/insights/' },
+  { id: 'contact', image: '/images/pages/contact.jpeg', href: '/contact/' },
 ] as const;
 
 /** Plain string[] so callers can look up an arbitrary `image` prop. */
-export const HERO_SLIDE_ORDER: string[] = HERO_SLIDES.map(
-  (slide) => slide.image,
-);
+export const HERO_SLIDE_ORDER: string[] = HERO_SLIDES.map((slide) => slide.image);
