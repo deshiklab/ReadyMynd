@@ -15,6 +15,13 @@
  * exported build is rooted at /ReadyMynd.
  */
 const isPages = process.env.GITHUB_PAGES === 'true';
+/**
+ * Static export for a file-only host that serves from the domain root —
+ * cPanel, shared hosting, an S3 bucket. Same output as the Pages build but
+ * without a base path, since the site is not in a subdirectory.
+ */
+const isStaticRoot = process.env.STATIC_ROOT === 'true';
+const isExport = isPages || isStaticRoot;
 const repoName = 'ReadyMynd';
 const basePath = isPages ? `/${repoName}` : '';
 
@@ -27,7 +34,7 @@ const basePath = isPages ? `/${repoName}` : '';
  */
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (isPages ? `https://deshiklab.github.io/${repoName}` : 'https://www.readymynd.com');
+  (isPages ? `https://deshiklab.github.io/${repoName}` : 'https://readymynd.com');
 
 const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -46,7 +53,7 @@ const nextConfig = {
   images: {
     remotePatterns: [],
     // Static hosting has no /_next/image endpoint.
-    unoptimized: isPages,
+    unoptimized: isExport,
   },
   // Lets <img src> / <a href> (which Next does not prefix) build correct URLs,
   // and lets lib/site.ts resolve the deployed origin.
@@ -61,11 +68,13 @@ const nextConfig = {
     NEXT_PUBLIC_GISCUS_CATEGORY: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? 'Insights',
     NEXT_PUBLIC_GISCUS_CATEGORY_ID: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
   },
-  ...(isPages
+  ...(isExport
     ? {
         output: 'export',
         basePath,
-        assetPrefix: `${basePath}/`,
+        // assetPrefix must stay undefined at the root, or every asset URL
+        // picks up a stray leading slash.
+        assetPrefix: basePath ? `${basePath}/` : undefined,
       }
     : {
         async headers() {
