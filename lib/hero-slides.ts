@@ -6,12 +6,16 @@
  * the About infographic instead of always starting on slide one.
  */
 export const HERO_SLIDES = [
+  /**
+   * The landing artwork leads. Pages without one of their own fall back to
+   * index 0, so this is also what the legal and article routes open on.
+   */
+  { id: 'home', image: '/images/pages/home.jpeg', href: '/' },
   {
     id: 'advisory',
     image: '/images/pages/advisory.jpeg',
     href: '/digital-advisory/',
   },
-  { id: 'home', image: '/images/pages/home.jpeg', href: '/' },
   {
     id: 'dpp',
     image: '/images/pages/eu-dpp.jpeg',
