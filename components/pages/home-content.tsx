@@ -11,7 +11,7 @@ import { HeroSlider } from '@/components/blocks/hero-slider';
 import { DimensionsExplorer } from '@/components/interactive/dimensions-explorer';
 import { factoryTypes, processSteps } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
-import {brochureCta, asset } from '@/lib/site';
+import { brochureCta, asset } from '@/lib/site';
 
 const heroStatValues = ['5', '7', '10–15', '1:1'];
 
@@ -42,7 +42,14 @@ export function HomeContent() {
         </Reveal>
 
         <div className="container-page">
-          <div className="mt-16 max-w-4xl lg:mt-20">
+          {/*
+           * Full width: the headline column no longer stops at max-w-4xl and
+           * leaves the right half empty. The assessment infographic sits
+           * beside it — that is the service the primary CTA leads to, so it
+           * carries the same message as the headline.
+           */}
+          <div className="mt-16 grid items-center gap-12 lg:mt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div>
               <Reveal>
                 <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-raised px-3 py-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-body-strong backdrop-blur">
                   <Sparkles className="size-3.5 text-accent" aria-hidden />
@@ -87,6 +94,28 @@ export function HomeContent() {
                   </ButtonLink>
                 </div>
               </Reveal>
+            </div>
+
+            <Reveal delay={240} className="relative">
+              <div
+                aria-hidden
+                className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-500/20 to-transparent blur-2xl dark:from-brand-500/30"
+              />
+              <div className="overflow-hidden rounded-2xl ring-1 ring-line">
+                {/* 16:9 box against 16:9 art, so the infographic is not cropped. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset('/images/pages/assessment.jpeg')}
+                  srcSet={`${asset('/images/pages/assessment-1280.jpeg')} 1280w, ${asset(
+                    '/images/pages/assessment.jpeg',
+                  )} 2560w`}
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  alt={t('assessment.imageAlt')}
+                  className="aspect-video w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </Reveal>
           </div>
 
           <Reveal delay={240}>
@@ -104,8 +133,13 @@ export function HomeContent() {
           <Reveal delay={400}>
             <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4">
               {heroStatValues.map((value, index) => (
-                <div key={value} className="bg-surface-raised px-5 py-6 text-center sm:px-6 sm:py-8">
-                  <dt className="font-display text-3xl font-bold text-heading sm:text-4xl">{value}</dt>
+                <div
+                  key={value}
+                  className="bg-surface-raised px-5 py-6 text-center sm:px-6 sm:py-8"
+                >
+                  <dt className="font-display text-3xl font-bold text-heading sm:text-4xl">
+                    {value}
+                  </dt>
                   <dd className="mt-2 text-xs uppercase tracking-[0.12em] text-body-soft">
                     {statLabels[index]}
                   </dd>
@@ -132,7 +166,11 @@ export function HomeContent() {
 
             <Reveal delay={160}>
               <div className="mt-8">
-                <ButtonLink href="/textile-digital-product-passport/" variant="ghost" className="px-0">
+                <ButtonLink
+                  href="/textile-digital-product-passport/"
+                  variant="ghost"
+                  className="px-0"
+                >
                   {t('why.link')}
                   <ArrowRight className="size-4" aria-hidden />
                 </ButtonLink>
@@ -155,9 +193,14 @@ export function HomeContent() {
                 { icon: Layers, title: t('why.card1Title'), body: t('why.card1Body') },
                 { icon: ShieldCheck, title: t('why.card2Title'), body: t('why.card2Body') },
               ].map((item) => (
-                <div key={item.title} className="rounded-xl border border-line bg-surface-raised p-5">
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-line bg-surface-raised p-5"
+                >
                   <item.icon className="size-5 text-accent" aria-hidden />
-                  <p className="mt-3 font-display text-sm font-semibold text-heading">{item.title}</p>
+                  <p className="mt-3 font-display text-sm font-semibold text-heading">
+                    {item.title}
+                  </p>
                   <p className="mt-1.5 text-sm leading-relaxed text-body">{item.body}</p>
                 </div>
               ))}
@@ -169,7 +212,7 @@ export function HomeContent() {
       {/* ------------------------------------------- Five dimensions (interactive) */}
       <Section id="readiness-dimensions" tone="mist">
         <SectionHeading
-                   eyebrow={t('dimensions.eyebrow')}
+          eyebrow={t('dimensions.eyebrow')}
           title={t('dimensions.title')}
           intro={t('dimensions.intro')}
         />
@@ -219,7 +262,7 @@ export function HomeContent() {
       {/* ------------------------------------------------------- 1.4 Who we serve */}
       <Section id="who-we-serve" tone="mist">
         <SectionHeading
-         eyebrow={t('serve.eyebrow')}
+          eyebrow={t('serve.eyebrow')}
           title={t('serve.title')}
           intro={t('serve.intro')}
         />
@@ -238,9 +281,9 @@ export function HomeContent() {
       </Section>
 
       {/* -------------------------------------------------------- Process teaser */}
-      <Section id="process" >
+      <Section id="process">
         <SectionHeading
-                   eyebrow={t('process.eyebrow')}
+          eyebrow={t('process.eyebrow')}
           title={t('process.title')}
           intro={t('process.intro')}
         />
@@ -269,7 +312,9 @@ export function HomeContent() {
         </ol>
 
         <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-base leading-relaxed text-body-strong">{t('process.note')}</p>
+          <p className="mt-8 max-w-3xl text-base leading-relaxed text-body-strong">
+            {t('process.note')}
+          </p>
         </Reveal>
 
         <Reveal delay={160}>
