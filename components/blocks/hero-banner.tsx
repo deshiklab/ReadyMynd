@@ -12,15 +12,7 @@ import { asset } from '@/lib/site';
  * cropped to fill — the same rule as the slider, since these carry
  * infographics that lose meaning if the edges are cut away.
  */
-export function HeroBanner({
-  image,
-  imageAlt = '',
-  eyebrow,
-}: {
-  image: string;
-  imageAlt?: string;
-  eyebrow?: string;
-}) {
+export function HeroBanner({ image, imageAlt = '' }: { image: string; imageAlt?: string }) {
   const small = image.replace(/\.jpeg$|\.jpg$/, '-1280.jpeg');
 
   return (
@@ -60,16 +52,6 @@ export function HeroBanner({
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface to-transparent"
       />
-
-      {eyebrow && (
-        <div className="absolute inset-x-0 bottom-0 pb-6">
-          <div className="container-page">
-            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-accent">
-              {eyebrow}
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -38,7 +38,7 @@ export function PageHero({
        * through. The banner carries the image, so the text block below no
        * longer repeats it in a side column.
        */}
-      {image && <HeroBanner image={image} imageAlt={imageAlt} eyebrow={eyebrow} />}
+      {image && <HeroBanner image={image} imageAlt={imageAlt} />}
       <section className="section-hero overflow-hidden pb-20 pt-24 sm:pb-24 lg:pb-28 lg:pt-28">
         <div
           aria-hidden
