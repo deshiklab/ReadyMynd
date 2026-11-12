@@ -93,6 +93,13 @@ export function Header() {
               <Phone className="size-3 shrink-0" aria-hidden />
               {site.phone}
             </a>
+            <a
+              href={`tel:${site.corporatePhoneHref}`}
+              className="hidden items-center gap-1.5 transition-colors hover:text-heading lg:inline-flex"
+            >
+              <Phone className="size-3 shrink-0" aria-hidden />
+              {site.corporatePhone}
+            </a>
           </div>
 
           <div className="glass-pill glass-ring ml-auto flex shrink-0 items-center gap-0.5 rounded-full border p-0.5">
@@ -116,6 +123,11 @@ export function Header() {
           >
             <Logo className="h-7 w-auto sm:h-8" priority />
           </Link>
+
+          {/* Tagline, beside the wordmark where there is room for it. */}
+          <p className="hidden shrink-0 border-l border-line pl-4 font-display text-sm font-semibold text-heading 2xl:block">
+            {t('brand.valueProp')}
+          </p>
 
           {/* Desktop nav — full labels */}
           <nav aria-label={t('nav.mainMenu')} className="hidden xl:block">

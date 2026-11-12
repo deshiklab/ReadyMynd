@@ -7,6 +7,7 @@ export const commonEn: Messages = {
     name: 'ReadyMynd',
     tagline: 'Textile DPP Readiness & Digital Advisory',
     positioning: 'Software-Enabled. Analyst-Led. Evidence-Based.',
+    valueProp: 'Digital Readiness. Business Advantage.',
     shortLabel: 'DPP Readiness',
   },
 
@@ -158,6 +159,7 @@ export const commonBn: Messages = {
     name: 'ReadyMynd',
     tagline: 'টেক্সটাইল ডিপিপি প্রস্তুতি ও ডিজিটাল পরামর্শ',
     positioning: 'সফটওয়্যার-সমর্থিত। বিশ্লেষক-নেতৃত্বাধীন। প্রমাণ-ভিত্তিক।',
+    valueProp: 'ডিজিটাল প্রস্তুতি। ব্যবসায়িক সুবিধা।',
     shortLabel: 'ডিপিপি প্রস্তুতি',
   },
 

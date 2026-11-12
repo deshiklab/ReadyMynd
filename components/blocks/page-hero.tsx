@@ -3,8 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/section';
 import { asset } from '@/lib/site';
-import { HeroSlider } from '@/components/blocks/hero-slider';
-import { HERO_SLIDE_ORDER } from '@/lib/hero-slides';
+import { HeroBanner } from '@/components/blocks/hero-banner';
 
 type Crumb = { label: string; href?: string };
 
@@ -31,16 +30,15 @@ export function PageHero({
   image?: string;
   imageAlt?: string;
 }) {
-  const startSlide = image ? Math.max(0, HERO_SLIDE_ORDER.indexOf(image)) : 0;
-
   return (
     <>
       {/*
-       * Every page opens on the same fullscreen slider as the home page. The
-       * page's own image doubles as the starting slide, so /about/ lands on
-       * the About artwork rather than always opening on slide one.
+       * Inner pages get one fixed banner rather than the home page's slider —
+       * the artwork belongs to this page, so there is nothing to rotate
+       * through. The banner carries the image, so the text block below no
+       * longer repeats it in a side column.
        */}
-      <HeroSlider initialSlide={startSlide} />
+      {image && <HeroBanner image={image} imageAlt={imageAlt} eyebrow={eyebrow} />}
       <section className="section-hero overflow-hidden pb-20 pt-24 sm:pb-24 lg:pb-28 lg:pt-28">
         <div
           aria-hidden
@@ -76,7 +74,7 @@ export function PageHero({
           )}
 
           <div
-            className={`grid items-center gap-12 ${image ? 'lg:grid-cols-[1.05fr_0.95fr]' : ''}`}
+            className="grid items-center gap-12"
           >
             <div className="max-w-3xl">
               <Eyebrow>{eyebrow}</Eyebrow>
@@ -113,24 +111,6 @@ export function PageHero({
                 </div>
               )}
             </div>
-
-            {image && (
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-500/20 to-transparent blur-2xl dark:from-brand-500/30"
-                />
-                <div className="overflow-hidden rounded-2xl ring-1 ring-line">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={asset(image)}
-                    alt={imageAlt}
-                    className="aspect-4/3 w-full object-cover"
-                    loading="eager"
-                  />
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </section>

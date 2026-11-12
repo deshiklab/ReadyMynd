@@ -126,6 +126,7 @@ export const companyEn: Messages = {
     email: 'Email',
     phone: 'Phone',
     location: 'Location',
+    corporatePhone: 'Corporate number',
     hours: 'Hours',
   },
 
@@ -312,6 +313,7 @@ export const companyBn: Messages = {
     email: 'ইমেইল',
     phone: 'ফোন',
     location: 'অবস্থান',
+    corporatePhone: 'কর্পোরেট নম্বর',
     hours: 'সময়',
   },
 

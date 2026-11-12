@@ -93,7 +93,7 @@ export function ContactContent() {
           intro={t('contact.bIntro')}
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {[
             {
               icon: Mail,
@@ -106,6 +106,12 @@ export function ContactContent() {
               label: t('contact.phone'),
               value: site.phone,
               href: `tel:${site.phoneHref}`,
+            },
+            {
+              icon: Phone,
+              label: t('contact.corporatePhone'),
+              value: site.corporatePhone,
+              href: `tel:${site.corporatePhoneHref}`,
             },
             {
               icon: MapPin,

@@ -53,9 +53,10 @@ export function Footer() {
               <Logo className="h-9 w-auto" />
             </Link>
             <p className="mt-5 text-sm leading-relaxed">{t('footer.intro')}</p>
-            <p className="mt-4 font-display text-sm font-semibold text-heading">
-              {t('brand.positioning')}
+            <p className="mt-4 font-display text-base font-semibold text-heading">
+              {t('brand.valueProp')}
             </p>
+            <p className="mt-1.5 text-sm text-body-soft">{t('brand.positioning')}</p>
           </div>
 
           <nav aria-label={t('footer.services')}>

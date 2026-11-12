@@ -13,6 +13,7 @@ export const homeEn: Messages = {
     ctaPrimary: 'Explore Digital Readiness Assessment',
     ctaSecondary: 'Download Service Brochure',
     imageAlt: 'ReadyMynd analysts reviewing product information with a Bangladesh factory team',
+    readinessImageAlt: 'Diagram of a digital readiness assessment across five dimensions',
     badgeTitle: 'Assessment principle',
     badgeHeading: 'One Product. One Factory.',
     badgeBody:
@@ -176,6 +177,7 @@ export const homeBn: Messages = {
     ctaPrimary: 'ডিজিটাল প্রস্তুতি মূল্যায়ন দেখুন',
     ctaSecondary: 'সেবা ব্রোশিওর ডাউনলোড করুন',
     imageAlt: 'বাংলাদেশের একটি কারখানার দলের সাথে পণ্য-তথ্য পর্যালোচনা করছেন ReadyMynd বিশ্লেষকরা',
+    readinessImageAlt: 'পাঁচটি মাত্রায় ডিজিটাল প্রস্তুতি মূল্যায়নের চিত্র',
     badgeTitle: 'মূল্যায়ন নীতি',
     badgeHeading: 'এক পণ্য। এক কারখানা।',
     badgeBody:

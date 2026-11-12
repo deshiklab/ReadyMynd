@@ -19,7 +19,7 @@ export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? '
 export const site = {
   name: 'ReadyMynd',
   legalName: 'ReadyMynd',
-  tagline: 'Textile DPP Readiness & Digital Advisory',
+  tagline: 'Digital Readiness. Business Advantage.',
   positioning: 'Software-Enabled. Analyst-Led. Evidence-Based.',
   /**
    * Absolute origin for canonicals, Open Graph tags and the sitemap. Inlined

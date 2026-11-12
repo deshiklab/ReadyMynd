@@ -102,15 +102,11 @@ export function HomeContent() {
                 className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-500/20 to-transparent blur-2xl dark:from-brand-500/30"
               />
               <div className="overflow-hidden rounded-2xl ring-1 ring-line">
-                {/* 16:9 box against 16:9 art, so the infographic is not cropped. */}
+                {/* Body artwork is generated separately so no banner image is repeated. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={asset('/images/pages/assessment.jpeg')}
-                  srcSet={`${asset('/images/pages/assessment-1280.jpeg')} 1280w, ${asset(
-                    '/images/pages/assessment.jpeg',
-                  )} 2560w`}
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  alt={t('assessment.imageAlt')}
+                  src={asset('/images/generated/readiness-overview.jpg')}
+                  alt={t('hero.readinessImageAlt')}
                   className="aspect-video w-full object-cover"
                   loading="eager"
                 />
@@ -182,7 +178,7 @@ export function HomeContent() {
             <div className="overflow-hidden rounded-2xl shadow-lift ring-1 ring-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={asset('/images/pages/eu-dpp.jpeg')}
+                src={asset('/images/generated/data-fragmentation.jpg')}
                 alt={t('why.imageAlt')}
                 className="aspect-4/3 w-full object-cover"
                 loading="lazy"
