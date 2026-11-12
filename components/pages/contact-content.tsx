@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { Clock, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { PageHero } from '@/components/blocks/page-hero';
 import { Reveal } from '@/components/ui/reveal';
 import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
@@ -9,11 +10,51 @@ import { EnquiryForm } from '@/components/contact/enquiry-form';
 import { useI18n } from '@/lib/i18n';
 import { site } from '@/lib/site';
 
+/**
+ * A card holds one or more links — the contact numbers share a single card
+ * rather than occupying two.
+ */
+type ContactCard = {
+  icon: LucideIcon;
+  label: string;
+  links: { value: string; href?: string; note?: string }[];
+};
+
 type Step = { title: string; body: string };
 
 export function ContactContent() {
   const { t, tr } = useI18n();
   const steps = tr<Step[]>('contact.eSteps') ?? [];
+
+  const contactCards: ContactCard[] = [
+    {
+      icon: Mail,
+      label: t('contact.email'),
+      links: [{ value: site.email, href: `mailto:${site.email}` }],
+    },
+    {
+      icon: Phone,
+      label: t('contact.contactNumber'),
+      links: [
+        { value: site.phone, href: `tel:${site.phoneHref}`, note: t('contact.phone') },
+        {
+          value: site.corporatePhone,
+          href: `tel:${site.corporatePhoneHref}`,
+          note: t('contact.corporatePhone'),
+        },
+      ],
+    },
+    {
+      icon: MapPin,
+      label: t('contact.location'),
+      links: [{ value: site.address, href: site.addressHref }],
+    },
+    {
+      icon: Clock,
+      label: t('contact.hours'),
+      links: [{ value: site.hours }],
+    },
+  ];
 
   return (
     <>
@@ -93,39 +134,8 @@ export function ContactContent() {
           intro={t('contact.bIntro')}
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {[
-            {
-              icon: Mail,
-              label: t('contact.email'),
-              value: site.email,
-              href: `mailto:${site.email}`,
-            },
-            {
-              icon: Phone,
-              label: t('contact.phone'),
-              value: site.phone,
-              href: `tel:${site.phoneHref}`,
-            },
-            {
-              icon: Phone,
-              label: t('contact.corporatePhone'),
-              value: site.corporatePhone,
-              href: `tel:${site.corporatePhoneHref}`,
-            },
-            {
-              icon: MapPin,
-              label: t('contact.location'),
-              value: site.address,
-              href: site.addressHref,
-            },
-            {
-              icon: Clock,
-              label: t('contact.hours'),
-              value: site.hours,
-              href: undefined,
-            },
-          ].map((item, i) => (
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {contactCards.map((item, i) => (
             <Reveal
               key={item.label}
               delay={i * 60}
@@ -135,16 +145,28 @@ export function ContactContent() {
               <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-body-soft">
                 {item.label}
               </p>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  className="mt-1.5 block text-base font-semibold text-heading hover:text-accent"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <p className="mt-1.5 text-base font-semibold text-heading">{item.value}</p>
-              )}
+              <div className="mt-2 space-y-2">
+                {item.links.map((link) =>
+                  link.href ? (
+                    <a
+                      key={link.value}
+                      href={link.href}
+                      className="block text-base font-semibold text-heading hover:text-accent"
+                    >
+                      {link.value}
+                      {link.note && (
+                        <span className="mt-0.5 block text-xs font-normal text-body-soft">
+                          {link.note}
+                        </span>
+                      )}
+                    </a>
+                  ) : (
+                    <p key={link.value} className="text-base font-semibold text-heading">
+                      {link.value}
+                    </p>
+                  ),
+                )}
+              </div>
             </Reveal>
           ))}
         </div>

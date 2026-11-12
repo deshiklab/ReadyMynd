@@ -8,33 +8,24 @@ import { asset } from '@/lib/site';
  * people arrive with a task, and making them scroll a whole viewport to
  * reach the title works against that.
  *
- * The artwork is drawn whole over a blurred copy of itself rather than
- * cropped to fill — the same rule as the slider, since these carry
- * infographics that lose meaning if the edges are cut away.
+ * The artwork fills the frame rather than being letterboxed. The banner is
+ * a wide strip, so fitting the whole image would leave large empty bands
+ * either side; `object-center` keeps the focal middle band. The home slider
+ * keeps the whole-image treatment, since its frame is tall enough for it.
  */
 export function HeroBanner({ image, imageAlt = '' }: { image: string; imageAlt?: string }) {
   const small = image.replace(/\.jpeg$|\.jpg$/, '-1280.jpeg');
 
   return (
     <div className="relative h-[20rem] overflow-hidden bg-surface-muted sm:h-[24rem] lg:h-[32rem]">
-      {/* Ambient fill — blurred, so cropping it costs nothing. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={asset(small)}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl"
-        loading="eager"
-        decoding="async"
-      />
-      {/* The artwork itself, shown whole. */}
+      {/* Fills the frame edge to edge — no letterbox bands down the sides. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={asset(image)}
         srcSet={`${asset(small)} 1280w, ${asset(image)} 2560w`}
         sizes="100vw"
         alt={imageAlt}
-        className="absolute inset-0 size-full object-contain"
+        className="absolute inset-0 size-full object-cover object-center"
         loading="eager"
         decoding="async"
       />
