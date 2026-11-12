@@ -10,6 +10,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
 import { evidenceSources, processSteps } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
+import { asset } from '@/lib/site';
 
 export function MethodologyContent() {
   const { t, tx, tl } = useI18n();
@@ -37,10 +38,22 @@ export function MethodologyContent() {
       {/* ------------------------------------------------------------- 4.1 */}
       <Section id="five-steps" tone="light" grid>
         <SectionHeading
-         eyebrow={t('methodology.sEyebrow')}
+          eyebrow={t('methodology.sEyebrow')}
           title={t('methodology.sTitle')}
           intro={t('methodology.sIntro')}
         />
+
+        <Reveal delay={60} className="mt-10">
+          <div className="overflow-hidden rounded-2xl border border-line">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset('/images/generated/five-step-process.jpg')}
+              alt={t('methodology.sImageAlt')}
+              className="aspect-[2/1] w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
 
         <ol className="mt-14 grid gap-6 lg:grid-cols-5">
           {processSteps.map((step, i) => (
@@ -71,11 +84,11 @@ export function MethodologyContent() {
       <Section id="evidence" tone="mist">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading
-                           eyebrow={t('methodology.eEyebrow')}
-              title={t('methodology.eTitle')}
-            />
-            <Reveal delay={80} className="mt-6 space-y-5 text-base leading-relaxed text-body-strong">
+            <SectionHeading eyebrow={t('methodology.eEyebrow')} title={t('methodology.eTitle')} />
+            <Reveal
+              delay={80}
+              className="mt-6 space-y-5 text-base leading-relaxed text-body-strong"
+            >
               <p>{t('methodology.eP1')}</p>
               <p>{t('methodology.eP2')}</p>
             </Reveal>
@@ -88,7 +101,7 @@ export function MethodologyContent() {
 
           <div>
             <Reveal delay={100}>
-              <Eyebrow >{t('methodology.eSourcesTitle')}</Eyebrow>
+              <Eyebrow>{t('methodology.eSourcesTitle')}</Eyebrow>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {evidenceSources.map((source, i) => (
                   <div
@@ -110,7 +123,7 @@ export function MethodologyContent() {
       {/* ------------------------------------------------------------- 4.3 */}
       <Section id="scope-responsibilities" tone="light">
         <SectionHeading
-         eyebrow={t('methodology.rEyebrow')}
+          eyebrow={t('methodology.rEyebrow')}
           title={t('methodology.rTitle')}
           intro={t('methodology.rIntro')}
         />
@@ -152,9 +165,7 @@ export function MethodologyContent() {
           <Reveal delay={80} className="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
             <Eyebrow>{t('methodology.rTheirsTitle')}</Eyebrow>
             <div className="mt-5">
-              <CheckList
-                items={tl('methodology.rTheirs')}
-              />
+              <CheckList items={tl('methodology.rTheirs')} />
             </div>
           </Reveal>
         </div>

@@ -9,6 +9,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
 import { advisoryAreas, advisoryPrinciples } from '@/lib/content';
 import { useI18n } from '@/lib/i18n';
+import { asset } from '@/lib/site';
 
 export function AdvisoryContent() {
   const { t, tx, tl } = useI18n();
@@ -66,6 +67,18 @@ export function AdvisoryContent() {
           intro={t('advisory.aIntro')}
         />
 
+        <Reveal delay={60} className="mt-10">
+          <div className="overflow-hidden rounded-2xl border border-line">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset('/images/generated/advisory-areas.jpg')}
+              alt={t('advisory.aImageAlt')}
+              className="aspect-[2/1] w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
+
         <div className="mt-14 space-y-6">
           {advisoryAreas.map((area, i) => (
             <Reveal
@@ -103,15 +116,14 @@ export function AdvisoryContent() {
       </Section>
 
       {/* ------------------------------------------------------------- 5.3 */}
-      <Section id="principles" >
+      <Section id="principles">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <SectionHeading
-                           eyebrow={t('advisory.pEyebrow')}
-              title={t('advisory.pTitle')}
-            />
+            <SectionHeading eyebrow={t('advisory.pEyebrow')} title={t('advisory.pTitle')} />
             <Reveal delay={80}>
-              <p className="mt-6 text-base leading-relaxed text-body-strong">{t('advisory.pIntro')}</p>
+              <p className="mt-6 text-base leading-relaxed text-body-strong">
+                {t('advisory.pIntro')}
+              </p>
             </Reveal>
           </div>
 

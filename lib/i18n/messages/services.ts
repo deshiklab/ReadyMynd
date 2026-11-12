@@ -70,6 +70,7 @@ export const servicesEn: Messages = {
     oP2: 'The assessment uses ReadyMynd’s developed software to support questionnaires, scoring, gap analysis and report generation. Enterprise Analysts review the available evidence, interpret findings and determine recommendations.',
     oP3: 'Assessment coverage is tailored to the selected factory’s activities, relevant departments and product-information environment.',
     oImageAlt: 'Abstract illustration of layered digital readiness dimensions',
+    sImageAlt: 'Diagram of the five-step assessment process from scope to 90-day plan',
     frameworkEyebrow: 'The framework',
     frameworkTitle: 'Five Dimensions of Digital Readiness',
     frameworkIntro: 'Select a dimension to see what it covers and what our analysts examine within it.',
@@ -156,6 +157,7 @@ export const servicesEn: Messages = {
     meta: ['3 areas', '5 principles', 'Vendor-neutral', 'Separate engagement'],
 
     oEyebrow: '5.1 — Digital Advisory Following the Assessment',
+    aImageAlt: 'Diagram of the three technical advisory areas: data, digital systems and integration',
     oTitle: 'Advisory Starts Where the Assessment Ends',
     oP1: 'ReadyMynd’s Digital Advisory Services help factories examine and plan technical improvements arising from a completed Textile DPP Digital Readiness Assessment.',
     oP2: 'Advisory is available only after the factory has purchased and completed ReadyMynd’s paid assessment. It is optional and separately contracted.',
@@ -250,6 +252,7 @@ export const servicesBn: Messages = {
     oP2: 'মূল্যায়নে প্রশ্নপত্র, স্কোরিং, ঘাটতি বিশ্লেষণ ও প্রতিবেদন তৈরিতে সহায়তার জন্য ReadyMynd-এর নিজস্ব সফটওয়্যার ব্যবহার করা হয়। এন্টারপ্রাইজ বিশ্লেষকরা উপলব্ধ প্রমাণ পর্যালোচনা করেন, ফলাফল ব্যাখ্যা করেন এবং সুপারিশ নির্ধারণ করেন।',
     oP3: 'নির্বাচিত কারখানার কার্যক্রম, প্রাসঙ্গিক বিভাগ ও তথ্য-পরিবেশ অনুযায়ী মূল্যায়নের পরিধি সাজানো হয়।',
     oImageAlt: 'স্তরীভূত ডিজিটাল প্রস্তুতি মাত্রার বিমূর্ত চিত্র',
+    sImageAlt: 'স্কোপ থেকে ৯০-দিনের পরিকল্পনা পর্যন্ত পাঁচ-ধাপ মূল্যায়ন প্রক্রিয়ার চিত্র',
     frameworkEyebrow: 'কাঠামো',
     frameworkTitle: 'ডিজিটাল প্রস্তুতির পাঁচটি মাত্রা',
     frameworkIntro: 'একটি মাত্রা নির্বাচন করুন — এতে কী কী আছে এবং আমাদের বিশ্লেষকরা এর মধ্যে কী পরীক্ষা করেন তা দেখুন।',
@@ -336,6 +339,7 @@ export const servicesBn: Messages = {
     meta: ['৩ ক্ষেত্র', '৫ নীতি', 'ভেন্ডর-নিরপেক্ষ', 'পৃথক চুক্তি'],
 
     oEyebrow: '৫.১ — মূল্যায়ন-পরবর্তী ডিজিটাল পরামর্শ',
+    aImageAlt: 'তিনটি কারিগরি পরামর্শ ক্ষেত্রের চিত্র: তথ্য, ডিজিটাল সিস্টেম ও সংযোগ',
     oTitle: 'পরামর্শ শুরু হয় যেখানে মূল্যায়ন শেষ হয়',
     oP1: 'ReadyMynd-এর ডিজিটাল পরামর্শ সেবা কারখানাগুলোকে একটি সম্পন্ন টেক্সটাইল ডিপিপি ডিজিটাল প্রস্তুতি মূল্যায়ন থেকে উদ্ভূত কারিগরি উন্নয়ন পরীক্ষা করতে ও পরিকল্পনা করতে সাহায্য করে।',
     oP2: 'কারখানা ReadyMynd-এর অর্থপ্রদত্ত মূল্যায়ন কিনে সম্পন্ন করার পরেই কেবল পরামর্শ সেবা নেওয়া যায়। এটি ঐচ্ছিক এবং পৃথকভাবে চুক্তিবদ্ধ।',
