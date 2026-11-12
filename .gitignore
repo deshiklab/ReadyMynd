@@ -20,3 +20,7 @@ tsconfig.tsbuildinfo
 out/
 .next/
 *.zip
+
+# ...but the cPanel deployment package is published from the repo, because
+# release-asset uploads (uploads.github.com) are unreachable from CI here.
+!readymynd-cpanel.zip
