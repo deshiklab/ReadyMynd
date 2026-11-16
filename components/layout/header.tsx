@@ -66,133 +66,144 @@ export function Header() {
     active ? 'text-accent' : 'text-body-strong hover:text-heading';
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        solid ? 'glass border-b glass-ring shadow-soft' : 'glass-soft border-b border-transparent'
-      }`}
-    >
-      {/*
-       * Top utility bar — always visible on every breakpoint.
-       * Left: positioning line + direct contact details.
-       * Right: language and theme switches in a frosted pill.
-       */}
-      <div className="border-b border-line/60 bg-surface-muted/60 backdrop-blur-xl">
-        <div className="container-page flex h-9 items-center gap-4 text-xs">
-          <div className="flex min-w-0 items-center gap-4 text-body-soft">
-            <p className="hidden truncate xl:block">{t('header.utilityStrip')}</p>
-            <p className="hidden shrink-0 border-l border-line pl-4 font-display text-xs font-semibold text-heading 2xl:block">
-              {t('brand.valueProp')}
-            </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="hidden items-center gap-1.5 transition-colors hover:text-heading sm:inline-flex"
-            >
-              <Mail className="size-3 shrink-0" aria-hidden />
-              {site.email}
-            </a>
-            <a
-              href={`tel:${site.phoneHref}`}
-              className="hidden items-center gap-1.5 transition-colors hover:text-heading md:inline-flex"
-            >
-              <Phone className="size-3 shrink-0" aria-hidden />
-              {site.phone}
-            </a>
-            <a
-              href={`tel:${site.corporatePhoneHref}`}
-              className="hidden items-center gap-1.5 transition-colors hover:text-heading lg:inline-flex"
-            >
-              <Phone className="size-3 shrink-0" aria-hidden />
-              {site.corporatePhone}
-            </a>
-          </div>
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          solid ? 'glass border-b glass-ring shadow-soft' : 'glass-soft border-b border-transparent'
+        }`}
+      >
+        {/*
+         * Top utility bar — always visible on every breakpoint.
+         * Left: positioning line + direct contact details.
+         * Right: language and theme switches in a frosted pill.
+         */}
+        <div className="border-b border-line/60 bg-surface-muted/60 backdrop-blur-xl">
+          <div className="container-page flex h-9 items-center gap-4 text-xs">
+            <div className="flex min-w-0 items-center gap-4 text-body-soft">
+              <p className="hidden truncate xl:block">{t('header.utilityStrip')}</p>
+              <p className="hidden shrink-0 border-l border-line pl-4 font-display text-xs font-semibold text-heading 2xl:block">
+                {t('brand.valueProp')}
+              </p>
+              <a
+                href={`mailto:${site.email}`}
+                className="hidden items-center gap-1.5 transition-colors hover:text-heading sm:inline-flex"
+              >
+                <Mail className="size-3 shrink-0" aria-hidden />
+                {site.email}
+              </a>
+              <a
+                href={`tel:${site.phoneHref}`}
+                className="hidden items-center gap-1.5 transition-colors hover:text-heading md:inline-flex"
+              >
+                <Phone className="size-3 shrink-0" aria-hidden />
+                {site.phone}
+              </a>
+              <a
+                href={`tel:${site.corporatePhoneHref}`}
+                className="hidden items-center gap-1.5 transition-colors hover:text-heading lg:inline-flex"
+              >
+                <Phone className="size-3 shrink-0" aria-hidden />
+                {site.corporatePhone}
+              </a>
+            </div>
 
-          <div className="glass-pill glass-ring ml-auto flex shrink-0 items-center gap-0.5 rounded-full border p-0.5">
-            <LanguageToggle variant="glass" />
-            <ThemeToggle variant="glass" />
+            <div className="glass-pill glass-ring ml-auto flex shrink-0 items-center gap-0.5 rounded-full border p-0.5">
+              <LanguageToggle variant="glass" />
+              <ThemeToggle variant="glass" />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main navigation bar */}
-      <div className="container-page">
-        <div
-          className={`flex items-center gap-4 transition-all duration-300 sm:gap-6 ${
-            solid ? 'h-16' : 'h-[4.5rem]'
-          }`}
-        >
-          <Link href="/" className="group flex shrink-0 items-center" aria-label="ReadyMynd — home">
-            <Logo className="h-7 w-auto sm:h-8" priority />
-          </Link>
-
-          {/* Desktop nav — full labels */}
-          <nav aria-label={t('nav.mainMenu')} className="hidden xl:block">
-            <ul className="flex items-center gap-0.5">
-              {items.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive(item.href) ? 'page' : undefined}
-                    className={`${navLink('xl')} ${navTone(isActive(item.href))}`}
-                  >
-                    {t(`nav.${item.key}`)}
-                    {isActive(item.href) && (
-                      <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 rounded-full bg-brand-500" />
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Desktop nav — condensed labels */}
-          <nav aria-label={t('nav.mainMenu')} className="hidden lg:block xl:hidden">
-            <ul className="flex items-center gap-0.5">
-              {items.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive(item.href) ? 'page' : undefined}
-                    className={`${navLink('lg')} ${navTone(isActive(item.href))}`}
-                  >
-                    {t(`nav.${item.key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Right cluster: primary CTA + menu trigger */}
-          <div className="ml-auto flex items-center gap-2 sm:gap-3">
+        {/* Main navigation bar */}
+        <div className="container-page">
+          <div
+            className={`flex items-center gap-4 transition-all duration-300 sm:gap-6 ${
+              solid ? 'h-16' : 'h-[4.5rem]'
+            }`}
+          >
             <Link
-              href="/contact/#assessment-enquiry"
-              className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-[0.8125rem] font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.65)] transition-all hover:bg-brand-600 xl:inline-flex"
+              href="/"
+              className="group flex shrink-0 items-center"
+              aria-label="ReadyMynd — home"
             >
-              {t('header.requestAssessment')}
-              <ArrowRight className="size-4" aria-hidden />
+              <Logo className="h-7 w-auto sm:h-8" priority />
             </Link>
 
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-expanded={open}
-              aria-controls="mobile-nav"
-              aria-label={open ? t('header.closeMenu') : t('header.openMenu')}
-              className="grid size-10 shrink-0 place-items-center rounded-xl text-heading transition-colors hover:bg-surface-sunken lg:hidden"
-            >
-              {open ? <X className="size-5" /> : <Menu className="size-5" />}
-            </button>
+            {/* Desktop nav — full labels */}
+            <nav aria-label={t('nav.mainMenu')} className="hidden xl:block">
+              <ul className="flex items-center gap-0.5">
+                {items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      className={`${navLink('xl')} ${navTone(isActive(item.href))}`}
+                    >
+                      {t(`nav.${item.key}`)}
+                      {isActive(item.href) && (
+                        <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 rounded-full bg-brand-500" />
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Desktop nav — condensed labels */}
+            <nav aria-label={t('nav.mainMenu')} className="hidden lg:block xl:hidden">
+              <ul className="flex items-center gap-0.5">
+                {items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      className={`${navLink('lg')} ${navTone(isActive(item.href))}`}
+                    >
+                      {t(`nav.${item.key}`)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Right cluster: primary CTA + menu trigger */}
+            <div className="ml-auto flex items-center gap-2 sm:gap-3">
+              <Link
+                href="/contact/#assessment-enquiry"
+                className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-[0.8125rem] font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.65)] transition-all hover:bg-brand-600 xl:inline-flex"
+              >
+                {t('header.requestAssessment')}
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                aria-controls="mobile-nav"
+                aria-label={open ? t('header.closeMenu') : t('header.openMenu')}
+                className="grid size-10 shrink-0 place-items-center rounded-xl text-heading transition-colors hover:bg-surface-sunken lg:hidden"
+              >
+                {open ? <X className="size-5" /> : <Menu className="size-5" />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile drawer — the switches live in the top bar, so they are not repeated here */}
+      {/*
+       * Mobile drawer — a sibling of the bar, not a child of it. It used to be a
+       * -z-10 child, which depended on the header's stacking context to stay above
+       * the page. As a sibling it sits at z-40: over page content, under the bar,
+       * so the close button is always reachable.
+       */}
       <div
         id="mobile-nav"
-        className={`fixed inset-0 top-0 -z-10 bg-surface transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 top-0 z-40 overflow-y-auto bg-surface transition-all duration-300 lg:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <div className="h-full overflow-y-auto px-5 pb-10 pt-32">
+        <div className="min-h-full px-5 pb-10 pt-32">
           <nav aria-label={t('nav.mobileMenu')}>
             <ul className="divide-y divide-line">
               {items.map((item) => (
@@ -243,6 +254,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
