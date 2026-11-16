@@ -88,7 +88,7 @@ export function AdvisoryContent() {
             >
               <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:gap-12">
                 <div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <span className="grid size-10 place-items-center rounded-xl bg-ink font-display text-sm font-bold text-white">
                       {area.index}
                     </span>

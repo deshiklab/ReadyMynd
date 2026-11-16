@@ -47,6 +47,15 @@ export const site = {
  * ReadyMynd is a brand of DeSHiK Consulting. Credited in the footer as
  * required, with the link pointing at the parent organisation's site.
  */
+/**
+ * Official profiles. Kept here so the footer, the mobile drawer, the contact
+ * page and the structured data all read from one place.
+ */
+export const socialLinks = [
+  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61596634550244' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/readymynd' },
+] as const;
+
 export const parentBrand = {
   name: 'DeSHiK Consulting',
   url: 'https://deshikconsulting.com/',

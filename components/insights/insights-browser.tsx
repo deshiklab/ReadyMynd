@@ -99,7 +99,7 @@ export function InsightsBrowser() {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <SlidersHorizontal className="size-4 text-body-soft" aria-hidden />
             <label htmlFor="insight-sort" className="sr-only">
               {t('insights.lSort')}

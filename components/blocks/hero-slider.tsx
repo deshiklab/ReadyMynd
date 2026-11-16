@@ -157,7 +157,7 @@ export function HeroSlider({ initialSlide = 0 }: { initialSlide?: number } = {})
                 </Link>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
                   onClick={() => go(index - 1)}

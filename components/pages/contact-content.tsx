@@ -9,6 +9,7 @@ import { Eyebrow, Section, SectionHeading } from '@/components/ui/section';
 import { EnquiryForm } from '@/components/contact/enquiry-form';
 import { useI18n } from '@/lib/i18n';
 import { site } from '@/lib/site';
+import { SocialLinks } from '@/components/blocks/social-links';
 
 /**
  * A card holds one or more links — the contact numbers share a single card
@@ -170,6 +171,13 @@ export function ContactContent() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={140} className="mt-10">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-body-soft">
+            {t('footer.followOn')}
+          </p>
+          <SocialLinks className="mt-3" />
+        </Reveal>
 
         <Reveal delay={120}>
           <p className="mt-10 max-w-3xl text-base leading-relaxed text-body-strong">

@@ -6,7 +6,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { NoFlashScript, Providers } from '@/components/providers';
-import { site } from '@/lib/site';
+import { site, socialLinks } from '@/lib/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -104,7 +104,7 @@ const organizationJsonLd = {
     'Product data management',
   ],
   slogan: site.positioning,
-  sameAs: [],
+  sameAs: socialLinks.map((link) => link.href),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -8,6 +8,7 @@ import { mainNav, site } from '@/lib/site';
 import { useI18n } from '@/lib/i18n';
 import { LanguageToggle, ThemeToggle } from '@/components/theme/controls';
 import { Logo } from '@/components/brand/logo';
+import { SocialLinks } from '@/components/blocks/social-links';
 
 /** Approved v1.8 desktop nav order -> i18n key. */
 const navKeys = [
@@ -58,8 +59,8 @@ export function Header() {
 
   const navLink = (size: 'lg' | 'xl') =>
     size === 'xl'
-      ? 'relative rounded-lg px-2.5 py-2 text-[0.8125rem] font-medium transition-colors'
-      : 'relative rounded-lg px-2 py-2 text-xs font-medium transition-colors';
+      ? 'relative shrink-0 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.8125rem] font-medium transition-colors'
+      : 'relative shrink-0 whitespace-nowrap rounded-lg px-2 py-2 text-xs font-medium transition-colors';
 
   const navTone = (active: boolean) =>
     active ? 'text-accent' : 'text-body-strong hover:text-heading';
@@ -79,6 +80,9 @@ export function Header() {
         <div className="container-page flex h-9 items-center gap-4 text-xs">
           <div className="flex min-w-0 items-center gap-4 text-body-soft">
             <p className="hidden truncate xl:block">{t('header.utilityStrip')}</p>
+            <p className="hidden shrink-0 border-l border-line pl-4 font-display text-xs font-semibold text-heading 2xl:block">
+              {t('brand.valueProp')}
+            </p>
             <a
               href={`mailto:${site.email}`}
               className="hidden items-center gap-1.5 transition-colors hover:text-heading sm:inline-flex"
@@ -116,18 +120,9 @@ export function Header() {
             solid ? 'h-16' : 'h-[4.5rem]'
           }`}
         >
-          <Link
-            href="/"
-            className="group flex shrink-0 items-center"
-            aria-label="ReadyMynd — home"
-          >
+          <Link href="/" className="group flex shrink-0 items-center" aria-label="ReadyMynd — home">
             <Logo className="h-7 w-auto sm:h-8" priority />
           </Link>
-
-          {/* Tagline, beside the wordmark where there is room for it. */}
-          <p className="hidden shrink-0 border-l border-line pl-4 font-display text-sm font-semibold text-heading 2xl:block">
-            {t('brand.valueProp')}
-          </p>
 
           {/* Desktop nav — full labels */}
           <nav aria-label={t('nav.mainMenu')} className="hidden xl:block">
@@ -170,7 +165,7 @@ export function Header() {
           <div className="ml-auto flex items-center gap-2 sm:gap-3">
             <Link
               href="/contact/#assessment-enquiry"
-              className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-[0.8125rem] font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.65)] transition-all hover:bg-brand-600 lg:inline-flex"
+              className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-[0.8125rem] font-semibold text-white shadow-[0_10px_30px_-12px_rgba(229,62,62,0.65)] transition-all hover:bg-brand-600 xl:inline-flex"
             >
               {t('header.requestAssessment')}
               <ArrowRight className="size-4" aria-hidden />
@@ -238,6 +233,13 @@ export function Header() {
             <a href={`tel:${site.phoneHref}`} className="block hover:text-heading">
               {site.phone}
             </a>
+          </div>
+
+          <div className="mt-6 border-t border-line pt-6">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-body-soft">
+              {t('footer.followOn')}
+            </p>
+            <SocialLinks className="mt-3" />
           </div>
         </div>
       </div>

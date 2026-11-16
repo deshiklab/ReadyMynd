@@ -5,6 +5,7 @@ import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 import { legalNav, parentBrand, site } from '@/lib/site';
 import { useI18n } from '@/lib/i18n';
 import { Logo } from '@/components/brand/logo';
+import { SocialLinks } from '@/components/blocks/social-links';
 
 const serviceHrefs = [
   '/textile-digital-product-passport/',
@@ -57,6 +58,11 @@ export function Footer() {
               {t('brand.valueProp')}
             </p>
             <p className="mt-1.5 text-sm text-body-soft">{t('brand.positioning')}</p>
+
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-body-soft">
+              {t('footer.followOn')}
+            </p>
+            <SocialLinks className="mt-3" />
           </div>
 
           <nav aria-label={t('footer.services')}>
