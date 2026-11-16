@@ -57,10 +57,8 @@ export function Header() {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href.replace(/\/$/, ''));
 
-  const navLink = (size: 'lg' | 'xl') =>
-    size === 'xl'
-      ? 'relative shrink-0 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.8125rem] font-medium transition-colors'
-      : 'relative shrink-0 whitespace-nowrap rounded-lg px-2 py-2 text-xs font-medium transition-colors';
+  const navLink =
+    'relative shrink-0 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.8125rem] font-medium transition-colors';
 
   const navTone = (active: boolean) =>
     active ? 'text-accent' : 'text-body-strong hover:text-heading';
@@ -68,7 +66,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-[70] transition-all duration-300 ${
           solid ? 'glass border-b glass-ring shadow-soft' : 'glass-soft border-b border-transparent'
         }`}
       >
@@ -137,29 +135,12 @@ export function Header() {
                     <Link
                       href={item.href}
                       aria-current={isActive(item.href) ? 'page' : undefined}
-                      className={`${navLink('xl')} ${navTone(isActive(item.href))}`}
+                      className={`${navLink} ${navTone(isActive(item.href))}`}
                     >
                       {t(`nav.${item.key}`)}
                       {isActive(item.href) && (
                         <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 rounded-full bg-brand-500" />
                       )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            {/* Desktop nav — condensed labels */}
-            <nav aria-label={t('nav.mainMenu')} className="hidden lg:block xl:hidden">
-              <ul className="flex items-center gap-0.5">
-                {items.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={isActive(item.href) ? 'page' : undefined}
-                      className={`${navLink('lg')} ${navTone(isActive(item.href))}`}
-                    >
-                      {t(`nav.${item.key}`)}
                     </Link>
                   </li>
                 ))}
@@ -182,7 +163,7 @@ export function Header() {
                 aria-expanded={open}
                 aria-controls="mobile-nav"
                 aria-label={open ? t('header.closeMenu') : t('header.openMenu')}
-                className="grid size-10 shrink-0 place-items-center rounded-xl text-heading transition-colors hover:bg-surface-sunken lg:hidden"
+                className="grid size-10 shrink-0 place-items-center rounded-xl text-heading transition-colors hover:bg-surface-sunken xl:hidden"
               >
                 {open ? <X className="size-5" /> : <Menu className="size-5" />}
               </button>
@@ -199,7 +180,7 @@ export function Header() {
        */}
       <div
         id="mobile-nav"
-        className={`fixed inset-0 top-0 z-40 overflow-y-auto bg-surface transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 top-0 z-[60] overflow-y-auto bg-surface transition-all duration-300 xl:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
