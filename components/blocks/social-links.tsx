@@ -2,8 +2,8 @@ import { socialLinks } from '@/lib/site';
 import { useI18n } from '@/lib/i18n';
 
 /**
- * lucide-react no longer ships brand glyphs, so the two official marks are
- * inlined. These are the standard Facebook and LinkedIn logo paths.
+ * lucide-react no longer ships brand glyphs, so the official marks are inlined
+ * here instead. These are the standard Facebook, LinkedIn and YouTube paths.
  */
 function FacebookGlyph({ className }: { className?: string }) {
   return (
@@ -21,9 +21,18 @@ function LinkedinGlyph({ className }: { className?: string }) {
   );
 }
 
+function YouTubeGlyph({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z" />
+    </svg>
+  );
+}
+
 const GLYPHS = {
   Facebook: FacebookGlyph,
   LinkedIn: LinkedinGlyph,
+  YouTube: YouTubeGlyph,
 } as const;
 
 /** Official profile links, for the footer, the mobile drawer and the contact page. */

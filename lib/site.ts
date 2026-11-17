@@ -54,6 +54,7 @@ export const site = {
 export const socialLinks = [
   { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61596634550244' },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/readymynd' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ReadyMynd' },
 ] as const;
 
 export const parentBrand = {
@@ -87,14 +88,24 @@ export const mainNav: NavItem[] = [
     href: '/digital-advisory/',
     description: 'Focused post-assessment technical advisory: data, systems, integration.',
   },
-  { label: 'About', full: 'About ReadyMynd', href: '/about/', description: 'Who we are and how we work.' },
+  {
+    label: 'About',
+    full: 'About ReadyMynd',
+    href: '/about/',
+    description: 'Who we are and how we work.',
+  },
   {
     label: 'Insights',
     full: 'Textile DPP Resources & Insights',
     href: '/insights/',
     description: 'Analysis and a knowledge library for Bangladesh manufacturers.',
   },
-  { label: 'Contact', full: 'Contact ReadyMynd', href: '/contact/', description: 'Request an assessment or the service brochure.' },
+  {
+    label: 'Contact',
+    full: 'Contact ReadyMynd',
+    href: '/contact/',
+    description: 'Request an assessment or the service brochure.',
+  },
 ];
 
 export const legalNav: NavItem[] = [
